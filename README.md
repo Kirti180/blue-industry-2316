@@ -2,7 +2,9 @@
 Photography Appointment Booking System
 *This project is a web-based application that allows customers to schedule appointments with professional photographers. The application's backend is responsible for managing customer data, photographer availability, and scheduling.*
 
-
+run the command 
+- run command npm i when you clone the repo
+- to run backend use npm run server
 # Features
 - Customers can create an account and log in.
 - Customers can search for photographers based on location, availability, and type of photography.
