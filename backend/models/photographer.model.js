@@ -10,8 +10,10 @@ photo = mongoose.Schema({
   },
   occasion: [{
     name: String,
+    require:true,
     slots: [{
       time: String,
+      require:true,
       booked: {
         type: Boolean,
         default: false
