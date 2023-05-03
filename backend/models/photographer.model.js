@@ -8,18 +8,18 @@ photo = mongoose.Schema({
     type: String,
     required: true,
   },
-  occasion: [{
-    name: String,
-    require:true,
-    slots: [{
-      time: String,
-      require:true,
-      booked: {
-        type: Boolean,
-        default: false
-      }
-    }]
-  }],
+  // occasion:{
+  //   name: String,
+  //   require:true,
+  //   slots: [{
+  //     time: String,
+  //     require:true,
+  //     booked: {
+  //       type: Boolean,
+  //       default: false
+  //     }
+  //   }]
+  // },
 
   address: {
     type: String,
@@ -42,5 +42,6 @@ photo = mongoose.Schema({
     required: true,
   },
 });
+
 photoModel = mongoose.model("Photographer", photo);
 module.exports = { photoModel };

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Styles/signUp.css">
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+
+    <div id="main">
+        <div class="left-side">
+
+            <div id="logo">
+                <a href="index.html"> <img src="../Images/Click It.png" alt=""> </a>
+            </div>
+
+            <div id="greet">
+                <h1>Welcome 👋</h1>
+                <p>Ready to make your life easier? Let's get started!</p>
+            </div>
+
+            <div id="detail">
+
+                <form action="Login.html" id="Form">
+                    <input type="text" class="formInp" id="first-name" placeholder="First Name" required>
+                    <input type="text" class="formInp" id="last-name" placeholder="Last Name" required> <br>
+                    <input type="number" class="formInp" id="mobile-no" placeholder="Mobile No." required>
+                    <input type="email" class="formInp" id="email" placeholder="Email" required> <br>
+                    <!-- <input type="text" class="formInp" id="location" placeholder="Location"> <br> -->
+                    <input type="password" class="formInp" id="password" placeholder="Password" required>
+                    <input type="password" class="formInp" id="confirm-password" placeholder="Confirm Password"
+                        required> <br>
+                    <!-- <input type="number" class="formInp" id="experience" placeholder="Experience"> <br> -->
+                    <input type="checkbox" class="formInp" id="checkbox">
+                    I have read and agree to Sprout Studio's <a href="">Terms and Conditions. </a> <br>
+                    <button id="submit" type="submit"> SignUp </button>
+                </form>
+
+            </div>
+
+
+        </div>
+
+        <div id="right-side">
+            <div id="bl"></div>
+            <a id="goto-login" href="Login.html"> Go to Login </a>
+            <img src="https://sproutstudio.com/assets/img/startup-wizard-gallery-imac.png" alt="">
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    document.getElementById("submit").addEventListener("click", (re) => {
+        re.preventDefault()
+
+        let fname = document.getElementById("first-name").value
+        let lname = document.getElementById("last-name").value
+        let mno = document.getElementById("mobile-no").value
+        let mail = document.getElementById("email").value
+        let pass = document.getElementById("password").value
+        let cpass = document.getElementById("confirm-password").value
+        let checkbox = document.getElementById("checkbox");
+
+        // console.log(fname, lname, mno, mail, pass, cpass, checkbox.checked)
+        if (fname == "" || lname == "" || mno == "" || mail == "" ||
+            pass == "" || cpass == "" || cpass == "") {
+            alert("Please fill all the data")
+            return
+        }
+        else {
+            if (checkbox.checked == false) {
+                alert("Please accept terms & conditions")
+                return
+            }
+            else if(pass!==cpass){
+                alert("Password does not matches")
+            }
+            else {
+                const payload = {
+                    firstName: document.getElementById("first-name").value,
+                    lastName: document.getElementById("last-name").value,
+                    mobileNo: document.getElementById("mobile-no").value,
+                    email: document.getElementById("email").value,
+                    password: document.getElementById("password").value
+                }
+                fetch("http://localhost:8080/User/signup", {
+                    method: "POST",
+                    headers: { "Content-type": "application/json" },
+                    body: JSON.stringify(payload)
+                }).then(res => res.json())
+                    .then(res => {
+                        console.log(res)
+                        alert("SignUp Success")
+                    })
+                    .catch(err => console.log(err))
+                    .finally(()=>{
+                        window.location.assign("Login.html")
+                    })
+            }
+        }
+    })
+
+
+
+</script>

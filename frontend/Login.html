@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="Styles/signUp.css">
+</head>
+
+<body>
+
+    <div id="main">
+        <div class="left-side">
+
+            <div id="logo">
+                <a href="index.html"> <img src="../Images/Click It.png" alt=""> </a>
+            </div>
+
+            <div id="greet">
+                <h1>Hey, Photographer 👋</h1>
+                <p>Ready to make your life easier? Let's get started!</p>
+            </div>
+
+            <div id="detail">
+
+                <form action="" id="Form">
+                    <input type="email" class="formInp" id="email" placeholder="Email"> <br>
+                    <input type="password" class="formInp" id="password" placeholder="Password"> <br>
+                    <input type="checkbox" class="formInp" id="checkbox">
+                    I have read and agree to Sprout Studio's <a href="">Terms and Conditions. </a> <br>
+                    <button id="submit"> Login </button>
+                </form>
+
+            </div>
+        </div>
+
+        <div id="right-side">
+            <img src="https://sproutstudio.com/assets/img/startup-wizard-gallery-imac.png" alt="">
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    document.getElementById("submit").addEventListener("click", (re) => {
+        re.preventDefault()
+        let mail = document.getElementById("email").value
+        let pass = document.getElementById("password").value
+
+        if (mail == "" || pass == "") {
+            alert("Please fill all the data")
+        }
+        else {
+            if (checkbox.checked == false) {
+                alert("Please accept terms & conditions")
+            }
+            else {
+                const payload = {
+                    email: document.getElementById("email").value,
+                    password: document.getElementById("password").value
+                }
+                fetch("http://localhost:8080/User/login", {
+                    method: "POST",
+                    headers: { "Content-type": "application/json" },
+                    body: JSON.stringify(payload)
+                }).then(res => res.json())
+                    .then(res => {
+                        console.log(res),
+                            alert("Login Successfull")
+                    })
+                    .catch((err) => alert("Wrong Credentials"))
+            }
+        }
+    })
+
+
+
+</script>
