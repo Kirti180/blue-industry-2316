@@ -5,7 +5,7 @@ const { connection } = require("./db");
 const { photographyRouter } = require("./routes/photographer.route");
 app.use(express.json());
 app.use(cors());
-app.use("/", photographyRouter);
+app.use("/photographer", photographyRouter);
 app.listen(process.env.port, async () => {
   try {
     await connection;
