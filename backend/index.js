@@ -1,10 +1,11 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const {connection}=require('./db')
+const { connection } = require("./db");
+const { photographyRouter } = require("./routes/photographer.route");
 app.use(express.json());
 app.use(cors());
-
+app.use("/", photographyRouter);
 app.listen(process.env.port, async () => {
   try {
     await connection;
