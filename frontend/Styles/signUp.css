@@ -1,0 +1,110 @@
+
+* {
+    margin: 0px;
+    font-family: "Nunito", "Lato", sans-serif;
+    color: rgb(88, 86, 82);
+}
+
+.left-side {
+    /* border: 1px solid red; */
+    width: 50%;
+    height: 655px;
+    background-color: #fdfdfd;
+}
+
+#logo {
+    /* border: 1px solid black; */
+    height: 60px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+#logo>a>img {
+    width: 100px;
+}
+
+#greet {
+    /* border: 1px solid; */
+    text-align: center;
+    margin-top: 10px;
+}
+
+#greet>p {
+    font-size: clamp(1em, 4vw, 1.15em) !important;
+    line-height: 1.6em;
+    font-weight: 400;
+    margin-top: 8px;
+}
+
+#greet>h1 {
+    font-size: 42px;
+}
+
+#detail {
+    /* border: 1px solid red; */
+    width: 80%;
+    margin: auto;
+    height: 460px;
+    margin-top: 20px;
+}
+
+.formInp {
+    /* border: 1px solid #fdfdfd; */
+    font-size: 18px;
+    margin: 20px 0px 10px 0px;
+    padding: 5px;
+    width: 230px;
+    margin-left: 20px;
+    background-color: #fdfdfd;
+    outline: none;
+    /* text-decoration: underline; */
+    border-bottom: 1px solid rgb(99, 96, 96);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+#location {
+    width: 494px;
+}
+
+#checkbox {
+    margin-left: -80px;
+    margin-right: -110px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+#submit {
+    width: 80%;
+    height: 50px;
+    margin: 24px 0px 0px 50px;
+    border: none;
+    color: white;
+    background-color: aqua;
+    border-radius: 115px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#main {
+    display: flex;
+}
+
+#right-side {
+    width: 50%;
+    background-color: #d1c0a9;
+}
+
+#right-side>img {
+    width: 75%;
+    margin-top: 150px;
+    margin-left: 80px;
+}
+
+#email,
+#password {
+    width: 360px;
+    margin-left: 80px;
+}
+
