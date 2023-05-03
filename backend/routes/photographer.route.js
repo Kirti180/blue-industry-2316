@@ -13,7 +13,7 @@ photographyRouter.post("/photography/create", async (req, res) => {
   // res.send("notes created")
   const photo = new photoModel(req.body);
   await photo.save();
-  res.send({ data: "note created" });
+  res.send({ data: "photography created" });
 });
 // DELETE REQUEST
 photographyRouter.delete("/photography/delete/:id", async (req, res) => {
