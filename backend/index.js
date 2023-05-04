@@ -21,9 +21,9 @@ app.get("/",(req,res)=>{
   res.send("Welcome")
 } )
 
-app.use("/User", UserRoute)
+// app.use("/User", UserRoute)
 
-app.use(authentication)
+// app.use(authentication)
 
 app.get("/user", async(req,res)=>{
 try {
