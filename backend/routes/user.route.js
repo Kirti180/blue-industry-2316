@@ -20,7 +20,7 @@ UserRoute.post("/signup", async (req, res) => {
             else {
                 const users = new UserModel({ firstName, lastName, mobileNo, email, password: hash, role })
                 await users.save()
-                res.send({ "mag": "New user registered", users })
+                res.send({ "msg": "New user registered", users })
             }
         });
     } catch (error) {
