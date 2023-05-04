@@ -1,19 +1,25 @@
-let search = document.getElementById("search");
+let searchInput  = document.getElementById("search");
 let select1 = document.getElementById("select");
 let photo_data = document.getElementById("show-photo-data");
-const search1 = (e) => {
-  setTimeout(() => {
-    fetch(
-      `http://localhost:8080/photographer/search?title=${e.target.value}`
-    )
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
-        display(res.data);
-      })
-      .catch((err) => console.log(err));
-  }, 300);
+let searchTimeoutId;
+const searchPhotos = (value) => {
+  fetch(`http://localhost:8080/photographer/search?location=${value}`)
+    .then((res) => res.json())
+    .then((res) => {
+      console.log(res);
+      display(res.data);
+    })
+    .catch((err) => console.log(err));
 };
+
+searchInput.addEventListener("input", (event) => {
+  const { value } = event.target;
+  clearTimeout(searchTimeoutId);
+  searchTimeoutId = setTimeout(() => {
+    searchPhotos(value);
+  }, 300);
+});
+
 const high = () => {
   fetch("http://localhost:8080/photographer/high")
     .then((res) => res.json())
@@ -61,12 +67,15 @@ function display(data) {
     //   console.log(element)
     let title = document.createElement("h2");
     let price= document.createElement("h1")
+    let location= document.createElement("h2")
+    
     title.innerText = element.title;
     price.innerText=element.charges
-    photo_data.append(title,price);
+    location.innerText=element.location
+    photo_data.append(title,price,location);
   });
 }
 
-search.addEventListener("change", search1);
+search.addEventListener("change", searchPhotos);
 select1.addEventListener("change", select);
 window.addEventListener("load", getdata);
