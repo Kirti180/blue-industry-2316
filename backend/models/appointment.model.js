@@ -1,15 +1,16 @@
 const mongoose = require("mongoose");
 
 const appointment = mongoose.Schema({
-  photographer: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Photographer",
-    required: true,
-  },
   clientName: {
     type: String,
     required: true
   },
+
+  email: {
+    type: String,
+    required: true
+  },
+
   occasion: {
     type: String,
     required: true,
@@ -22,6 +23,19 @@ const appointment = mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+
+
+  user_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'UserData',
+    required: true
+},
+photographer: {
+  type: mongoose.Schema.Types.ObjectId,
+  ref: "Photographer",
+  required: true,
+},
+
 });
 
 const appointmentModel = mongoose.model("Appointment", appointment);

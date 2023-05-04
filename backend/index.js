@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cors());
 app.use(cookieparser())
 
-app.use("/a", photographyRouter);
+app.use("/photographer", photographyRouter);
 
 app.get("/",(req,res)=>{
   res.send("Welcome")
@@ -25,7 +25,7 @@ app.use("/User", UserRoute)
 
 app.use(authentication)
 
-app.get("/user",authorise(["User"]), async(req,res)=>{
+app.get("/user", async(req,res)=>{
 try {
   const data= await UserModel.find()
   // console.log(req.cookies)
