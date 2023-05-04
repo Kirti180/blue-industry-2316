@@ -66,6 +66,8 @@ function display(data) {
   data.forEach((element) => {
     //   console.log(element)
    let card_img=document.createElement("div")
+   let main_card=document.createElement("div")
+   main_card.setAttribute("id", "main_card");
    let occasion_add=document.createElement("div")
    occasion_add.setAttribute("id", "occasion_add");
    card_img.setAttribute("id", "card_img");
@@ -90,7 +92,12 @@ function display(data) {
    occasion_add.append(occasion)
    card_info.append(title,location,workingtime,charges,occasion_add)
    card_img.append(image)
-    photo_data.append(card_img,card_info);
+   main_card.append(card_img,card_info)
+   main_card.addEventListener("click",()=>{
+    localStorage.setItem("element", JSON.stringify(element));
+    window.location.href = "./detailphotography.html";
+   })
+    photo_data.append(main_card);
   });
 }
 

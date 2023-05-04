@@ -1,3 +1,66 @@
-#show-photo-data{
-    display: flex;
+#main_card{
+   /* border: 1px solid red; */
+   display: flex;
+   justify-content: space-between;
+   margin-top: 2%;
+  padding-left: 5%;
+   
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   border-radius: 10px;
+   background-color: white;
 }
+#photo_main{
+    width: 60%;
+    margin: auto;
+    
+    
+}
+#show-photo-data{
+    margin-top: 5%;
+}
+body{
+    background: rgb(93,223,230);
+    background: linear-gradient(90deg, rgba(93,223,230,1) 0%, rgba(0,74,173,1) 100%);
+}
+#card_img{
+    /* margin: auto; */
+    /* border: 1px solid red; */
+    padding-top: 2%;
+    width: 250px;
+    height: 200px;
+}
+#card_img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 80px;
+}
+#occasion_add p{
+    /* border: 1px solid red; */
+    font-size: 20px;
+    font-weight: bold;
+
+}
+#card_info{
+    /* border: 1px solid green; */
+    width: 40%;
+}
+#card_info p{
+  font-size:20px;
+}
+#search{
+    width: 30%;
+    height: 40px;
+    font-size: 16px;
+    padding-left: 2%;
+    margin-right: 15%;
+}
+#select{
+    width: 30%;
+    height: 40px;
+    font-size: 16px;
+    padding-left: 2%;
+}
+/* #functionality{
+    display: flex;
+    justify-content: space-between;
+} */
