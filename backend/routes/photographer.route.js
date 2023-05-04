@@ -48,16 +48,13 @@ photographyRouter.get('/high', async (req, res) => {
 })
 //search by hotel
 photographyRouter.get("/search", async (req, res) => {
-
-    const { title } = req.query
-    console.log(req.query)
-    try {
-
-        const photo = await photoModel.find({ name: { $regex: `${title}`, $options: "i" } })
-        res.send({ msg: 'photographer', data: photo })
-        // console.log(query)
-    } catch (err) {
-        console.log(err)
-    }
-})
+  const { location } = req.query;
+  try {
+      const photos = await photoModel.find({ location: { $regex: `${location}`, $options: "i" } });
+      res.send({ msg: "photographer", data: photos });
+  } catch (err) {
+      console.log(err);
+      res.status(500).send({ error: "Internal Server Error" });
+  }
+});
 module.exports = { photographyRouter };
