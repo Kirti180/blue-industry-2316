@@ -42,7 +42,7 @@ photo = mongoose.Schema({
     required: true,
   },
   charges: {
-    type: Number,
+    type: String,
     required: true,
   },
   location: {
