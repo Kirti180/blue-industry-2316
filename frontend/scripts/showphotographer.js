@@ -65,14 +65,32 @@ function display(data) {
     photo_data.innerHTML = null;
   data.forEach((element) => {
     //   console.log(element)
-    let title = document.createElement("h2");
-    let price= document.createElement("h1")
-    let location= document.createElement("h2")
-    
-    title.innerText = element.title;
-    price.innerText=element.charges
-    location.innerText=element.location
-    photo_data.append(title,price,location);
+   let card_img=document.createElement("div")
+   let occasion_add=document.createElement("div")
+   occasion_add.setAttribute("id", "occasion_add");
+   card_img.setAttribute("id", "card_img");
+   let card_info=document.createElement("div")
+   card_info.setAttribute("id", "card_info");
+   let image = document.createElement("img");
+   image.setAttribute("src", element.image);
+   let title=document.createElement("h1")
+   let location=document.createElement("p")
+   let workingtime=document.createElement("p")
+   let charges=document.createElement("p")
+   let occasion=document.createElement("p")
+   
+   occasion.innerHTML = "Occasion : ";
+   element.occasion.forEach((occ) => {
+     occasion.innerHTML += occ.name + " ";
+   });
+   charges.innerHTML="Charges : "+element.charges
+   workingtime.innerHTML="Timing : "+element.workingtime
+   location.innerHTML="Location : "+element.location
+   title.innerHTML=element.title
+   occasion_add.append(occasion)
+   card_info.append(title,location,workingtime,charges,occasion_add)
+   card_img.append(image)
+    photo_data.append(card_img,card_info);
   });
 }
 
