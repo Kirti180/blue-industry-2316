@@ -4,52 +4,75 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>photography form</title>
+    <link rel="stylesheet" href="./Styles/photography.css">
+    <title>photo</title>
   </head>
   <body>
-    <form method="POST" action="/photographer/create">
-      <label for="title">Title:</label>
-      <input type="text" id="title" name="title" /><br />
+    <div id="container">
+      <div>
+        <form method="POST" action="/photography/create">
+          <label for="email">Email:</label><br>
+          <input placeholder="Enter Email" type="text" id="email" name="email" /><br /><br>
 
-      <label for="image">Image URL:</label>
-      <input type="text" id="image" name="image" /><br />
+          <label for="password">Password:</label><br>
+          <input placeholder="Enter Password" type="text" id="pass" name="pass" /><br /><br>
 
-      <div id="occasions">
-        <div class="occasion">
-          <label for="occasion_0">Occasion:</label>
-          <input type="text" id="occasion_0" name="occasions[]" /><br />
-          <div class="slots">
-            <div class="slot">
-              <label for="time_0_0">Time:</label>
-              <input
-                type="text"
-                id="time_0_0"
-                name="occasions[0][slots][][time]"
-              />
+          <label for="title">Title:</label><br>
+          <input placeholder="Enter Title" type="text" id="title" name="title" /><br /><br>
+    
+          <label for="image">Image URL:</label><br>
+          <input placeholder="Enter Image_url" type="text" id="image" name="image" /><br /><br>
+    
+          <div id="occasions">
+            <div class="occasion">
+              <label for="occasion_0">Occasion:</label><br>
+              <input placeholder="Enter Occasion8" type="text" id="occasion_0" name="occasions[]" /><br />
+              <div class="slots">
+                <div class="slot">
+                  <label for="time_0_0">Time:</label>
+                  <input
+                    type="text"
+                    id="time_0_0"
+                    name="occasions[0][slots][][time]"
+                  />
+                
+                </div>
+              </div>
+              <button type="button" onclick="addSlot(0)">Add Slot</button><br /><br>
             </div>
           </div>
-          <button type="button" onclick="addSlot(0)">Add Slot</button><br />
-        </div>
+          <button type="button" onclick="addOccasion()">Add Occasion</button><br /><br>
+    
+          <label for="address">Address:</label><br>
+          <input type="text" id="address" name="address" /><br /><br>
+    
+          <label for="charges">Charges:</label><br>
+          <input type="text" id="charges" name="charges" /><br /><br>
+    
+          <label for="location">Location:</label><br>
+          <input type="text" id="location" name="location" /><br /><br>
+    
+          <label for="workingtime">Working Time:</label><br>
+          <input type="text" id="workingtime" name="workingtime" /><br /><br>
+    
+          <label for="contact">Contact:</label><br>
+          <input type="text" id="contact" name="contact" /><br /><br><br>
+    
+          <button id="sub" type="button" onclick="photography_register()">Submit</button><br>
+        </form>
       </div>
-      <button type="button" onclick="addOccasion()">Add Occasion</button><br />
+      <div>
+        <div class="bg-image"><img src="https://images.unsplash.com/photo-1495915892242-054e3010a490?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt=""></div>
 
-      <label for="address">Address:</label>
-      <input type="text" id="address" name="address" /><br />
-
-      <label for="charges">Charges:</label>
-      <input type="text" id="charges" name="charges" /><br />
-
-      <label for="location">Location:</label>
-      <input type="text" id="location" name="location" /><br />
-
-      <label for="workingtime">Working Time:</label>
-      <input type="text" id="workingtime" name="workingtime" /><br />
-
-      <label for="contact">Contact:</label>
-      <input type="text" id="contact" name="contact" /><br />
-
-      <button type="button" onclick="photography_register()">Submit</button>
-    </form>
+     <div class="bg-text">
+ 
+  <h1 style="font-size:50px">Your photography business's new best friend</h1>
+  <p>And I'm a Photographer</p>
+</div>
+      </div>
+    </div>
+    
   </body>
 </html>
 <script src="./scripts/photographyform.js"></script>
+
