@@ -1,0 +1,120 @@
+#detail_main{
+    display: flex;
+    /* border: 1px solid red; */
+    width: 65%;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   border-radius: 10px;
+   background-color: white;
+   padding: 1%;
+   justify-content: space-between;
+   margin-bottom: 3%;
+   
+}
+#detail_contain{
+    /* border: 1px solid red; */
+    margin-top: 2%;
+    width: 40%;
+    
+}
+#title{
+    
+    font-size: 38px;
+    font-weight: bold;
+}
+
+#location_detail, #charges, #workingtime, #address, #contact{
+    margin-top: 3%;
+    font-size: 26px;
+}
+#detail_img{
+    /* border: 1px solid red; */
+    height: 350px;
+    width: 550px;
+}
+#detail_img img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+}
+body{
+    background: rgb(93,223,230);
+    background: linear-gradient(90deg, rgba(93,223,230,1) 0%, rgba(0,74,173,1) 100%);
+}
+#form{
+    width: 65%;
+padding: 2%;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   border-radius: 10px;
+   background-color: snow;
+}
+#clientName,#email{
+    margin-top: 2%;
+    height: 35px;
+    width: 55%;
+    font-size: 16px;
+}
+#occasion,#bookedOn{
+    margin-top: 2%;
+    height: 35px;
+    width: 25%;
+    font-size: 16px;
+}
+#form_contain{
+    display: flex;
+    gap: 5%;
+}
+#book-slot{
+    display: flex;
+    font-size: 20px;
+    margin-top: 2%;
+   
+}
+#start_time,#end_time{
+
+    margin-top: 2%;
+    height: 30px;
+    width: 60%;
+    font-size: 16px;
+    margin-right: 2%;
+}
+#confirm{
+    margin-top: 4%;
+    font-size: 18px;
+    padding: 1.5%;
+    border-radius: 10px;
+    background-color: skyblue;
+    font-weight: bold;
+   
+    border: none;
+}
+#confirm:hover{
+    background-color: rgba(127, 255, 212, 0.553);
+}
+#occasions-container{
+    margin-top: 2%;
+    line-height: 1.8;
+}
+ul, li{
+    list-style: none;
+   
+}
+li button{
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0.8%;
+    margin-top: 1%;
+}
+ul{
+    font-size: 18px;
+    /* margin-top: 2%; */
+    
+}
+ul::after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid black;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }

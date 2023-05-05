@@ -23,7 +23,7 @@ UserRoute.post("/signup", async (req, res) => {
             else {
                 const users = new UserModel({ firstName, lastName, mobileNo, email, password: hash, role })
                 await users.save()
-                res.send({ "mag": "New user registered", users })
+                res.send({ "msg": "New user registered", users })
             }
         });
     } catch (error) {
@@ -49,6 +49,10 @@ UserRoute.post("/login", async (req, res) => {
                 }
                 else {
                     res.send(err.message)
+                if (err) res.send(err)
+                else if (result) {
+                    const token = jwt.sign({ userId: usr[0]._id }, 'imran', { expiresIn: '1h' })
+                    res.cookie("Token", token).send({ "msg": "User logged in successful", "token": token })
                 }
             });
         }

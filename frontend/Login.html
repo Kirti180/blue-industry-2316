@@ -75,6 +75,10 @@
                         else{
                             alert("Wrong Credentials")
                         }
+                            localStorage.setItem("token",res.token)
+
+                           
+
                     })
                     .catch((err) => console.log(err))
             }

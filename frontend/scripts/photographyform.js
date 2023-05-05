@@ -15,6 +15,8 @@ const photography_register = async () => {
   );
 
   const payload = {
+    email: document.getElementById("email").value,
+    pass: document.getElementById("pass").value,
     title: document.getElementById("title").value,
     image: document.getElementById("image").value,
     occasion: occasions,

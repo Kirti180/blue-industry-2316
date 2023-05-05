@@ -14,6 +14,7 @@ const { UserModel } = require("./models/user.model")
 const { photographyRouter } = require("./routes/photographer.route");
 const { UserRoute } = require("./routes/user.route");
 const { BlacklistModel } = require("./models/blacklist.model")
+const {appointmentRouter} = require("./routes/appointment.route")
 require("dotenv").config();
 client.connect();
 const cors = require("cors");
@@ -29,6 +30,8 @@ app.use(session({
 
 app.use(express.json());
 app.use("/photographer", photographyRouter);
+app.use("/appointment",appointmentRouter)
+
 
 app.use("/User", UserRoute)
 
@@ -38,6 +41,7 @@ require("./OAuth")
 
 
 app.get("/google", passport.authenticate("google", { scope: ["profile","email"] }))
+app.use("/User", UserRoute)
 
 app.get("/google/callback", passport.authenticate("google", {  failureRedirect: "/login" }), async (req, res) => {
     const { id, displayName, emails } = req.user;
