@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./Styles/detailphotographer.css" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -19,17 +20,67 @@
         <p id="contact"></p>
       </div>
     </div>
-    <div id="form">
-      <input type="text" placeholder="clientName" />
-      <input type="text" placeholder="clientEmail" />
-      <input type="text" placeholder="occasion" />
-      <input type="date" />
+    <duv id="form">
+      <input id="clientName"  type="text" placeholder="clientName" />
+      <input id="email" type="text" placeholder="clientEmail" />
+      <input id="occasion" type="text" placeholder="occasion" />
+      <input id="bookedOn" type="date" />
       <div id="occasions-container"></div>
-      Start-time<input type="time" placeholder="Enter the slot-time" />
-      End-time<input type="time" placeholder="Enter the slot-time" />
+      Start-time<input id="start_time" type="time" placeholder="Enter the slot-time" />
+      End-time<input id="end_time" type="time" placeholder="Enter the slot-time" />
       
-      <button>Confirm booking</button>
-    </div>
+      <button id="confirm">Confirm booking</button>
+    </form>
   </body>
 </html>
 <script src="./scripts/detailphotography.js"></script>
+
+<script>
+   
+
+
+const clientName = document.getElementById("clientName")
+const email = document.getElementById("email")
+const occasion = document.getElementById("occasion")
+const bookedOn = document.getElementById("bookedOn")
+const start_time = document.getElementById("start_time")
+const end_time = document.getElementById("end_time")
+
+
+let appointbtn = document.querySelector("#confirm")
+appointbtn.addEventListener("click",(e)=>{
+    let Appointobj={
+        clientName:clientName.value,
+            email:email.value,
+            occasion:occasion.value,
+            bookedOn:bookedOn.value,
+            start_time:start_time.value,
+            end_time:end_time.value
+        }
+
+        const dataid=JSON.parse(localStorage.getItem("element"))
+         const id = dataid._id
+         console.log(id)
+        
+        async function getAppointment(photographer){
+            let newAppointment = await fetch(`http://localhost:8080/appointment/book/${id}`,{
+                method:"POST",
+               body:JSON.stringify(Appointobj),
+         headers:{
+            "content-type":"application/json",
+            Authorization: localStorage.getItem("token"),
+        },
+            })
+            if(newAppointment.ok){
+                swal({
+  title: "Sit Tight!",
+  text: "Your Appointment Request has been sent!",
+  icon: "success",
+});
+console.log("appointment sent")
+            }
+        }
+    getAppointment()
+})
+
+</script>
