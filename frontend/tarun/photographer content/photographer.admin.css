@@ -1,0 +1,84 @@
+*{
+    margin: 0px;
+    padding: 0px;
+
+
+}
+
+.admin-div{
+    border: 2px solid red;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.photographer_detail{
+    border: 3px solid blue;
+    width: 25%;
+    height: 100vh;
+}
+.photographer_info{
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 10px 0px ;
+    
+}
+
+.photographer_info>img{
+    border-radius: 50%;
+   
+}
+
+
+.admin_data{
+    border: 3px solid yellow;
+    width: 75%;
+    height: 100vh;
+
+    display: flex;
+
+}
+
+.admin_data_1{
+    border: 2px solid black;
+    background-color: tan;
+    width: 50%;
+}
+.admin_data_1>div:nth-child(1){
+    background-color: teal;
+    font-size: 25px;
+    padding: 5px;
+    text-align: center;
+    font-family: cursive;
+}
+
+
+.admin_data_2{
+    border: 2px solid salmon;
+    width: 50%;
+}
+.admin_data_2>div:nth-child(1){
+    background-color: teal;
+    font-size: 25px;
+    padding: 5px;
+    text-align: center;
+    font-family: cursive;
+}
+
+.photo-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.photo-grid div{
+
+   
+    border: 1px solid green;
+}
+.photo-grid img{
+    max-width: 100%;
+}
