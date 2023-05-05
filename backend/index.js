@@ -10,18 +10,21 @@ const cookieparser = require("cookie-parser")
 const {UserModel} = require("./models/user.model")
 const { photographyRouter } = require("./routes/photographer.route");
 const { UserRoute } = require("./routes/user.route");
+const {appointmentRouter} = require("./routes/appointment.route")
 require("dotenv").config();
 app.use(express.json());
 app.use(cors());
 app.use(cookieparser())
 
 app.use("/photographer", photographyRouter);
+app.use("/appointment",appointmentRouter)
+
 
 app.get("/",(req,res)=>{
   res.send("Welcome")
 } )
 
-// app.use("/User", UserRoute)
+app.use("/User", UserRoute)
 
 // app.use(authentication)
 

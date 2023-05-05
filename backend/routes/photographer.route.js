@@ -3,6 +3,8 @@ const photographyRouter = express.Router();
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 require("dotenv").config
+const {appointmentModel} = require("../models/appointment.model")
+const {UserModel} = require("../models/user.model")
 
 const { photoModel } = require("../models/photographer.model");
 photographyRouter.use(express.json());
