@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Styles/photography.css">
+    <title>photo</title>
+    <style>
+        #container>div:nth-child(1){
+            margin-top: 200px;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div>
+        <form method="POST" action="/photography/create">
+          <label for="email">Email:</label><br>
+          <input placeholder="Enter Email" type="text" id="email" name="email" /><br /><br>
+
+          <label for="password">Password:</label><br>
+          <input placeholder="Enter Password" type="text" id="pass" name="pass" /><br /><br><br>
+
+        
+          <button id="sub" type="button" onclick="photography_register()">Login</button><br><br>
+        </form>
+      </div>
+      <div>
+        <div class="bg-image"><img src="https://images.unsplash.com/photo-1495915892242-054e3010a490?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt=""></div>
+
+     <div class="bg-text">
+ 
+  <h1 style="font-size:50px">Login Here</h1>
+  <p>Photographer</p>
+</div>
+      </div>
+    </div>
+    
+  </body>
+</html>
+<script src="./scripts/photographyform.js"></script>
+
