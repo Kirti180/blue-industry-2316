@@ -5,10 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./Styles/detailphotographer.css" />
+    <script
+    src="https://kit.fontawesome.com/714346974b.js"
+    crossorigin="anonymous"
+  ></script>
+  <link rel="stylesheet" href="./Styles/navbar2.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Document</title>
   </head>
   <body>
+    <nav>
+      <i class="fa-solid fa-bars" id="hamburger"></i>
+      <div id="nav_right_side">
+        <div id="brand_name">
+          <a href="./index.html" class="indexstyle1"
+            ><img
+              src="../Images/Click It.png"
+              alt=""
+              height="100%"
+              width="80% "
+          /></a>
+        </div>
+        <!-- <input type="text" placeholder="Search here" > -->
+      </div>
+      <div id="nav_left_side">
+        <div>
+          <span><a class="indexstyle" href="./index.html">Home</a></span>
+        </div>
+  
+        <div>
+          <span><a href="#" class="indexstyle">About</a> </span>
+        </div>
+        <div>
+          <span><a href="#" class="indexstyle">Contact</a> </span>
+        </div>
+      </div>
+    </nav>
+    <div id="burger">
+      <div class="burger_inside" id="vc">About</div>
+      <div class="burger_inside" id="ss">Contact</div>
+  
+      <div class="burger_inside" id="hm">Home</div>
+    </div>
     <div id="detail_main">
       <div id="detail_img"></div>
       <div id="detail_contain">
@@ -20,17 +58,25 @@
         <p id="contact"></p>
       </div>
     </div>
-    <duv id="form">
-      <input id="clientName"  type="text" placeholder="clientName" />
+    <div id="form">
+      <input id="clientName"  type="text" placeholder="clientName" /><br>
       <input id="email" type="text" placeholder="clientEmail" />
-      <input id="occasion" type="text" placeholder="occasion" />
-      <input id="bookedOn" type="date" />
-      <div id="occasions-container"></div>
-      Start-time<input id="start_time" type="time" placeholder="Enter the slot-time" />
-      End-time<input id="end_time" type="time" placeholder="Enter the slot-time" />
+      <div id="form_contain">
+        <input id="occasion" type="text" placeholder="occasion" />
+        <input id="bookedOn" type="date" />
+      </div>
+      
+      <div id="occasions-container"></div><br>
+      <i><p>* Select timing as per booked slot for conformation</p></i>
+      <div id="book-slot">
+        <div> Start-time<input id="start_time" type="time" placeholder="Enter the slot-time" /></div>
+        <div> End-time<input id="end_time" type="time" placeholder="Enter the slot-time" /></div>
+      </div>
+     
+     
       
       <button id="confirm">Confirm booking</button>
-    </form>
+    </div>
   </body>
 </html>
 <script src="./scripts/detailphotography.js"></script>
