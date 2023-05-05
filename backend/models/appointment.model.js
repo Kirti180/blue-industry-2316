@@ -16,21 +16,25 @@ const appointment = mongoose.Schema({
     type: String,
     required: true,
   },
-  slot: {
+  start_time: {
+    type: String,
+    required: true,
+  },
+  end_time: {
     type: String,
     required: true,
   },
   bookedOn: {
-   type:String,
-   required:true
+    type: String,
+    required: true,
   },
 
   status: {
     type: String,
-    default: 'Pending',
-    enum: ['Pending', 'Accepted', 'Rejected']
-},
-  
+    default: "Pending",
+    enum: ["Pending", "Accepted", "Rejected"],
+  },
+
   user_id: {
     type: Schema.Types.ObjectId,
     ref: "UserData",
