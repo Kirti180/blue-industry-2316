@@ -34,7 +34,7 @@ UserRoute.post("/login", async (req, res) => {
         const usr = await UserModel.find({ email })
         if (usr.length > 0) {
             bcrypt.compare(password, usr[0].password, async (err, result) => {
-                if (err) res.end(err)
+                if (err) res.send(err)
                 else if (result) {
                     const token = jwt.sign({ userId: usr[0]._id }, 'imran', { expiresIn: '1h' })
                     res.cookie("Token", token).send({ "msg": "User logged in successful", "token": token })
@@ -48,6 +48,8 @@ UserRoute.post("/login", async (req, res) => {
         res.send(error)
     }
 })
+
+
 
 module.exports = {
     UserRoute
