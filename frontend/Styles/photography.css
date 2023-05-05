@@ -1,0 +1,95 @@
+form{
+    max-width: 500px;
+    height:auto;
+    text-align: center;
+    padding: 30px;
+    background-color: rgb(239, 246, 247);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: auto;
+  }
+  
+  #container{
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 95%;
+    margin: auto;
+  }
+  #container>div img{
+    width: 93%;
+    padding: 30px;
+    
+  }
+  #container>div:nth-child(1){
+  width: 60%;
+  }
+
+  .bg-image {
+/* The image used */
+padding-top: 40px;
+
+/* Add the blur effect */
+filter: blur(8px);
+-webkit-filter: blur(8px);
+
+/* Full height */
+height: 100%; 
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+color: white;
+font-weight: bold;
+border: 3px solid #f1f1f1;
+position: absolute;
+top: 45%;
+left: 72%;
+transform: translate(-50%, -50%);
+z-index: 2;
+width: 40%;
+padding: 20px;
+text-align: center;
+}
+  form label{
+    font-size: 18px;
+    color: rgb(113, 109, 109);
+    font-family: sans-serif;
+    font-weight: bold;
+  }
+  form input{
+    height: 30px;
+    width: 300px;
+    background-color: rgb(203, 216, 217);
+    border: 1px solid white;
+  }
+
+  form button{
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    font-weight: bold;
+    background-color: rgb(107, 173, 173);
+    cursor: pointer;
+  }
+
+  form button:hover{
+    background-color: rgb(134, 211, 211);
+    cursor: pointer;
+  }
+  #sub{
+    background-color: rgb(121, 128, 128);
+    color: white;
+    border-radius: 0%;
+    border: none;
+    cursor: pointer;
+  }
+
+  #sub:hover{
+    background-color: rgb(73, 69, 69);
+  }

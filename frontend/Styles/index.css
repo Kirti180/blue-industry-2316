@@ -1,0 +1,286 @@
+
+
+.top-name{
+    text-align: center;
+   
+    color: black;
+    font-size: 25px;
+    margin: 0px 0px;
+    padding: 15px;
+    font-family: cursive;
+  }
+/* slide css  */
+
+/* slide - 1  */
+.slide-1{
+    /* position: relative; */
+    /* height: 30%; */
+    width: 80%;
+    background-color: gray;
+    border-radius: 20px;
+    margin-left: 10%;
+    
+}
+.slide_image{
+    height: 500px;
+    width: 100%; 
+    border-radius: 10px; 
+    
+}
+.slide-p{
+    /* background-color: gray; */
+    padding-bottom: 5px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    word-spacing: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* slide   */
+
+.line{
+    border: 10px solid skyblue;
+    margin: 5px 0px;
+}
+
+/* more photo  */
+
+.more-photo{
+    display: flex;
+    
+}
+.more-photo div{
+    width: 10%;
+}
+.more-photo>div>img{
+    max-width: 100%;
+  
+}
+
+
+#mtext{
+    font-family: "PT Sans" ;
+    font-size: 3rem;;
+    font-weight: 700;
+    line-height: 5rem;
+
+}
+
+#btext{
+    font-family: "Gotham Bold";
+    font-weight: 800;
+    color: black;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    text-decoration: underline;
+
+}
+.center{
+    text-align: center;
+}
+
+#htext{
+    font-family: "Gotham-Medium";
+    font-weight: 500;
+    color:  rgb(58, 89, 109);
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    
+}
+
+.top>div{
+    align-self: center;
+
+}
+
+.container{
+    width: 75%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.cate{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.cate>div{
+    padding: 25px;
+    margin: auto;
+    background-color: rgb(211, 249, 249);
+    border-radius: 15px;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+
+    height: 300px;
+
+}
+
+.cate>div:hover{
+    padding: 20px;
+    opacity: 80%;
+    cursor: pointer;
+}
+
+.cate>div img{
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+border-radius: 10px;
+
+}
+
+.cate>div img:hover{
+    border-radius: 40px;
+}
+.cate>div>div:nth-child(1){
+    width: 70%;
+
+}
+.main{
+    background-color: rgba(127, 244, 225, 0.235);
+}
+.HowItWorks{
+    width: 75%;
+    margin: auto;
+    padding: 30px;
+    text-align: center;
+}
+
+.HowItWorks>div{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 50px;
+}
+
+.HowItWorks>div>div{
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+   box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+p{
+    margin-top: 10px;
+}
+
+.why{
+    width: 75%;
+    margin: auto;
+    padding: 30px;
+}
+.why>p{
+    text-align: center;
+    font-family: "Gotham-Medium";
+    font-weight: 500;
+    color:  rgb(58, 89, 109);
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+}
+.why>div{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 30px;
+}
+.why>div>div{
+    background-color: rgba(101, 215, 223, 0.518);
+    padding: 30px;
+    display: flex;
+    border-radius: 10px;
+    
+}
+
+.reviews{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 50px;
+    padding: 30px;
+    text-align: center;
+    color: rgb(16, 13, 103);
+    font-family: sa;
+}
+.reviews img{
+    width:280px;
+     height:350px;
+    background-size:cover;
+  background-position:center;
+  border-radius:10%;
+    
+}
+
+.bottom{
+    padding: 50px 0px;
+    text-align: center;
+    width: 100%;
+   background-color: rgba(135, 207, 235, 0.61);
+}
+.bottom>p{
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 50px;
+    color: black;
+    margin-bottom: 30px;
+}
+
+.nav-button{
+    font-size: 20px;
+    padding: 10px 30px;
+    border-radius: 10px;
+    background-color: teal;
+}
+.nav-button:hover{
+    background-color: wheat;
+}
+
+
+
+
+ 
+/* --------------footer part ---------------*/
+
+.footer{
+    background-color: rgb(105, 100, 100);
+    color: white;
+    padding: 30px;
+    
+}
+.footer>div{
+    
+    display: flex;
+    
+    width: 100%;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+hr{
+    margin: 10px;
+}
+.footer>p{
+    text-align: center;
+    font-size: 12px;
+}
+#ftext{
+    text-align: start;
+    font-family: "Open Sans", Roboto, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 50px;
+    color: rgb(255, 255, 255);
+}
+
+
+    #nbtn,#dash {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        font-weight: 400;
+        }
+
+
