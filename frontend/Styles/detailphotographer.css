@@ -1,3 +1,39 @@
 #detail_main{
     display: flex;
+    /* border: 1px solid red; */
+    width: 65%;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   border-radius: 10px;
+   background-color: white;
+   padding: 1%;
+   justify-content: space-between;
+   
+}
+#detail_contain{
+    /* border: 1px solid red; */
+    width: 40%;
+    
+}
+#title{
+    font-size: 38px;
+    font-weight: bold;
+}
+
+#location_detail, #charges, #workingtime, #address, #contact{
+    font-size: 26px;
+}
+#detail_img{
+    /* border: 1px solid red; */
+    height: 400px;
+    width: 600px;
+}
+#detail_img img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+}
+body{
+    background: rgb(93,223,230);
+    background: linear-gradient(90deg, rgba(93,223,230,1) 0%, rgba(0,74,173,1) 100%);
 }
