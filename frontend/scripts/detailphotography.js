@@ -14,7 +14,7 @@ let occasionsContainer = document.getElementById('occasions-container');
 occasionData.map((occasion) => {
     let occasionListItem = document.createElement('li');
     let occasionName = document.createElement('h3');
-    occasionName.innerText = occasion.name;
+    occasionName.innerText = "Occasion : "+occasion.name;
     occasionListItem.appendChild(occasionName);
   
     let slotsList = document.createElement('ul');

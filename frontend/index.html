@@ -1,12 +1,665 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    indexpage
+    <button id="ok">
+        Index page
+    </button>
 </body>
+
 </html>
+
+<script>
+    document.getElementById("ok").addEventListener("click", (res) => {
+        fetch("http://localhost:8080/user").then(res => res.json())
+            .then(res => {
+                console.log(res)
+            })
+            .catch((err) => console.log(err))
+    })
+</script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/714346974b.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Landing page</title>
+    <link rel="stylesheet" href="./Styles/navbar.css" />
+    <!-- <link rel="stylesheet" href="styles/navbar-footer.css"> -->
+    <link rel="stylesheet" href="./Styles/index.css" />
+  </head>
+  <body>
+    <!------------------- navigation bar start ------------>
+    <nav>
+      <i class="fa-solid fa-bars" id="hamburger"></i>
+      <div id="nav_right_side">
+        <div id="brand_name">
+          <a href="./index.html" class="indexstyle1"
+            ><img
+              src="../Images/Click It.png"
+              alt=""
+              height="100%"
+              width="80% "
+          /></a>
+        </div>
+        <!-- <input type="text" placeholder="Search here" > -->
+      </div>
+      <div id="nav_left_side">
+        <div>
+          <span><a class="indexstyle" href="./index.html">Home</a></span>
+        </div>
+
+        <div>
+          <span><a href="#" class="indexstyle">About</a> </span>
+        </div>
+        <div>
+          <span><a href="#" class="indexstyle">Contact</a> </span>
+        </div>
+      </div>
+    </nav>
+    <div id="burger">
+      <div class="burger_inside" id="vc">About</div>
+      <div class="burger_inside" id="ss">Contact</div>
+
+      <div class="burger_inside" id="hm">Home</div>
+    </div>
+    <!-- <div style="background-color: rgba(127, 255, 212, 0.553); padding: 20px; text-align: center; font-weight: bold;">header and nav-bar</div> -->
+
+    <br />
+
+    <hr />
+    <div class="top-name">Click It</div>
+    <hr />
+
+    <!-- slide html  -->
+
+    <div class="slide-1">
+      <img
+        class="slide_image"
+        src="https://images.pexels.com/photos/3397026/pexels-photo-3397026.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        alt=""
+      />
+      <p class="slide-p">
+        Safety precautions during COVID-19. We’re taking additional steps and
+        precautionary measures to protect our community from COVID-19.
+        <a href=""> Know more</a>
+      </p>
+    </div>
+
+    <div class="line"></div>
+    <!-- image slide  -->
+
+    <div class="more-photo">
+      <div>
+        <img
+          src="https://plus.unsplash.com/premium_photo-1664701475272-953393050754?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <img
+          src="https://plus.unsplash.com/premium_photo-1676389758875-be52d3176b91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <img
+          src="https://plus.unsplash.com/premium_photo-1664701475272-953393050754?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <img
+          src="https://plus.unsplash.com/premium_photo-1676389758875-be52d3176b91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <img
+          src="https://plus.unsplash.com/premium_photo-1664701475272-953393050754?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <img
+          src="https://plus.unsplash.com/premium_photo-1676389758875-be52d3176b91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <img
+          src="https://plus.unsplash.com/premium_photo-1664701475272-953393050754?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <img
+          src="https://plus.unsplash.com/premium_photo-1676389758875-be52d3176b91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <img
+          src="https://plus.unsplash.com/premium_photo-1664701475272-953393050754?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <img
+          src="https://plus.unsplash.com/premium_photo-1676389758875-be52d3176b91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <img
+          src="https://plus.unsplash.com/premium_photo-1664701475272-953393050754?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <img
+          src="https://plus.unsplash.com/premium_photo-1676389758875-be52d3176b91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <!-- image slide  -->
+
+    <div class="line"></div>
+    <!------------------- page contain  ------------>
+
+    <br />
+    <div class="center">
+      <button class="nav-button">Book a Studio</button>
+    </div>
+
+    <br />
+
+    <div class="main">
+      <div class="HowItWorks">
+        <p id="htext">How It Works</p>
+
+        <div>
+          <div>
+            <img
+              width="15%"
+              src="https://cdn3.iconfinder.com/data/icons/social-messaging-ui-color-line/245532/14-512.png"
+              alt=""
+            />
+            <h3>Search</h3>
+            <p>
+              Search for your perfect Photographer based on your location,
+              category and price range.
+            </p>
+          </div>
+
+          <div>
+            <img
+              width="15%"
+              src="https://mixpanel.com/wp-content/uploads/2020/07/icon-09.svg"
+              alt=""
+            />
+            <h3>Shortlist</h3>
+            <p>
+              Shortlist Photographers you like based on their albums, packages
+              and reviews to keep track.
+            </p>
+          </div>
+
+          <div>
+            <img
+              width="15%"
+              src="https://d1hcxvwj40zhpj.cloudfront.net/images/icons/blue-circle-creditcard.png"
+              alt=""
+            />
+            <h3>Book</h3>
+            <p>
+              Book your finalized Photographer by selecting a package or
+              directly contacting them on Whatsapp.
+            </p>
+          </div>
+        </div>
+
+        <p>
+          We have listings of Phone Number, Albums, Packages and Reviews of Best
+          Photographers from all over India for Wedding, Babies, Kids, Pre
+          Wedding, Maternity, Anniversary, Commercial, Food, Restaurant,
+          Corporate Events, Fashion, Portfolio, Nature and Travel Photography.
+        </p>
+      </div>
+    </div>
+
+    <!-- container  -->
+
+    <div class="container">
+      <p id="htext" class="center">Photography for Every Milestone</p>
+      <p id="stext" class="center">
+        Get inspired to create your own beautiful moments!
+      </p>
+
+      <div class="cate">
+        <div>
+          <div>
+            <p id="btext">Holiday</p>
+            <p id="stext">
+              Capture precious moments at your favourite destinations
+            </p>
+          </div>
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1475503572774-15a45e5d60b9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <p id="btext">Family</p>
+            <p id="stext">From intimate family shoots to special gatherings</p>
+          </div>
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1643869355390-4dcffc63d049?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <p id="btext">Marriage</p>
+            <p id="stext">Proposal</p>
+            <p id="stext">Pre-wedding</p>
+          </div>
+
+          <img
+            src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+            alt="wed"
+          />
+        </div>
+
+        <div>
+          <div>
+            <p id="btext">Birthday</p>
+            <p id="stext">Every birthday is worthy to be celebrated</p>
+          </div>
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1623244727304-54995b233b1c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <p id="btext">Graduation</p>
+            <p id="stext">Celebrate your achievements</p>
+          </div>
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <p id="btext">Baby</p>
+            <p id="stext">Maternity</p>
+
+            <p id="stext">Newborn</p>
+          </div>
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1491013516836-7db643ee125a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1025&q=80"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <p id="btext">Others</p>
+            <p id="stext">For every moment, anywhere, any time</p>
+          </div>
+
+          <img
+            src="https://plus.unsplash.com/premium_photo-1663091556856-559de6ebf4d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            alt=""
+          />
+        </div>
+
+        <div>
+          <div>
+            <p id="btext">Browse All Categories</p>
+          </div>
+          <div>
+            <img
+              src="https://arrow.apache.org/img/arrow-logo_chevrons_black-txt_transparent-bg.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- more photo  -->
+
+    <div class="line"></div>
+    <!-- image slide  -->
+
+    <div class="more-photo">
+      <div>
+        <img
+          src="https://images.unsplash.com/photo-1673557143243-39f2995a3bca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <img
+          src="https://plus.unsplash.com/premium_photo-1673356713504-d8a6a35eb209?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <img
+          src="https://images.unsplash.com/photo-1673557143243-39f2995a3bca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <img
+          src="https://plus.unsplash.com/premium_photo-1673356713504-d8a6a35eb209?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <img
+          src="https://images.unsplash.com/photo-1673557143243-39f2995a3bca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <img
+          src="https://plus.unsplash.com/premium_photo-1673356713504-d8a6a35eb209?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <img
+          src="https://images.unsplash.com/photo-1673557143243-39f2995a3bca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <img
+          src="https://plus.unsplash.com/premium_photo-1673356713504-d8a6a35eb209?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <img
+          src="https://images.unsplash.com/photo-1673557143243-39f2995a3bca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <img
+          src="https://plus.unsplash.com/premium_photo-1673356713504-d8a6a35eb209?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <img
+          src="https://images.unsplash.com/photo-1673557143243-39f2995a3bca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          alt=""
+        />
+      </div>
+
+      <div>
+        <img
+          src="https://plus.unsplash.com/premium_photo-1673356713504-d8a6a35eb209?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <!-- image slide  -->
+
+    <div class="line"></div>
+
+    <!-- more photo  -->
+
+    <div class="main">
+      <div class="why">
+        <p>Why book a photo shoot with us</p>
+        <div>
+          <div>
+            <div>
+              <img
+                src="https://cdn.sweetescape.com/images/section_assets/11/icon/big_4acaeac6-d909-423a-bf1e-85fdaed40f95.png"
+                alt=""
+              />
+            </div>
+
+            <div>
+              <h3>Hassle-Free Booking</h3>
+              <p>
+                Simply select your photo shoot package in almost any city and a
+                photographer will be assigned to you shortly.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <img
+                src="https://cdn.sweetescape.com/images/section_assets/12/icon/big_e92162bd-8ced-48c8-9f8f-a30ec7da133c.png"
+                alt=""
+              />
+            </div>
+            <div>
+              <h3>The Best Photographers</h3>
+              <p>
+                Our photographers are professionally selected to provide the
+                best photo experience and results.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <img
+                src="https://cdn.sweetescape.com/images/section_assets/13/icon/big_4e69a3e2-7b88-4a50-b371-384ea41e405c.png"
+                alt=""
+              />
+            </div>
+            <div>
+              <h3>Great Photos</h3>
+              <p>
+                Our experienced editor team ensures that your photos are edited
+                to the highest quality.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <img
+                src="https://cdn.sweetescape.com/images/section_assets/14/icon/big_4edb2d57-e0e4-4f6a-bc3d-bbc201e4196a.png"
+                alt=""
+              />
+            </div>
+            <div>
+              <h3>Fast Delivery</h3>
+              <p>
+                Delivering top quality photos in just 48 hours after your
+                session.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <img
+                src="https://cdn.sweetescape.com/images/section_assets/30/icon/big_b18d6d1a-2f00-4938-a02d-009033f90c0a.png"
+                alt=""
+              />
+            </div>
+            <div>
+              <h3>Covid health-protocol</h3>
+              <p>
+                Most of our photographers have been vaccinated and we maintain
+                safe distance during the photoshoot
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <img
+                src="https://cdn.sweetescape.com/images/section_assets/29/icon/big_60a8127e-8efb-475e-ade4-f7f84c5d5543.png"
+                alt=""
+              />
+            </div>
+            <div>
+              <h3>Peace-of-mind</h3>
+              <p>
+                We understand that plans can change due to unforseen
+                circumstances especially during this pandemic, we provide easy
+                reschedule up-to 48 hours before your photoshoot
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <p id="htext">What people are saying…</p>
+      <div class="reviews">
+        <div>
+          <div>
+            <img
+              src="https://images.pexels.com/photos/2781104/pexels-photo-2781104.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt=""
+            />
+            <h3>Vyankatesh Gadekar</h3>
+            <p>WEDDING</p>
+            <h3>⭐5</h3>
+          </div>
+          <p>
+            Very professional team of photographers. Passionate about their work
+            and very accommodating. Made our wedding memorable. Good with the
+            parents and relatives as well.
+          </p>
+        </div>
+        <div>
+          <div>
+            <img
+              src="https://images.pexels.com/photos/1547538/pexels-photo-1547538.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt=""
+            />
+
+            <h3>Bandana Maity</h3>
+            <p>WEDDING</p>
+            <h3>⭐4.6</h3>
+          </div>
+          <p>
+            Photomatic is a complete solution for wedding photography. This team
+            has got excellent members with huge knowledge. The best part is all
+            the members are calm,decent and very friendly and highly
+            professional too. All the very best to this lovely team.
+          </p>
+        </div>
+        <div>
+          <div>
+            <img
+              src="https://images.pexels.com/photos/752801/pexels-photo-752801.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt=""
+            />
+
+            <h3>Supriya Mishra</h3>
+            <p>SPECIAL OCCASION</p>
+            <h3>⭐4.5</h3>
+          </div>
+          <p>
+            Best photography best service with lots of creativity made my
+            wedding memorable . These guys did a great job thanku vijay studio
+            you guys are really awesome
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <p>Are you Professional Photographer?</p>
+      <button class="nav-button">Register as Studio</button>
+    </div>
+
+    <!------------------- footer part  ------------>
+    <div class="footer">
+      <div>
+        <div>
+          <p>Company</p>
+          <li>Blog</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Cities</li>
+        </div>
+        <div>
+          <p>Legal</p>
+          <li>Terms Of Service</li>
+          <li>Privacy Policy</li>
+          <li>Content Guidelines</li>
+          <li>Community Guidelines</li>
+          <li>3rd Party licenses</li>
+        </div>
+      </div>
+      <hr />
+      <p>Icons made by Freepik from www.flaticon.com And Font Awesome</p>
+      <hr />
+      <p>
+        © Copyright 2023 Strike a Pose Technologies Pvt. Ltd. All rights
+        reserved. | Terms Of Service | Privacy Policy
+      </p>
+    </div>
+  </body>
+</html>
+
+<script src="./scripts/index.js"></script>
