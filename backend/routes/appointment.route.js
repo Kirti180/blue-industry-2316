@@ -59,6 +59,7 @@ appointmentRouter.get("/:id", async (req, res) => {
 
 
 
+
 //getting specific photographer's appointment details as well as user details using appointments id
 appointmentRouter.get("/getAppointmentDetails/:id", async (req, res) => {
     const id = req.params.id;
@@ -76,6 +77,7 @@ appointmentRouter.get("/", async (req, res) => {
 });
 
 
+
 //accepting appointment 
 appointmentRouter.patch("/status/:id", async (req, res) => {
     const id = req.params.id
@@ -85,7 +87,5 @@ appointmentRouter.patch("/status/:id", async (req, res) => {
    // const updateStatus = await appointmentModel.findByIdAndUpdate({_id:id},{photographer})
      res.status(200).send({appointedData,"msg":"Appointment Status Updated"})
 });
-
-
 
 module.exports = { appointmentRouter };
