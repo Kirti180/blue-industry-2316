@@ -1,4 +1,4 @@
-       
+
 * {
     margin: 0px;
     font-family: "Nunito", "Lato", sans-serif;
@@ -85,7 +85,6 @@
     border-radius: 115px;
     font-size: 24px;
     cursor: pointer;
-    margin-bottom: 40px;
 }
 
 #main {
@@ -99,48 +98,13 @@
 
 #right-side>img {
     width: 75%;
-    margin-top: 110px;
-    margin-left: 100px;
+    margin-top: 150px;
+    margin-left: 80px;
 }
 
 #email,
 #password {
-    
+    width: 360px;
+    margin-left: 80px;
 }
 
-#goto-login{
-    text-decoration: none;
-    color: white;
-    margin-left: 555px;
-}
-
-#bl{
-    height: 20px;
-}
-
-#ggl{
-    width: 434px;
-    height: 50px;
-    border: 1px solid red;
-    /* padding: 12px 111px; */
-    margin-left: 50px;
-    margin-top: 10px;
-    border: none;
-    background-color: aqua;
-    border-radius: 115px;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-#ggl>a{
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    font-size: 24px;
-    margin-top: -10px;
-    width: 400px;
-}
-#or{
-    text-align: center;
-    margin-top: -22px;
-}
