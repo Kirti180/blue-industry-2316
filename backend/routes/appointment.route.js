@@ -63,9 +63,6 @@ appointmentRouter.get("/", async (req, res) => {
   res.send(appointmentData);
 });
 
-
-
-
 //accepting appointment api
 // appointmentRouter.patch("/accept/:id", async (req, res) => {
 //     const id = req.params.id
@@ -80,7 +77,5 @@ appointmentRouter.get("/", async (req, res) => {
 //         }
 //     })
 // });
-
-
 
 module.exports = { appointmentRouter };
