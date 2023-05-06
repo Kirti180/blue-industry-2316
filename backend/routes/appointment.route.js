@@ -51,6 +51,7 @@ appointmentRouter.post("/book/:id", (req, res) => {
 
 
 //get total appointment requests and datas with respect to photographers on photographer's admin page
+//(taking photographer id in params)
 appointmentRouter.get("/:id", async (req, res) => {
     const id = req.params.id
   const appointmentData = await appointmentModel.find({photographer:id});
@@ -78,14 +79,25 @@ appointmentRouter.get("/", async (req, res) => {
 
 
 
-//accepting appointment 
-appointmentRouter.patch("/status/:id", async (req, res) => {
+//accepting appointment (appointment id as params)
+appointmentRouter.patch("/accept/:id", async (req, res) => {
     const id = req.params.id
-    const status = req.body
 
-    const appointedData = await appointmentModel.findByIdAndUpdate({_id:id},status)
+    const appointedData = await appointmentModel.findByIdAndUpdate({_id:id},{status:"Accepted"})
    // const updateStatus = await appointmentModel.findByIdAndUpdate({_id:id},{photographer})
      res.status(200).send({appointedData,"msg":"Appointment Status Updated"})
 });
+
+
+
+//reject api
+appointmentRouter.patch("/reject/:id", async (req, res) => {
+  const id = req.params.id
+
+  const appointedData = await appointmentModel.findByIdAndUpdate({_id:id},{status:"Rejected"})
+ // const updateStatus = await appointmentModel.findByIdAndUpdate({_id:id},{photographer})
+   res.status(200).send({appointedData,"msg":"Appointment Status Updated"})
+});
+
 
 module.exports = { appointmentRouter };
