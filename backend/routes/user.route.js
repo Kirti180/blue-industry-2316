@@ -54,6 +54,7 @@ UserRoute.post("/login", async (req, res) => {
                     const token = jwt.sign({ userId: usr[0]._id }, 'imran', { expiresIn: '1h' })
                     res.cookie("Token", token).send({ "msg": "User logged in successful", "token": token })
                 }
+            }
             });
         }
         else {
