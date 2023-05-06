@@ -70,6 +70,7 @@
                         console.log(res),
                             alert("Login Successfull")
                             localStorage.setItem("token",res.token)
+                            window.location.href="./index.html"
                     })
                     .catch((err) => alert("Wrong Credentials"))
             }
