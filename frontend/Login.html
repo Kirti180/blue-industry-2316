@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-   <link rel="stylesheet" href="Styles/signUp.css">
+   <link rel="stylesheet" href="Styles/login.css">
 </head>
 
 <body>
@@ -56,7 +56,7 @@
             if (checkbox.checked == false) {
                 alert("Please accept terms & conditions")
             }
-            else {
+             else {
                 const payload = {
                     email: document.getElementById("email").value,
                     password: document.getElementById("password").value
@@ -67,14 +67,18 @@
                     body: JSON.stringify(payload)
                 }).then(res => res.json())
                     .then(res => {
-                        console.log(res),
+                        console.log(res)
+                        if(res.msg=="User logged in successful"){
                             alert("Login Successfull")
+                            window.location.assign("index.html")
+                        }
+                        else{
+                            alert("Wrong Credentials")
+                        }
                             localStorage.setItem("token",res.token)
-
-                           
-
+                            window.location.href="./index.html"
                     })
-                    .catch((err) => alert("Wrong Credentials"))
+                    .catch((err) => console.log(err))
             }
         }
     })

@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="Styles/signUp.css">
+    <link rel="stylesheet" href="Styles/signup.css">
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </head>
 
 <body>
@@ -27,19 +28,21 @@
 
             <div id="detail">
 
-                <form action="Login.html" id="Form">
-                    <input type="text" class="formInp" id="first-name" placeholder="First Name" required>
-                    <input type="text" class="formInp" id="last-name" placeholder="Last Name" required> <br>
-                    <input type="number" class="formInp" id="mobile-no" placeholder="Mobile No." required>
-                    <input type="email" class="formInp" id="email" placeholder="Email" required> <br>
+                <form id="Form">
+                    <input type="text" class="formInp" id="first-name" placeholder="First Name">
+                    <input type="text" class="formInp" id="last-name" placeholder="Last Name"> <br>
+                    <input type="number" class="formInp" id="mobile-no" placeholder="Mobile No.">
+                    <input type="email" class="formInp" id="email" placeholder="Email"> <br>
                     <!-- <input type="text" class="formInp" id="location" placeholder="Location"> <br> -->
-                    <input type="password" class="formInp" id="password" placeholder="Password" required>
-                    <input type="password" class="formInp" id="confirm-password" placeholder="Confirm Password"
-                        required> <br>
+                    <input type="password" class="formInp" id="password" placeholder="Password">
+                    <input type="password" class="formInp" id="confirm-password" placeholder="Confirm Password"> <br>
                     <!-- <input type="number" class="formInp" id="experience" placeholder="Experience"> <br> -->
                     <input type="checkbox" class="formInp" id="checkbox">
                     I have read and agree to Sprout Studio's <a href="">Terms and Conditions. </a> <br>
-                    <button id="submit" type="submit"> SignUp </button>
+                    <button id="submit" type="submit"> SignUp </button> <br>
+                    <h3 id="or">OR</h3>
+                    <!-- <button id="ggl"><a href="http://localhost:8080/google">SinUp with Google</a></button> -->
+                    <a href="http://localhost:8080/google" id="ggl" >SignUp With Google</a>
                 </form>
 
             </div>
@@ -56,7 +59,6 @@
 </body>
 
 </html>
-
 <script>
     document.getElementById("submit").addEventListener("click", (re) => {
         re.preventDefault()
@@ -80,7 +82,7 @@
                 alert("Please accept terms & conditions")
                 return
             }
-            else if(pass!==cpass){
+            else if (pass !== cpass) {
                 alert("Password does not matches")
             }
             else {
@@ -101,12 +103,23 @@
                         alert("SignUp Success")
                     })
                     .catch(err => console.log(err))
-                    .finally(()=>{
-                        window.location.assign("Login.html")
+                    .finally(() => {
+                        // window.location.assign("Login.html")
                     })
             }
         }
     })
+
+    // document.getElementById("google").addEventListener("click", (rew) => {
+    //     rew.preventDefault()
+    //     fetch("http://localhost:8080/google").then((res) => res.json())
+    //         .then((res) => console.log(res))
+    //         .catch((err) => console.log(err))
+    //     // fetch("http://localhost:8080//google/callback").then((res) => res.json())
+    //     //     .then((res) => console.log(res))
+    //     //     .catch((err) => console.log(err))
+    //     // window.location.assign("index.html")
+    // })
 
 
 
