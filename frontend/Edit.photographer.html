@@ -4,67 +4,94 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./Styles/navbar2.css">
+    <link rel="stylesheet" href="./Styles/navbar2.css" />
     <script
-    src="https://kit.fontawesome.com/714346974b.js"
-    crossorigin="anonymous"
-  ></script>
-    <link rel="stylesheet" href="./Styles/photography.css">
+      src="https://kit.fontawesome.com/714346974b.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./Styles/photography.css" />
     <title>photo</title>
   </head>
   <body>
     <nav>
-    <i class="fa-solid fa-bars" id="hamburger"></i>
-    <div id="nav_right_side">
-      <div id="brand_name">
-        <a href="./index.html" class="indexstyle1"
-          ><img
-            src="../Images/Click It.png"
-            alt=""
-            height="100%"
-            width="80% "
-        /></a>
+      <i class="fa-solid fa-bars" id="hamburger"></i>
+      <div id="nav_right_side">
+        <div id="brand_name">
+          <a href="./index.html" class="indexstyle1"
+            ><img
+              src="../Images/Click It.png"
+              alt=""
+              height="100%"
+              width="80% "
+          /></a>
+        </div>
+        <!-- <input type="text" placeholder="Search here" > -->
       </div>
-      <!-- <input type="text" placeholder="Search here" > -->
-    </div>
-    <div id="nav_left_side">
-      <div>
-        <span><a class="indexstyle" href="./index.html">Home</a></span>
-      </div>
+      <div id="nav_left_side">
+        <div>
+          <span><a class="indexstyle" href="./index.html">Home</a></span>
+        </div>
 
-      <div>
-        <span><a href="#" class="indexstyle">About</a> </span>
+        <div>
+          <span><a href="#" class="indexstyle">About</a> </span>
+        </div>
+        <div>
+          <span
+            ><a href="./photographerLogin.html" class="indexstyle">login</a>
+          </span>
+        </div>
       </div>
-      <div>
-        <span><a href="./photographerLogin.html" class="indexstyle">login</a> </span>
-      </div>
-    </div>
-  </nav>
-  <div id="burger">
-    <div class="burger_inside" id="vc">About</div>
-    <div class="burger_inside" id="ss">login</div>
+    </nav>
+    <div id="burger">
+      <div class="burger_inside" id="vc">About</div>
+      <div class="burger_inside" id="ss">login</div>
 
-    <div class="burger_inside" id="hm">Home</div>
-  </div>
+      <div class="burger_inside" id="hm">Home</div>
+    </div>
     <div id="container">
       <div>
         <form method="POST" action="/photography/create">
-          <label for="email">Email:</label><br>
-          <input placeholder="Enter Email" type="text" id="email" name="email" /><br /><br>
+          <label for="email">Email:</label><br />
+          <input
+            placeholder="Enter Email"
+            type="text"
+            id="email"
+            name="email"
+          /><br /><br />
 
-          <label for="password">Password:</label><br>
-          <input placeholder="Enter Password" type="text" id="pass" name="pass" /><br /><br>
+          <label for="password">Password:</label><br />
+          <input
+            placeholder="Enter Password"
+            type="text"
+            id="pass"
+            name="pass"
+          /><br /><br />
 
-          <label for="title">Title:</label><br>
-          <input placeholder="Enter Title" type="text" id="title" name="title" /><br /><br>
-    
-          <label for="image">Image URL:</label><br>
-          <input placeholder="Enter Image_url" type="text" id="image" name="image" /><br /><br>
-    
+          <label for="title">Title:</label><br />
+          <input
+            placeholder="Enter Title"
+            type="text"
+            id="title"
+            name="title"
+          /><br /><br />
+
+          <label for="image">Image URL:</label><br />
+          <input
+            placeholder="Enter Image_url"
+            type="text"
+            id="image"
+            name="image"
+          /><br /><br />
+
           <div id="occasions">
             <div class="occasion">
-              <label for="occasion_0">Occasion:</label><br>
-              <input placeholder="Enter Occasion8" type="text" id="occasion_0" name="occasions[]" /><br />
+              <label for="occasion_0">Occasion:</label><br />
+              <input
+                placeholder="Enter Occasion8"
+                type="text"
+                id="occasion_0"
+                name="occasions[]"
+              /><br />
               <div class="slots">
                 <div class="slot">
                   <label for="time_0_0">Time:</label>
@@ -73,69 +100,65 @@
                     id="time_0_0"
                     name="occasions[0][slots][][time]"
                   />
-                
                 </div>
               </div>
-              <button type="button" onclick="addSlot(0)">Add Slot</button><br /><br>
+              <button type="button" onclick="addSlot(0)">Add Slot</button
+              ><br /><br />
             </div>
           </div>
-          <button type="button" onclick="addOccasion()">Add Occasion</button><br /><br>
-    
-          <label for="address">Address:</label><br>
-          <input type="text" id="address" name="address" /><br /><br>
-    
-          <label for="charges">Charges:</label><br>
-          <input type="text" id="charges" name="charges" /><br /><br>
-    
-          <label for="location">Location:</label><br>
-          <input type="text" id="location" name="location" /><br /><br>
-    
-          <label for="workingtime">Working Time:</label><br>
-          <input type="text" id="workingtime" name="workingtime" /><br /><br>
-    
-          <label for="contact">Contact:</label><br>
-          <input type="text" id="contact" name="contact" /><br /><br><br>
-    
-          <button id="sub" type="button">Update</button><br>
+          <button type="button" onclick="addOccasion()">Add Occasion</button
+          ><br /><br />
+
+          <label for="address">Address:</label><br />
+          <input type="text" id="address" name="address" /><br /><br />
+
+          <label for="charges">Charges:</label><br />
+          <input type="text" id="charges" name="charges" /><br /><br />
+
+          <label for="location">Location:</label><br />
+          <input type="text" id="location" name="location" /><br /><br />
+
+          <label for="workingtime">Working Time:</label><br />
+          <input type="text" id="workingtime" name="workingtime" /><br /><br />
+
+          <label for="contact">Contact:</label><br />
+          <input type="text" id="contact" name="contact" /><br /><br /><br />
+
+          <button id="sub" type="button">Update</button><br />
         </form>
       </div>
       <div>
-        <div class="bg-image"><img src="https://images.unsplash.com/photo-1495915892242-054e3010a490?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt=""></div>
+        <div class="bg-image">
+          <img
+            src="https://images.unsplash.com/photo-1495915892242-054e3010a490?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            alt=""
+          />
+        </div>
 
-     <div class="bg-text">
- 
-  <h1 style="font-size:50px">Your photography business's new best friend</h1>
-  <p>And I'm a Photographer</p>
-</div>
+        <div class="bg-text">
+          <h1 style="font-size: 50px">
+            Your photography business's new best friend
+          </h1>
+          <p>And I'm a Photographer</p>
+        </div>
       </div>
     </div>
-    
   </body>
 </html>
 <script>
-const data = JSON.parse(localStorage.getItem("element"));
-const id = data._id;
-const getdata=()=>{
-        fetch(`http://localhost:8080/photographer/update/${id}`,{
-    headers:{
-// "Authorization":localStorage.getItem("token")
-    },
-   }).then(res=>res.json())
-   .then(res=>{
-       console.log(res) 
-//    display(res.data)
-console.log(res)
-   document.getElementById("email").value=res.data[0].email
-    document.getElementById("title").value=res.data[0].title
-    document.getElementById("image").value=res.data[0].image
-    document.getElementById("hotel_type").value=res.data[0].hotel_type
-    document.getElementById("pay_type").value=res.data[0].pay_type
-    document.getElementById("meal").value=res.data[0].meal
-    document.getElementById("location").value=res.data[0].location
-
-
-})
-   .catch(err=>console.log(err))
-    }
-    getdata()
+  const data = JSON.parse(localStorage.getItem("admin"));
+  const id = data._id;
+  let arr = [];
+  const sub = document.getElementById("sub");
+  const getdata = () => {
+    fetch(`http://localhost:8080/photographer/update/${id}`, {
+     
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  };
+  getdata();
 </script>
