@@ -37,7 +37,10 @@ const photography_register = async () => {
     body: JSON.stringify(payload),
   })
     .then((res) => res.json())
-    .then((res) => console.log(res))
+    .then((res) => console.log(res),
+    setTimeout(()=>{
+      window.location.href="./photographerLogin.html"
+    },2000))
     .catch((err) => console.log(err));
 };
 
