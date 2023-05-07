@@ -102,41 +102,7 @@ ham.addEventListener("click", function () {
     document.getElementById("burger").style.display = "none";
   }
 
-// let occasion_data=document.getElementById("occasion-data")
-// const data = JSON.parse(localStorage.getItem("element"));
-// const id = data._id;
-// let arr=[]
-// console.log(id)
-// const getdata = () => {
-//   fetch(`http://localhost:8080/photographer/${id}/occasion`)
-//     .then((res) => res.json())
-//     .then((res) => {
-//       arr.push(res.data)
-//       display(arr);
-//       console.log(arr)
-//     })
-//     .catch((err) => console.log(err));
-// };
-// function display(data) {
-//   occasion_data.innerHTML = null;
-  
-  
-//     data.forEach((element) => {
-      
-//       console.log(element[0].name)
-//       element.forEach((el)=>{
-//         let h1=document.createElement("h1")
-//         h1.innerText=el.name
-//       occasion_data.append(h1)
-//       })
-      
-//     });
-  
-// }
 
-// window.addEventListener("load", () => {
-//   getdata();
-// });
 let occasion_data = document.getElementById("occasion-data");
 const data = JSON.parse(localStorage.getItem("element"));
 const id = data._id;
@@ -152,20 +118,6 @@ const getdata = () => {
     .catch((err) => console.log(err));
 };
 
-// function display(data) {
-//   occasion_data.innerHTML = null;
-
-//   data.forEach((occasion) => {
-//     const h1 = document.createElement("h1");
-//     h1.innerText = occasion.name;
-//     occasion_data.appendChild(h1);
-//     occasion.slots.forEach((slot) => {
-//       const h2 = document.createElement("h2");
-//       h2.innerText = slot.time;
-//       occasion_data.appendChild(h2);
-//     });
-//   });
-// }
 function display(data) {
   occasion_data.innerHTML = null;
 
