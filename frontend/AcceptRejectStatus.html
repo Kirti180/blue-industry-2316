@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Styles/dash.photo.nav.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="./Styles/acceptReject.css">
     <script
       src="https://kit.fontawesome.com/714346974b.js"
       crossorigin="anonymous"
     ></script>
     <title>Document</title>
-    <style>
-
-    </style>
+    
 </head>
 <body>
     <div id="main_admin_photo">
@@ -23,12 +22,7 @@
                 <div id="nav_right_side">
                   <div id="brand_name">
                     <a href="./index.html" class="indexstyle1"
-                      ><img
-                        src=""
-                        alt=""
-                        height="100%"
-                        width="80% "
-                    /></a><br><br>
+                      ></a><br><br>
                   </div>
                   <!-- <input type="text" placeholder="Search here" > -->
                 </div>
@@ -177,34 +171,9 @@ let arr=[]
 
     acceptBtn.addEventListener('click', () => {
         acceptingAppointment(item._id)
-    acceptBtn.innerHTML="Order Completed"
-
-
+    acceptBtn.innerHTML="Confirmed"
     })
 
-    acceptBtn.addEventListener('click', async () => {
-            //slot.booked = false;
-            // Update the backend schema with the new data
-            try {
-              const response = await fetch(`http://localhost:8080/photographer/update/${data._id}/occasions/${occasion.name}/slots/${slot.time}`, {
-                method: 'PATCH',
-                headers: {
-                  'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                  booked: false
-                })
-              });
-              if (!response.ok) {
-                throw new Error('Failed to update slot');
-              }
-              //slotListItem.innerText = `${slot.time} - Booked`;
-              //bookButton.disabled = true;
-            } catch (err) {
-              console.error(err);
-              alert('Failed to update slot');
-            }
-          });
 
     let declineBtn = document.createElement('button');
     declineBtn.classList.add('RejectBtn', 'btn-2')
@@ -214,7 +183,7 @@ let arr=[]
 
     declineBtn.addEventListener('click', () => {
       declineAppointment(item._id)
-      
+    
     })
 
     tableBody.append(tr)
@@ -236,6 +205,9 @@ async function acceptingAppointment(id){
             if(accept.ok){
                 swal("Accepted!", "Appointment Confirmed", "success");
             }
+            setTimeout(()=>{
+              window.location.href="./AcceptRejectStatus.html"
+            },2000)
         }
     
 
@@ -263,6 +235,7 @@ async function declineAppointment(id){
   } else {
     swal("Appointment is Pending!");
   }
+  window.location.href="./AcceptRejectStatus.html"
 });
             }
         }

@@ -12,6 +12,9 @@
     margin: auto;
     /* border: 1px solid red; */
     grid-template-columns: 30% 70%;
+  text-align: center;
+  font-family: sans-serif;
+  
 }
 #dash_title{
     background: rgb(93,223,230);
