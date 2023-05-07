@@ -52,22 +52,23 @@
               </div>
         </div>
         <div id="dash_info">
-            <h1 id="admin_photo_name">name of the studio</h1>
-        <div id="detail_total_main">
-          <div id="detail_total">
+
+            <h1 id="admin_photo_name"></h1>
+        <div id="detail_total">
+
             <div class="req_detail">
                 <center><h1>Accepted</h1>
-                    <h1>30</h1></center>
+                    <h1 class="c1"></h1></center>
                 
             </div>
             <div class="req_detail">
                 <center><h1>Rejected</h1>
-                    <h1>10</h1></center>
+                    <h1 class="c2"></h1></center>
                 
             </div>
             <div class="req_detail">
                 <center><h1>pending</h1>
-                    <h1>15</h1></center>
+                    <h1 class="c3"></h1></center>
                 
             </div>
           </div><i><p id="note">Click on the visible slot to make them avaliable when order is completed</p></i>
@@ -81,6 +82,13 @@
 </body>
 </html>
 <script>
+
+
+
+
+
+
+
 
     let ham = document.getElementById("hamburger");
 ham.addEventListener("click", function () {
@@ -102,41 +110,58 @@ ham.addEventListener("click", function () {
     document.getElementById("burger").style.display = "none";
   }
 
-// let occasion_data=document.getElementById("occasion-data")
-// const data = JSON.parse(localStorage.getItem("element"));
-// const id = data._id;
-// let arr=[]
-// console.log(id)
-// const getdata = () => {
-//   fetch(`http://localhost:8080/photographer/${id}/occasion`)
-//     .then((res) => res.json())
-//     .then((res) => {
-//       arr.push(res.data)
-//       display(arr);
-//       console.log(arr)
-//     })
-//     .catch((err) => console.log(err));
-// };
-// function display(data) {
-//   occasion_data.innerHTML = null;
-  
-  
-//     data.forEach((element) => {
-      
-//       console.log(element[0].name)
-//       element.forEach((el)=>{
-//         let h1=document.createElement("h1")
-//         h1.innerText=el.name
-//       occasion_data.append(h1)
-//       })
-      
-//     });
-  
-// }
 
-// window.addEventListener("load", () => {
-//   getdata();
-// });
+
+  //get accepted, rejected, pending counts 
+  const dataid=JSON.parse(localStorage.getItem("element"))
+         const id = dataid._id
+         const photoGraphername =dataid.title
+         console.log(id)
+
+  async function requestData(photographer){
+    let countData = await fetch(`http://localhost:8080/appointment/getData/${id}`,{
+    method:"GET",
+    headers:{
+      "content-type":"application/json"
+    }
+    })
+    if(countData.ok){
+     let data = await countData.json()
+     display(data)
+     console.log(data)
+    }
+  }
+  requestData()
+
+
+  let c1=document.querySelector(".c1")
+  let c2=document.querySelector(".c2")
+  let c3=document.querySelector(".c3")
+
+  function display(data){
+    let count1 = 0;
+    let count2 = 0;
+    let count3 = 0;
+    data.forEach((ele) => {
+        if (ele.status == "Accepted") {
+            count1++
+        } else if (ele.status == "Pending") {
+            count2++
+        } else if (ele.status == "Rejected") {
+            count3++;
+        }
+        c1.innerText=`${count1}`
+        c2.innerText=`${count2}`
+        c3.innerText=`${count3}`
+    })
+  }
+
+
+  //admin photo name
+const admin_photo_name = document.querySelector("#admin_photo_name")
+admin_photo_name.innerText=`${photoGraphername}`
+
+
 let occasion_data = document.getElementById("occasion-data");
 const data = JSON.parse(localStorage.getItem("element"));
 const id = data._id;
@@ -152,20 +177,7 @@ const getdata = () => {
     .catch((err) => console.log(err));
 };
 
-// function display(data) {
-//   occasion_data.innerHTML = null;
 
-//   data.forEach((occasion) => {
-//     const h1 = document.createElement("h1");
-//     h1.innerText = occasion.name;
-//     occasion_data.appendChild(h1);
-//     occasion.slots.forEach((slot) => {
-//       const h2 = document.createElement("h2");
-//       h2.innerText = slot.time;
-//       occasion_data.appendChild(h2);
-//     });
-//   });
-// }
 function display(data) {
   occasion_data.innerHTML = null;
 
@@ -219,5 +231,4 @@ function display(data) {
 window.addEventListener("load", () => {
   getdata();
 });
-
 </script>

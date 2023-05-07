@@ -1,0 +1,42 @@
+table{
+    width: 900px;
+    margin-top: 80px;
+    border: 1px solid black;
+    text-align: center;
+    height: auto;
+   }
+   table th{
+    width: 30px;
+    border: 1px solid rgb(19, 19, 18);
+    font-size: 18px;
+    color: white;
+    font-family: sans-serif;
+    background-color: rgb(106, 106, 110);
+   }
+
+    td{
+    font-size: 15px;
+    background-color: rgb(199, 204, 202);
+   }
+
+   .AcceptBtn{
+    background-color: rgb(111, 164, 96);
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+   }
+   .AcceptBtn:hover{
+    background-color: rgb(89, 146, 74);
+   }
+
+   .RejectBtn{
+    background-color: rgb(210, 97, 97);
+    width: 80px;
+    color: white;
+    height: 30px;
+    cursor: pointer;
+   }
+
+   .RejectBtn:hover{
+    background-color: rgb(181, 70, 70);
+   }
