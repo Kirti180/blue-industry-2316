@@ -1,23 +1,89 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
 
 
 }
 
-.admin-div{
+.admin-div {
     border: 2px solid red;
     height: 100vh;
     display: flex;
     justify-content: center;
 }
 
-.photographer_detail{
+.photographer_detail {
     border: 3px solid blue;
     width: 25%;
     height: 100vh;
 }
-.photographer_info{
+
+@media screen and (min-width:700px) and (max-width:1100px) {
+    .admin-div {
+        border: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .admin-div>div:nth-child(1) {
+        margin-bottom: 30px;
+        width: 100%;
+        height: auto;
+    }
+
+    .admin-div>div:nth-child(2) {
+        width: 100%;       
+    }
+    .admin-div>div:nth-child(3) {
+        height: 100%;
+        border: none;
+    }
+
+    #fst{
+        margin-top: 380px;
+    }
+
+}
+
+@media screen and (max-width:700px) {
+    .admin-div {
+        border: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    .admin-div>div:nth-child(1) {
+        border: none;
+        height: auto;
+        width: 100%;
+    }
+    .admin_data {
+        display: flex;
+        flex-wrap: wrap;
+        border: none;
+        margin-top: 20px;
+        width: 100%;
+    }
+    .admin_data>div:nth-child(1){
+        border: none;
+        height: auto;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .admin_data>div:nth-child(2){
+        border: none;
+        height: auto;
+        width: 100%;
+    }
+    #fst{
+        margin-top: 380px;
+    }
+}
+
+.photographer_info {
     border: 2px solid red;
     display: flex;
     flex-direction: column;
@@ -25,17 +91,17 @@
     align-items: center;
 
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 10px 0px ;
-    
+    padding: 10px 0px;
+
 }
 
-.photographer_info>img{
+.photographer_info>img {
     border-radius: 50%;
-   
+
 }
 
 
-.admin_data{
+.admin_data {
     border: 3px solid yellow;
     width: 75%;
     height: 100vh;
@@ -44,12 +110,13 @@
 
 }
 
-.admin_data_1{
+.admin_data_1 {
     border: 2px solid black;
     background-color: tan;
     width: 50%;
 }
-.admin_data_1>div:nth-child(1){
+
+.admin_data_1>div:nth-child(1) {
     background-color: teal;
     font-size: 25px;
     padding: 5px;
@@ -57,12 +124,12 @@
     font-family: cursive;
 }
 
-
-.admin_data_2{
+.admin_data_2 {
     border: 2px solid salmon;
     width: 50%;
 }
-.admin_data_2>div:nth-child(1){
+
+.admin_data_2>div:nth-child(1) {
     background-color: teal;
     font-size: 25px;
     padding: 5px;
@@ -70,15 +137,17 @@
     font-family: cursive;
 }
 
-.photo-grid{
+.photo-grid {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
-.photo-grid div{
 
-   
+.photo-grid div {
+
+
     border: 1px solid green;
 }
-.photo-grid img{
+
+.photo-grid img {
     max-width: 100%;
 }

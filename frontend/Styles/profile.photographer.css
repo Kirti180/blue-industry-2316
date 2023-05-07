@@ -1,0 +1,30 @@
+#cart_info> h2{
+    margin-top: -20px;
+    margin-bottom: -20px;
+    font-size: 28px;
+    text-align: left;
+    margin-left: 23px;
+}
+#cart_info h3{
+      /* color: red;  */
+     font-size: 19px;
+    margin-bottom: -16px;
+    text-align: left;
+    margin-left: 33px;
+  }
+  #cart_img{
+    height: 300px;
+    margin-bottom: -22px;
+  }
+  .occasion>h3{
+    color:red;
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -8px;
+    margin-top: 16px;
+  }
+  .slots>p{
+    font-size: 18px;
+    margin-bottom: -8px;
+  }
