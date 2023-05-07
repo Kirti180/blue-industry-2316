@@ -54,9 +54,19 @@ appointmentRouter.post("/book/:id", (req, res) => {
 //(taking photographer id in params)
 appointmentRouter.get("/:id", async (req, res) => {
     const id = req.params.id
-  const appointmentData = await appointmentModel.find({photographer:id});
+  const appointmentData = await appointmentModel.find({photographer:id,status:"Pending"});
   res.send(appointmentData);
 });
+
+
+//get appointment detauls of respective photographers 
+appointmentRouter.get("/getData/:id", async (req, res) => {
+  const id = req.params.id
+const appointmentData = await appointmentModel.find({photographer:id});
+res.send(appointmentData);
+});
+
+
 
 
 
@@ -98,6 +108,10 @@ appointmentRouter.patch("/reject/:id", async (req, res) => {
  // const updateStatus = await appointmentModel.findByIdAndUpdate({_id:id},{photographer})
    res.status(200).send({appointedData,"msg":"Appointment Status Updated"})
 });
+
+
+
+//accepted appointments
 
 
 module.exports = { appointmentRouter };

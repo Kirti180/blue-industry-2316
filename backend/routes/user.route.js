@@ -51,7 +51,7 @@ UserRoute.post("/login", async (req, res) => {
                     res.send(err.message)
                 if (err) res.send(err)
                 else if (result) {
-                    const token = jwt.sign({ userId: usr[0]._id }, 'imran', { expiresIn: '1h' })
+                    const token = jwt.sign({ userId: usr[0]._id }, 'imran', { expiresIn: '10h' })
                     res.cookie("Token", token).send({ "msg": "User logged in successful", "token": token })
                 }
             }
