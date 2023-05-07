@@ -275,7 +275,7 @@
 
     <br />
     <div class="center">
-      <a href="./showphotographers.html"><button class="nav-button">Book a photographer</button></a>
+      <a id="bookbtn"><button class="nav-button">Book a photographer</button></a>
     </div>
 
     <br />
@@ -746,4 +746,15 @@
   </body>
 </html>
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <script src="./scripts/index.js"></script>
+<script>
+  const book = document.querySelector("#bookbtn")
+  book.addEventListener("click",()=>{
+    swal("Login first!!");
+    setTimeout(() => {
+      window.location.href="./Login.html"
+    }, 2000);
+  })
+</script>
