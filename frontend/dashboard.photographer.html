@@ -126,9 +126,9 @@ ham.addEventListener("click", function () {
     }
     })
     if(countData.ok){
-     let data = await countData.json()
-     display(data)
-     console.log(data)
+     let reqData = await countData.json()
+     displayData(reqData)
+     console.log(reqData)
     }
   }
   requestData()
@@ -138,11 +138,11 @@ ham.addEventListener("click", function () {
   let c2=document.querySelector(".c2")
   let c3=document.querySelector(".c3")
 
-  function display(data){
+  function displayData(reqData){
     let count1 = 0;
     let count2 = 0;
     let count3 = 0;
-    data.forEach((ele) => {
+    reqData.forEach((ele) => {
         if (ele.status == "Accepted") {
             count1++
         } else if (ele.status == "Pending") {
@@ -163,8 +163,7 @@ admin_photo_name.innerText=`${photoGraphername}`
 
 
 let occasion_data = document.getElementById("occasion-data");
-const data = JSON.parse(localStorage.getItem("element"));
-const id = data._id;
+
 let arr = [];
 
 const getdata = () => {
