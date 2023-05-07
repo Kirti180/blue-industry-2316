@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./Styles/photography.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <title>photo</title>
     <style>
         #container>div:nth-child(1){
@@ -15,7 +17,7 @@
   <body>
     <div id="container">
       <div>
-        <form method="POST" action="/photography/create">
+        <form method="POST">
           <label for="email">Email:</label><br>
           <input placeholder="Enter Email" type="text" id="email" name="email" /><br /><br>
 
@@ -23,7 +25,7 @@
           <input placeholder="Enter Password" type="text" id="pass" name="pass" /><br /><br><br>
 
         
-          <button id="sub" type="button" onclick="photography_register()">Login</button><br><br>
+          <button id="sub" type="button">Login</button><br><br>
         </form>
       </div>
       <div>
@@ -39,5 +41,38 @@
     
   </body>
 </html>
-<script src="./scripts/photographyform.js"></script>
+
+
+<script>
+
+  const email = document.querySelector("#email")
+  const pass = document.querySelector("#pass")
+
+  const sub = document.querySelector("#sub")
+  sub.addEventListener("click",()=>{
+    let loginobj={
+      email:email.value,
+      pass:pass.value
+    }
+   async function loginFunction(){
+    let loginRequest = await fetch("http://localhost:8080/photographer/login",{
+            method:"POST",
+            body:JSON.stringify(loginobj),
+        headers:{
+            "content-type":"application/json",
+        },
+        })
+        if(loginRequest.ok){
+          swal("Login Successfull!", "You can now book appointment!", "success");
+        }
+        // let data = await loginRequest.json()
+        // console.log(data)
+        setTimeout(()=>{
+          window.location.href="./showphotographers.html"
+        },2000)
+   }
+   loginFunction()
+  })
+
+</script>
 
