@@ -8,6 +8,7 @@ const session = require('express-session');
 const { authentication } = require("./middleware/Authentication")
 const { createClient } = require("redis");
 const client = createClient();
+
 client.on('error', err => console.log('Redis Client Error', err));
 const { authorise } = require("./middleware/Authorization")
 const { UserModel } = require("./models/user.model")

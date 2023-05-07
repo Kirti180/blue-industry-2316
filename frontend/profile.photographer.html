@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Styles/dash.photo.nav.css">
+    <link rel="stylesheet" href="./Styles/profile.dash.css">
     <script
       src="https://kit.fontawesome.com/714346974b.js"
       crossorigin="anonymous"
@@ -15,6 +16,7 @@
     </style>
 </head>
 <body>
+  <!-- <a href="./Edit.photographer.html"></a> -->
     <div id="main_admin_photo">
         <div id="dash_title">
             <nav>
@@ -53,17 +55,10 @@
         </div>
         <div id="dash_info">
          <div id="admin_info">
-            <div id="admin_photo_img">
-                <!-- append img here -->
-            </div>
-            <div id="admin_photo_Details">
-                <!-- append details here -->
-            </div>
+         
          </div>
-         <div id="admin_photo_slot">
-            <!-- append slots here -->
-         </div>
-         <div id="editbtn">Edit</div>
+    
+         
         </div>
            
         </div>
@@ -90,4 +85,100 @@ ham.addEventListener("click", function () {
     console.log("close nav");
     document.getElementById("burger").style.display = "none";
   }
+  // ========================
+  const data = JSON.parse(localStorage.getItem("element"));
+const id = data._id;
+let arr=[]
+let profileimg = document.getElementById("profileimg");
+let dash_info = document.getElementById("dash_info");
+let admin_info = document.getElementById("admin_info");
+let title_dash = document.getElementById("title_dash");
+
+const getdata = () => {
+  fetch(`http://localhost:8080/photographer/${id}`)
+    .then((res) => res.json())
+    .then((res) => {
+      arr.push(res.data)
+      display(arr);
+      console.log(arr)
+    })
+    .catch((err) => console.log(err));
+};
+
+// getdata();
+
+
+const display = (data) => {
+  admin_info.innerHTML = '';
+
+  data.forEach((element) => {
+    const cart_img = document.createElement('div');
+    cart_img.setAttribute('id', 'cart_img');
+
+    const cart_info = document.createElement('div');
+    cart_info.setAttribute('id', 'cart_info');
+
+    const cart_slot = document.createElement('div');
+    cart_slot.setAttribute('id', 'cart_slot');
+
+    const image = document.createElement('img');
+    image.setAttribute('src', element.image);
+
+    const h1 = document.createElement('h1');
+    h1.innerText = "Title : "+element.title;
+
+    const location_details = document.createElement('h3');
+    location_details.innerText = "Location : "+element.location;
+
+    const price = document.createElement('h3');
+    price.innerText = "Charges : "+element.charges;
+
+    const worktime = document.createElement('h3');
+    worktime.innerText = "WorkingTime : "+element.workingtime;
+
+    const address = document.createElement('h3');
+    address.innerText = "Address : "+element.address;
+
+    const contact = document.createElement('h3');
+    contact.innerText = "Contact : "+element.contact;
+    const button_edit=document.createElement("button")
+    button_edit.innerText="EDIT"
+    button_edit.addEventListener("click", () => {
+      // localStorage.setItem("element", JSON.stringify(element));
+      window.location.href = "./Edit.photographer.html";
+    });
+    button_edit.setAttribute("id","button_edit")
+    cart_img.append(image);
+    cart_info.append(h1, location_details, price, worktime, address, contact);
+
+    // Displaying Occasion and Slots
+    const occasionDiv = document.createElement('div');
+    occasionDiv.setAttribute('class', 'occasion');
+    element.occasion.forEach((occasion) => {
+      const occasionName = document.createElement('h3');
+      occasionName.innerText = `Occasion: ${occasion.name}`;
+      occasionDiv.append(occasionName);
+      const slotsDiv = document.createElement('div');
+      slotsDiv.setAttribute('class', 'slots');
+      occasion.slots.forEach((slot) => {
+        const slotTime = document.createElement('p');
+        slotTime.innerText = `Slot Time: ${slot.time}`;
+        const slotBooked = document.createElement('p');
+        slotBooked.innerText = `Slot Booked: ${slot.booked}`;
+        slotsDiv.append(slotTime);
+      });
+      occasionDiv.append(slotsDiv);
+    });
+
+    cart_slot.append(occasionDiv);
+    admin_info.append(cart_img, cart_info, cart_slot,button_edit);
+  });
+};
+
+
+window.addEventListener("load", () => {
+  getdata();
+});
+
+
 </script>

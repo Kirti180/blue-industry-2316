@@ -52,8 +52,10 @@
               </div>
         </div>
         <div id="dash_info">
+
             <h1 id="admin_photo_name"></h1>
         <div id="detail_total">
+
             <div class="req_detail">
                 <center><h1>Accepted</h1>
                     <h1 class="c1"></h1></center>
@@ -69,13 +71,18 @@
                     <h1 class="c3"></h1></center>
                 
             </div>
+          </div><i><p id="note">Click on the visible slot to make them avaliable when order is completed</p></i>
+            <h1 id="occasion-title">Photographer Occasion Data</h1>
+    <ul id="occasion-data"></ul>
         </div>
            
         </div>
+        
     </div>
 </body>
 </html>
 <script>
+
 
 
 
@@ -102,6 +109,7 @@ ham.addEventListener("click", function () {
     console.log("close nav");
     document.getElementById("burger").style.display = "none";
   }
+
 
 
   //get accepted, rejected, pending counts 
@@ -152,4 +160,75 @@ ham.addEventListener("click", function () {
   //admin photo name
 const admin_photo_name = document.querySelector("#admin_photo_name")
 admin_photo_name.innerText=`${photoGraphername}`
+
+
+let occasion_data = document.getElementById("occasion-data");
+const data = JSON.parse(localStorage.getItem("element"));
+const id = data._id;
+let arr = [];
+
+const getdata = () => {
+  fetch(`http://localhost:8080/photographer/${id}/occasion`)
+    .then((res) => res.json())
+    .then((res) => {
+      arr.push(...res.data);
+      display(arr);
+    })
+    .catch((err) => console.log(err));
+};
+
+
+function display(data) {
+  occasion_data.innerHTML = null;
+
+  data.forEach((occasion) => {
+    const h1 = document.createElement("h1");
+    h1.setAttribute("id", "h1");
+    h1.innerText = occasion.name;
+    occasion_data.appendChild(h1);
+    occasion.slots.forEach((slot) => {
+      const button = document.createElement("button");
+      button.setAttribute("id", "slot_btn");
+      button.innerText = slot.time;
+      if (!slot.booked) {
+        button.disabled = true;
+        button.classList.add("booked");
+      } else {
+        button.addEventListener("click", async () => {
+          try {
+            const response = await fetch(
+              `http://localhost:8080/photographer/${id}/occasion/${occasion._id}/slot/${slot._id}`,
+              {
+                method: "PATCH",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  booked: false,
+                }),
+              }
+            );
+            if (!response.ok) {
+              throw new Error("Failed to update slot");
+            }
+            slot.booked = false;
+            button.disabled = true;
+            button.innerHTML="order completed"
+            button.classList.add("booked");
+          } catch (err) {
+            console.error(err);
+            alert("Failed to update slot");
+          }
+        });
+      }
+      occasion_data.appendChild(button);
+    });
+  });
+}
+
+
+
+window.addEventListener("load", () => {
+  getdata();
+});
 </script>
