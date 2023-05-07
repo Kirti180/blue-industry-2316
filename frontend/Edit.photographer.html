@@ -96,7 +96,7 @@
           <label for="contact">Contact:</label><br>
           <input type="text" id="contact" name="contact" /><br /><br><br>
     
-          <button id="sub" type="button" onclick="photography_register()">Submit</button><br>
+          <button id="sub" type="button">Update</button><br>
         </form>
       </div>
       <div>
@@ -112,26 +112,30 @@
     
   </body>
 </html>
-<script src="./scripts/photographyform.js"></script>
 <script>
-  let ham = document.getElementById("hamburger");
-ham.addEventListener("click", function () {
-    this.classList.toggle("is-active");
-    if (this.classList.contains("is-active")) {
-      openNav();
-    } else {
-      closeNav();
-    }
-  });
-  function openNav() {
-    console.log("open");
-    document.getElementById("burger").style.display = "initial";
-    document.getElementById("burger").style.transition =
-      "transform 250ms ease-in-out";
-  }
-  function closeNav() {
-    console.log("close nav");
-    document.getElementById("burger").style.display = "none";
-  }
-</script>
+const data = JSON.parse(localStorage.getItem("element"));
+const id = data._id;
+const getdata=()=>{
+        fetch(`http://localhost:8080/photographer/update/${id}`,{
+    headers:{
+// "Authorization":localStorage.getItem("token")
+    },
+   }).then(res=>res.json())
+   .then(res=>{
+       console.log(res) 
+//    display(res.data)
+console.log(res)
+   document.getElementById("email").value=res.data[0].email
+    document.getElementById("title").value=res.data[0].title
+    document.getElementById("image").value=res.data[0].image
+    document.getElementById("hotel_type").value=res.data[0].hotel_type
+    document.getElementById("pay_type").value=res.data[0].pay_type
+    document.getElementById("meal").value=res.data[0].meal
+    document.getElementById("location").value=res.data[0].location
 
+
+})
+   .catch(err=>console.log(err))
+    }
+    getdata()
+</script>

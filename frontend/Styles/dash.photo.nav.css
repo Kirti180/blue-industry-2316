@@ -17,7 +17,7 @@
     background: rgb(93,223,230);
     background: linear-gradient(90deg, rgba(93,223,230,1) 0%, rgba(0,74,173,1) 100%);
     /* border: 1px solid red; */
-    height: 100vh;
+    height: 110vh;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 #dash_info{
@@ -300,4 +300,35 @@ nav {
       font-size: 16px;
       /* margin-left: 2%; */
     }
+  }
+
+  /* body */
+  #occasion-title{
+    margin-top: 1%;
+    margin-bottom: 2%;
+    font-size: 34px;
+  }
+  #h1{
+    margin-bottom: 2%;
+    font-size: 34px;
+    /* border: 1px solid red; */
+  }
+  #slot_btn{
+    /* border: 1px solid red; */
+    font-size: 24px;
+    padding: 0.5%;
+    margin-right: 1.5%;
+    margin-bottom: 1%;
+    background-color: snow;
+    border: 1px solid white;
+    border-radius: 10px;
+  }
+  #slot_btn:hover{
+    color: white;
+    font-weight: bold;
+    background-color: rgb(24, 24, 114);
+  }
+  #note{
+    margin-top: 5%;
+    font-size: 18px;
   }
