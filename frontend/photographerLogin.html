@@ -63,14 +63,15 @@
         },
         })
         if(loginRequest.ok){
-          swal("Login Successfull!", "You can now book appointment!", "success");
+          swal("Login Successfull!", "success");
         }
-        // let data = await loginRequest.json()
-        // console.log(data)
+         let data = await loginRequest.json()
+         localStorage.setItem("photographer",JSON.stringify(data.user))
+        console.log(data)
         setTimeout(()=>{
-          window.location.href="./showphotographers.html"
+          window.location.href="./dashboard.photographer.html"
         },2000)
-   }
+  }
    loginFunction()
   })
 
