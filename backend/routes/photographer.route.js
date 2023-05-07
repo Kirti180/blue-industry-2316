@@ -15,7 +15,32 @@ photographyRouter.get("/", async (req, res) => {
   const photo = await photoModel.find(req.query);
   res.send({ data: photo });
 });
+photographyRouter.get("/:id", async (req, res) => {
+  const id = req.params.id;
+  try {
+    const photographer = await photoModel.findOne({_id: id});
+    if (!photographer) {
+      res.status(404).send({ message: "Photographer not found" });
+      return;
+    }
+    res.send({ data: photographer });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ message: "Server Error" });
+  }
+});
 
+photographyRouter.get("/:id/occasion", async (req, res) => {
+  try {
+    const photographerId = req.params.id;
+    const photographer = await photoModel.findById(photographerId);
+    const occasionData = photographer.occasion;
+    res.send({ data: occasionData });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ error: "Server Error" });
+  }
+});
 
 //login for photographer
 photographyRouter.post("/login",async(req,res)=>{
@@ -124,6 +149,24 @@ photographyRouter.patch("/update/:id/occasions/:occasionName/slots/:slotTime", a
     res.send({ msg: "Slot booked successfully" });
   } catch (err) {
     console.log(err);
+    res.status(500).send({ error: "Something went wrong" });
+  }
+});
+//unbook
+photographyRouter.patch("/:id/occasion/:occasionId/slot/:slotId", async (req, res) => {
+  const photographerId = req.params.id;
+  const occasionId = req.params.occasionId;
+  const slotId = req.params.slotId;
+
+  try {
+    const photographer = await photoModel.findById(photographerId);
+    const occasion = photographer.occasion.id(occasionId);
+    const slot = occasion.slots.id(slotId);
+    slot.booked = false;
+    await photographer.save();
+    res.send({ message: 'Slot unbooked successfully' });
+  } catch (error) {
+    console.error(error);
     res.status(500).send({ error: "Something went wrong" });
   }
 });

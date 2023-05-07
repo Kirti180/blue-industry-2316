@@ -40,3 +40,7 @@ ham.addEventListener("click", function () {
     console.log("close nav");
     document.getElementById("burger").style.display = "none";
   }
+  const nav_button=document.querySelector(".nav-button")
+  nav_button.addEventListener("click",()=>{
+    window.location.herf="./showphotgrapher.html"
+  })
