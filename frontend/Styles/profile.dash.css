@@ -1,6 +1,10 @@
-#admin_info{
+* {
+    text-align: center;
+}
+
+#admin_info {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     /* border: 1px solid red; */
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin: auto;
@@ -10,47 +14,228 @@
     border-radius: 10px;
     row-gap: 5%;
 }
-#cart_img{
+
+#cart_img {
     /* border: 1px solid red; */
-    width: 80%;
-    height: 500px;
+    width: 100%;
+    /* height: 500px; */
+    margin-right: 130px;
 }
-#cart_img img{
+
+#cart_img img {
     width: 100%;
     height: 100%;
     border-radius: 10px;
 }
-#cart_info{
+
+#cart_info {
     line-height: 70px;
     border-radius: 10px;
     /* border: 1px solid red; */
 }
-#cart_info h1{
+
+#cart_info h1 {
     /* border: 1px solid red; */
     font-size: 48px;
 }
-#cart_info h3{
-    /* border: 1px solid red; */
-    font-size: 36px;
+
+/* #cart_info h3 {
+    border: 1px solid red;
+    font-size: 22px;
+} */
+
+@media screen and (min-width: 680px) and (max-width: 1100px) {
+    #button_edit {
+        margin-top: 0px;
+        height: 14%;
+        width: 22%;
+        border-radius: 10px;
+        background-color: skyblue;
+        border: none;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    #nav_left_side{
+        text-align: left;
+        /* border: 1px solid red;
+        margin-top: 0px;
+        background: linear-gradient(90deg, rgba(93,223,230,1) 0%, rgba(0,74,173,1) 100%);
+        /* padding: 50px 211px; */
+        /* width: 111%; */
+        /* margin-left: -30px; */
+    }
+    #cart_info>h3 {
+        text-align: center;
+    }
+
+    #admin_info {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        /* border: 1px solid red; */
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        /* margin: auto; */
+        width: 80%;
+        background-color: snow;
+        padding: 3%;
+        border-radius: 10px;
+        row-gap: 5%;
+    }
+
+    #cart_info>h2 {
+        margin-top: -20px;
+        margin-bottom: -20px;
+        font-size: 28px;
+        text-align: left;
+    }
+
+    #cart_info>h3 {
+        /* color: red; */
+        font-size: 21px;
+        margin-bottom: -16px;
+        text-align: left;
+    }
+
+    #cart_img {
+        height: 300px;
+        margin-bottom: -22px;
+    }
+
+    .occasion>h3 {
+        color: red;
+        font-size: 22px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: -8px;
+        margin-top: 16px;
+    }
+
+    .slots>p {
+        font-size: 18px;
+        margin-bottom: -8px;
+    }
+
+    /* { */
+    /* color: red; */
+    /* } */
+
 }
-.occasion{
-font-size: 24px;
-line-height:40px;
+
+@media screen and (max-width: 700px) {
+    #main_admin_photo {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        /* gap: 2%; */
+        /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+        width: 90%;
+        margin: auto;
+        /* grid-template-columns: 30% 70%; */
+        text-align: center;
+        font-family: sans-serif;
+    }
+    #nav_left_side{
+        border: 1px solid red;
+        margin-top: 0px;
+        background: linear-gradient(90deg, rgba(93,223,230,1) 0%, rgba(0,74,173,1) 100%);
+        /* padding: 50px 211px; */
+        width: 111%;
+        margin-left: -30px;
+    }
+    #dash_info{
+        margin-top: 250px;
+    }
+    #button_edit {
+        margin-top: 0px;
+        height: 14%;
+        width: 22%;
+        border-radius: 10px;
+        background-color: skyblue;
+        border: none;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    #cart_info>h3 {
+        text-align: center;
+    }
+
+    #admin_info {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        /* border: 1px solid red; */
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        /* margin: auto; */
+        width: 80%;
+        background-color: snow;
+        padding: 3%;
+        border-radius: 10px;
+        row-gap: 5%;
+    }
+
+    #cart_info>h2 {
+        margin-top: -20px;
+        margin-bottom: -20px;
+        font-size: 28px;
+        text-align: left;
+    }
+
+    #cart_info>h3 {
+        /* color: red; */
+        font-size: 21px;
+        margin-bottom: -16px;
+        text-align: left;
+    }
+
+    #cart_img {
+        height: 300px;
+        margin-bottom: -22px;
+    }
+
+    .occasion>h3 {
+        color: red;
+        font-size: 22px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: -8px;
+        margin-top: 16px;
+    }
+
+    .slots>p {
+        font-size: 18px;
+        margin-bottom: -8px;
+    }
+
+
+
+
 }
-.slots{
+
+.occasion {
+    font-size: 24px;
+    line-height: 40px;
+}
+
+.slots {
     font-size: 24px;
 }
-#button_edit{
-    margin-top: 50%;
-    margin-left: 70%;
-    height: 14%;
-    width: 22%;
+
+#admin_info>button {
+    margin-top: 230px;
+    margin-bottom: 333px;
+}
+
+#button_edit {
+    /* margin-top: 50%;
+    margin-left: 70%; */
+    margin: 0px 0px 0px 180px;
+    height: 50px;
+    width: 150px;
     border-radius: 10px;
     background-color: skyblue;
     border: none;
     font-size: 18px;
     font-weight: bold;
 }
-#button_edit:hover{
+
+#button_edit:hover {
     background-color: rgb(195, 231, 245);
 }
