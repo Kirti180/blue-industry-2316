@@ -75,6 +75,7 @@ ham.addEventListener("click", function () {
       closeNav();
     }
   });
+  
   function openNav() {
     console.log("open");
     document.getElementById("burger").style.display = "initial";
@@ -86,7 +87,7 @@ ham.addEventListener("click", function () {
     document.getElementById("burger").style.display = "none";
   }
   // ========================
-  const data = JSON.parse(localStorage.getItem("element"));
+  const data = JSON.parse(localStorage.getItem("photographer"));
 const id = data._id;
 let arr=[]
 let profileimg = document.getElementById("profileimg");
