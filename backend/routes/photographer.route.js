@@ -96,7 +96,7 @@ photographyRouter.delete("/delete/:id", async (req, res) => {
 
 
 // PATCH REQUEST
-photographyRouter.patch("/update/:id", async (req, res) => {
+photographyRouter.put("/update/:id", async (req, res) => {
   let Id = req.params.id;
   const payload = req.body;
   // console.log(payload)

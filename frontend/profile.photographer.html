@@ -146,6 +146,7 @@ const display = (data) => {
     button_edit.addEventListener("click", () => {
       // localStorage.setItem("element", JSON.stringify(element));
       window.location.href = "./Edit.photographer.html";
+      localStorage.setItem("admin", JSON.stringify(element))
     });
     button_edit.setAttribute("id","button_edit")
     cart_img.append(image);
