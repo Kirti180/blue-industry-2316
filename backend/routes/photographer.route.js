@@ -10,6 +10,7 @@ const { photoModel } = require("../models/photographer.model");
 photographyRouter.use(express.json());
 
 
+
 // GET REQUEST
 photographyRouter.get("/", async (req, res) => {
   const photo = await photoModel.find(req.query);
