@@ -15,6 +15,8 @@ photographyRouter.get("/", async (req, res) => {
   const photo = await photoModel.find(req.query);
   res.send({ data: photo });
 });
+
+
 photographyRouter.get("/:id", async (req, res) => {
   const id = req.params.id;
   try {
@@ -96,16 +98,15 @@ photographyRouter.delete("/delete/:id", async (req, res) => {
 
 
 // PATCH REQUEST
-photographyRouter.put("/update/:id", async (req, res) => {
+photographyRouter.patch("/update/:id", async (req, res) => {
   let Id = req.params.id;
   const payload = req.body;
   // console.log(payload)
   try {
     const photo = await photoModel.findByIdAndUpdate({ _id: Id }, payload);
-    console.log(photo);
-    res.send({ msg: "patch req done" });
+   return res.send({ msg: "Details updated" ,payload});
   } catch (err) {
-    console.log(err);
+    return res.status(400).send(err.message)
   }
 });
 
