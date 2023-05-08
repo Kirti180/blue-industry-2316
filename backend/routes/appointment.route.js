@@ -67,6 +67,17 @@ res.send(appointmentData);
 });
 
 
+//get data of appointment status
+appointmentRouter.get("/userdata/:id", async (req, res) => {
+  const id = req.params.id
+const appointmentData = await appointmentModel.find({user_id:id});
+const status = appointmentData[0].status
+let acceptedData = await appointmentModel.find({status:"Accepted"})
+let rejectedData = await appointmentModel.find({status:"Rejected"})
+let pendingData = await appointmentModel.find({status:"Pending"})
+res.send({pendingData,acceptedData,rejectedData});
+});
+
 
 
 

@@ -9,6 +9,8 @@ const { UserModel } = require("../models/user.model")
 UserRoute = express.Router()
 UserRoute.use(express.json())
 
+const {appointmentModel} = require("../models/appointment.model")
+
 
 UserRoute.post("/signup", async (req, res) => {
     let Role = req.body.role
@@ -64,7 +66,6 @@ UserRoute.post("/login", async (req, res) => {
         res.send(error)
     }
 })
-
 
 
 module.exports = {
