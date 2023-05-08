@@ -1,0 +1,12 @@
+#user_home{
+    width: 10%;
+    height: 70%;
+    font-size: 20px;
+    background-color: skyblue;
+    font-weight: bolder;
+    border: none;
+    border-radius: 10px;
+}
+#user_home:hover{
+    background-color: rgb(194, 227, 240);
+}
