@@ -13,7 +13,7 @@ photographyRouter.use(express.json());
 
 
 // GET REQUEST
-photographyRouter.get("/",photoauth,async (req, res) => {
+photographyRouter.get("/",async (req, res) => {
   const photo = await photoModel.find(req.query);
   res.send({ data: photo });
 });

@@ -12,7 +12,7 @@ client.connect();
 const authentication = async (req, res, next) => {
     
     const token = await client.get('token')
-    console.log({"msg":"middleware" , "data":token})
+
 
     if (token) {
         const blocked = await BlacklistModel.find({ token })
