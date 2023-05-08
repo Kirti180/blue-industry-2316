@@ -39,6 +39,7 @@ UserRoute.post("/signup", async (req, res) => {
 });
 
 UserRoute.post("/login", async (req, res) => {
+
   const { email, password } = req.body;
   res.clearCookie("token");
   try {
@@ -58,7 +59,7 @@ UserRoute.post("/login", async (req, res) => {
           if (err) res.send(err);
           else if (result) {
             const token = jwt.sign({ userId: usr[0]._id }, "imran", {
-              expiresIn: "10h",
+              expiresIn: "10h"
             });
             res
               .cookie("Token", token)
