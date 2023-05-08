@@ -7,10 +7,11 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy
 const session = require('express-session');
 const { authentication } = require("./middleware/Authentication")
 const { createClient } = require("redis");
+// const {photoauth}=require("../middleware/photo.authantication")
 const client = createClient();
 
 client.on('error', err => console.log('Redis Client Error', err));
-const { authorise } = require("./middleware/Authorization")
+// const { authorise } = require("../middleware/Authorization")
 const { UserModel } = require("./models/user.model")
 const { photographyRouter } = require("./routes/photographer.route");
 const { UserRoute } = require("./routes/user.route");
@@ -30,7 +31,7 @@ app.use(session({
 
 
 app.use(express.json());
-app.use("/photographer", photographyRouter);
+app.use("/photographer",photographyRouter);
 app.use("/appointment", appointmentRouter)
 
 

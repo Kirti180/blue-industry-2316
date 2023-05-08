@@ -1,7 +1,7 @@
 const authorise= (permitibble)=>{
 
     return (req,res,next)=>{
-        const role= req.user[0].role
+        const role= req.body.role
         console.log(req.user)
         if(permitibble.includes(role)){
             next()
