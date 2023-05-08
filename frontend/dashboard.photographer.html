@@ -120,11 +120,17 @@ ham.addEventListener("click", function () {
          const photoGraphername =dataid.title
          console.log(id)
 
+
+         
+         
+
+
   async function requestData(photographer){
     let countData = await fetch(`http://localhost:8080/appointment/getData/${id}`,{
     method:"GET",
     headers:{
-      "content-type":"application/json"
+      "content-type":"application/json",
+      Authorization:JSON.parse(localStorage.getItem("phototoken"))
     }
     })
     if(countData.ok){
@@ -147,9 +153,9 @@ ham.addEventListener("click", function () {
     reqData.forEach((ele) => {
         if (ele.status == "Accepted") {
             count1++
-        } else if (ele.status == "Pending") {
-            count2++
         } else if (ele.status == "Rejected") {
+            count2++
+        } else if (ele.status == "Pending") {
             count3++;
         }
         c1.innerText=`${count1}`
@@ -164,11 +170,21 @@ const admin_photo_name = document.querySelector("#admin_photo_name")
 admin_photo_name.innerText=`${photoGraphername}`
 
 
+
 let occasion_data = document.getElementById("occasion-data");
 
 let arr = [];
 
 const getdata = () => {
+  const headers = {
+    'Content-Type': 'application/json',
+    Authorization: `${JSON.parse(localStorage.getItem("phototoken"))}`
+  };
+  
+  const options = {
+    method: 'GET',
+    headers: headers
+  };
   fetch(`http://localhost:8080/photographer/${id}/occasion`)
     .then((res) => res.json())
     .then((res) => {

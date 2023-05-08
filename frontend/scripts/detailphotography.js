@@ -33,7 +33,8 @@ occasionData.map((occasion) => {
               const response = await fetch(`http://localhost:8080/photographer/update/${data._id}/occasions/${occasion.name}/slots/${slot.time}`, {
                 method: 'PATCH',
                 headers: {
-                  'Content-Type': 'application/json'
+                  'Content-Type': 'application/json',
+                  Authorization:JSON.parse(localStorage.getItem("phototoken"))
                 },
                 body: JSON.stringify({
                   booked: true

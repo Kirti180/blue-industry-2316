@@ -113,12 +113,15 @@ const tableHead = document.querySelector('thead');
   const dataid=JSON.parse(localStorage.getItem("photographer"))
          const id = dataid._id
 
+         console.log(localStorage.getItem("phototoken"))
+       
 let arr=[]
  async function getRequests(photographer){
     let newRequest = await fetch(`http://localhost:8080/appointment/${id}`,{
         method:"GET",
         headers:{
             "content-type":"application/json",
+            Authorization:JSON.parse(localStorage.getItem("phototoken"))
         }
     })
     if(newRequest.ok){
@@ -200,6 +203,7 @@ async function acceptingAppointment(id){
                 method:"PATCH",
          headers:{
             "content-type":"application/json",
+            Authorization:JSON.parse(localStorage.getItem("phototoken"))
         },
             })
             if(accept.ok){
@@ -217,6 +221,7 @@ async function declineAppointment(id){
                 method:"PATCH",
          headers:{
             "content-type":"application/json",
+            Authorization:JSON.parse(localStorage.getItem("phototoken"))
         },
             })
             if(rejected.ok){
