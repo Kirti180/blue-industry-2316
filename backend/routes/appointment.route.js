@@ -53,15 +53,15 @@ appointmentRouter.post("/book/:id", (req, res) => {
 
 //get total appointment requests and datas with respect to photographers on photographer's admin page
 //(taking photographer id in params)
-appointmentRouter.get("/:id", async (req, res) => {
+appointmentRouter.get("/:id",photoauth, async (req, res) => {
     const id = req.params.id
   const appointmentData = await appointmentModel.find({photographer:id,status:"Pending"});
   res.send(appointmentData);
 });
 
 
-//get appointment detauls of respective photographers 
-appointmentRouter.get("/getData/:id", async (req, res) => {
+//get appointment details of respective photographers 
+appointmentRouter.get("/getData/:id",photoauth, async (req, res) => {
   const id = req.params.id
 const appointmentData = await appointmentModel.find({photographer:id});
 res.send(appointmentData);
@@ -71,9 +71,7 @@ res.send(appointmentData);
 //get data of appointment status
 appointmentRouter.get("/userdata/:id", async (req, res) => {
   const id = req.params.id
-  if(!id){
-    return res.status(400).send({"msg":"Login first"})
-  }
+ 
 const appointmentData = await appointmentModel.find({user_id:id});
 const status = appointmentData[0].status
 let acceptedData = await appointmentModel.find({status:"Accepted"})
@@ -105,7 +103,7 @@ appointmentRouter.get("/", async (req, res) => {
 
 
 //accepting appointment (appointment id as params)
-appointmentRouter.patch("/accept/:id", async (req, res) => {
+appointmentRouter.patch("/accept/:id",photoauth, async (req, res) => {
     const id = req.params.id
 
     const appointedData = await appointmentModel.findByIdAndUpdate({_id:id},{status:"Accepted"})
@@ -116,7 +114,7 @@ appointmentRouter.patch("/accept/:id", async (req, res) => {
 
 
 //reject api
-appointmentRouter.patch("/reject/:id", async (req, res) => {
+appointmentRouter.patch("/reject/:id",photoauth, async (req, res) => {
   const id = req.params.id
 
   const appointedData = await appointmentModel.findByIdAndUpdate({_id:id},{status:"Rejected"})

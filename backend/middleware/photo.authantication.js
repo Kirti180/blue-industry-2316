@@ -3,7 +3,7 @@ const fs = require("fs");
 const photoauth = async (req, res, next) => {
   var token = req.headers.authorization;
   if (!token) {
-    res.send({ msg: "bad request" });
+    res.status(400).send({ msg: "Login first" });
   }
   //   const blacklistdata = JSON.parse(
   //     fs.readFileSync("./blacklist.json", "utf-8")
@@ -19,11 +19,11 @@ const photoauth = async (req, res, next) => {
         req.body.role = decoded.role;
         next();
       } else {
-        res.send({ msg: "login again" });
+        res.status(200).send({ msg: "login again" });
       }
     } catch (err) {
       // console.log(err);
-      res.status(400).send({ msg: "login first" });
+      res.status(400).send({ msg: "Token expired.. login again" });
     }
   }
 };
