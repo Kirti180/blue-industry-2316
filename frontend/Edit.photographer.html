@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./Styles/navbar2.css" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script
       src="https://kit.fontawesome.com/714346974b.js"
       crossorigin="anonymous"
@@ -54,17 +55,9 @@
           <label for="email">Email:</label><br />
           <input
             placeholder="Enter Email"
-            type="text"
+            type="text"  
             id="email"
             name="email"
-          /><br /><br />
-
-          <label for="password">Password:</label><br />
-          <input
-            placeholder="Enter Password"
-            type="text"
-            id="pass"
-            name="pass"
           /><br /><br />
 
           <label for="title">Title:</label><br />
@@ -82,32 +75,6 @@
             id="image"
             name="image"
           /><br /><br />
-
-          <div id="occasions">
-            <div class="occasion">
-              <label for="occasion_0">Occasion:</label><br />
-              <input
-                placeholder="Enter Occasion8"
-                type="text"
-                id="occasion_0"
-                name="occasions[]"
-              /><br />
-              <div class="slots">
-                <div class="slot">
-                  <label for="time_0_0">Time:</label>
-                  <input
-                    type="text"
-                    id="time_0_0"
-                    name="occasions[0][slots][][time]"
-                  />
-                </div>
-              </div>
-              <button type="button" onclick="addSlot(0)">Add Slot</button
-              ><br /><br />
-            </div>
-          </div>
-          <button type="button" onclick="addOccasion()">Add Occasion</button
-          ><br /><br />
 
           <label for="address">Address:</label><br />
           <input type="text" id="address" name="address" /><br /><br />
@@ -145,20 +112,86 @@
     </div>
   </body>
 </html>
+
 <script>
-  const data = JSON.parse(localStorage.getItem("admin"));
+
+let mail = document.querySelector("#email")
+
+let title = document.querySelector("#title")
+let image = document.querySelector("#image")
+let locate = document.querySelector("#location")
+let worktime = document.querySelector("#workingtime")
+let charges = document.querySelector("#charges")
+let address = document.querySelector("#address")
+let contact = document.querySelector("#contact")
+
+
+
+
+  const data = JSON.parse(localStorage.getItem("photographer"));
   const id = data._id;
-  let arr = [];
-  const sub = document.getElementById("sub");
-  const getdata = () => {
-    fetch(`http://localhost:8080/photographer/update/${id}`, {
-     
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
+  console.log(id)
+
+
+
+const sub = document.querySelector("#sub")
+sub.addEventListener("click",()=>{
+  const payload ={
+  email:email.value,
+  title:title.value,
+  image:image.value,
+  address:address.value,
+  contact:contact.value,
+  worktime:worktime.value,
+  charges:charges.value
+  }
+
+  async function loginFunction(_id){
+    let loginRequest = await fetch(`http://localhost:8080/photographer/update/${id}`,{
+            method:"PATCH",
+            body:JSON.stringify(payload),
+        headers:{
+            "content-type":"application/json",
+        },
+        })
+        if(loginRequest.ok){
+          swal("Updated!", "Data updated successfully!", "success");
+          setTimeout(()=>{
+            window.location.href="./dashboard.photographer.html"
+          },2000)
+        }
+
+         let data = await loginRequest.json()
+        console.log(data)
+      }
+      loginFunction()
+      
       })
-      .catch((err) => console.log(err));
-  };
-  getdata();
+
+
+const getdata=(_id)=>{
+        fetch(`http://localhost:8080/photographer/${id}`,{
+    headers:{
+// "Authorization":localStorage.getItem("token")
+    },
+   }).then(res=>res.json())
+   .then(res=>{
+//    display(res.data)
+document.querySelector("#email").value=res.data.email
+document.querySelector("#title").value=res.data.title
+document.querySelector("#image").value=res.data.image
+document.querySelector("#location").value=res.data.location
+document.querySelector("#workingtime").value=res.data.workingtime
+document.querySelector("#charges").value=res.data.charges
+document.querySelector("#address").value=res.data.address
+document.querySelector("#contact").value=res.data.contact
+
+
+
+})
+   .catch(err=>console.log(err))
+    }
+    getdata()
+
+
 </script>
