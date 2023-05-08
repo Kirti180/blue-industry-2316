@@ -5,7 +5,8 @@ const { appointmentModel } = require("../models/appointment.model");
 const { authentication } = require("../middleware/Authentication");
 const jwt = require("jsonwebtoken");
 const { UserModel } = require("../models/user.model");
-
+const {authorise} = require("../middleware/Authorization")
+const {photoauth}=require("../middleware/photo.authantication")
 
 //booking appointment api
 appointmentRouter.post("/book/:id", (req, res) => {
