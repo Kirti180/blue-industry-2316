@@ -70,6 +70,9 @@ res.send(appointmentData);
 //get data of appointment status
 appointmentRouter.get("/userdata/:id", async (req, res) => {
   const id = req.params.id
+  if(!id){
+    return res.status(400).send({"msg":"Login first"})
+  }
 const appointmentData = await appointmentModel.find({user_id:id});
 const status = appointmentData[0].status
 let acceptedData = await appointmentModel.find({status:"Accepted"})
