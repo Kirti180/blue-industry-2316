@@ -137,7 +137,7 @@ let contact = document.querySelector("#contact")
 const sub = document.querySelector("#sub")
 sub.addEventListener("click",()=>{
   const payload ={
-  email:email.value,
+  email:mail.value,
   title:title.value,
   image:image.value,
   address:address.value,
@@ -152,6 +152,7 @@ sub.addEventListener("click",()=>{
             body:JSON.stringify(payload),
         headers:{
             "content-type":"application/json",
+            Authorization:JSON.parse(localStorage.getItem("phototoken"))
         },
         })
         if(loginRequest.ok){
@@ -172,7 +173,7 @@ sub.addEventListener("click",()=>{
 const getdata=(_id)=>{
         fetch(`http://localhost:8080/photographer/${id}`,{
     headers:{
-// "Authorization":localStorage.getItem("token")
+      Authorization:JSON.parse(localStorage.getItem("phototoken"))
     },
    }).then(res=>res.json())
    .then(res=>{

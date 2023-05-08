@@ -34,7 +34,7 @@ photographyRouter.get("/:id",photoauth, async (req, res) => {
   }
 });
 
-photographyRouter.get("/:id/occasion",photoauth, async (req, res) => {
+photographyRouter.get("/:id/occasion", async (req, res) => {
   try {
     const photographerId = req.params.id;
     const photographer = await photoModel.findById(photographerId);

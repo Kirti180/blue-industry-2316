@@ -66,6 +66,7 @@
           swal("Login Successfull!", "success");
         }
          let data = await loginRequest.json()
+         localStorage.setItem("phototoken",JSON.stringify(data.token))
          localStorage.setItem("photographer",JSON.stringify(data.user))
         console.log(data)
         setTimeout(()=>{
