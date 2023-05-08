@@ -31,6 +31,7 @@
     /* border: 1px solid red; */
     height: 350px;
     width: 550px;
+    margin-right: 20px;
 }
 #detail_img img{
     height: 100%;
@@ -117,4 +118,25 @@ ul::after {
     border-bottom: 1px solid black;
     margin-top: 2%;
     margin-bottom: 2%;
+  }
+
+  @media screen and  (max-width: 1110px) {
+
+    #detail_main{
+        border: 1px solid red;
+        display: flex;
+        flex-wrap: wrap;
+        /* margin: auto; */
+    }
+    #detail_img{
+        margin: auto;
+        margin-top: 20px;
+    }
+    #title{
+        margin-top: 22px;
+    }
+    #detail_contain{
+        margin-top: 20px;
+        margin: auto;
+    }
   }

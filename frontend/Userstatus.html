@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Styles/dash.photo.nav.css">
+    <link rel="stylesheet" href="./Styles/acceptReject.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="./Styles/userstatus.css">
+    <script
+    src="https://kit.fontawesome.com/714346974b.js"
+    crossorigin="anonymous"
+  ></script>
+
+    <script
+      src="https://kit.fontawesome.com/714346974b.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+    
+</head>
+<body>
+    <div id="usestatus_main">
+
+    </div>
+   <nav>
+<button id="user_home">Home</button>
+   </nav>
+   
+        <div id="dash_info">
+           <h1>APPOINTMENT REQUESTS</h1>
+           <div class="appointment-child">
+            <table>
+              <thead>
+                <tr>
+                  <th>Client-Name</th>
+                  <th>Email</th>
+                  <th>Date</th>
+                  <th>Start-time</th>
+                  <th>End-time</th>
+                  <th>Status</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+           
+    
+    
+</body>
+</html>
+<script>
+let user_home =document.getElementById("user_home")
+user_home.addEventListener("click",()=>{
+    window.location.href="./showphotographers.html"
+})
+
+
+
+
+
+//==================================/////========================///////
+
+
+  ///appointment request fetchingg
+  const tableBody = document.querySelector('tbody');
+const tableHead = document.querySelector('thead');
+const user_status_id=JSON.parse(localStorage.getItem("user"))
+const id=user_status_id[0]._id
+
+
+
+let arr=[]
+// async function getRequests(userId) {
+//   try {
+//     const newRequest = await fetch(`http://localhost:8080/appointment/userdata/${userId}`, {
+//       method: "GET",
+//       headers: {
+//         "content-type": "application/json",
+//       }
+//     })
+//     if (newRequest.ok) {
+//       const data = await newRequest.json()
+//       console.log(data)
+//       arr = data
+//       console.log(arr)
+//       // renderAppointmentData(arr)
+//     } else {
+//       console.log('Request failed with status', newRequest.status)
+//     }
+//   } catch (error) {
+//     console.log('Error:', error.message)
+//   }
+// }
+
+// getRequests(id)
+
+//  function renderAppointmentData(data){
+//     tableBody.innerHTML = '';
+//    tableHead.innerHTML = `
+//       <tr>
+//         <th>Client Name</th>
+//         <th>Mobile Number</th>
+//         <th>Date</th>
+//         <th>occasion</th>
+//         <th>Start time</th>
+//         <th>End time</th>
+//         <th>Accept</th>
+//         <th>Reject</th>
+//       </tr>
+//       `
+
+//       data.forEach(async (item, index) => {
+
+//     let tr = document.createElement('tr');
+//     tr.setAttribute('id', item._id)
+//     let clientName = document.createElement('td');
+//     clientName.innerText = item.clientName;
+//     let email = document.createElement('td');
+//     email.innerText = item.email;
+//     let occasion = document.createElement('td');
+//     occasion.innerText = item.occasion;
+//     let date = document.createElement('td');
+//     date.innerText = item.bookedOn;
+//     let start_time = document.createElement('td');
+//     start_time.innerText = item.start_time;
+//     let end_time = document.createElement('td');
+//     end_time.innerText = item.end_time;
+
+//     let acceptBtn = document.createElement('button');
+//     acceptBtn.classList.add('AcceptBtn', 'btn-1')
+//     acceptBtn.innerHTML = '<span>Accept</span>';
+//     let acceptTD = document.createElement('td');
+//     acceptTD.append(acceptBtn)
+
+//     acceptBtn.addEventListener('click', () => {
+//         acceptingAppointment(item._id)
+//     acceptBtn.innerHTML="Confirmed"
+//     })
+
+
+//     let declineBtn = document.createElement('button');
+//     declineBtn.classList.add('RejectBtn', 'btn-2')
+//     declineBtn.innerHTML = '<span>Decline</span>';
+//     let declineTD = document.createElement('td');
+//     declineTD.append(declineBtn)
+
+//     declineBtn.addEventListener('click', () => {
+//       declineAppointment(item._id)
+    
+//     })
+
+//     tableBody.append(tr)
+//     tr.append(clientName, email, date, occasion, start_time, end_time, acceptTD, declineTD)
+//   })
+//  }
+
+
+
+
+
+
+</script>

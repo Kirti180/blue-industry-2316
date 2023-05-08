@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Styles/profile.photographer.css">
     <link rel="stylesheet" href="./Styles/dash.photo.nav.css">
     <link rel="stylesheet" href="./Styles/profile.dash.css">
     <script
@@ -11,9 +12,7 @@
       crossorigin="anonymous"
     ></script>
     <title>Document</title>
-    <style>
-
-    </style>
+    
 </head>
 <body>
   <!-- <a href="./Edit.photographer.html"></a> -->
@@ -28,7 +27,7 @@
                   </div>
                   <!-- <input type="text" placeholder="Search here" > -->
                 </div>
-                <div id="nav_left_side">
+                <div id="nav_left_side" >
                   <div>
                     <span><a class="indexstyle" href="./index.html">Home</a></span>
                   </div>
@@ -44,7 +43,7 @@
                   </div>
                 </div>
               </nav>
-              <div id="burger">
+              <div id="burger" style="position: sticky;" >
                 <div class="burger_inside" id="hm">Home</div>
                 <div class="burger_inside" id="ss">Dashboard</div>
                 <div class="burger_inside" id="vc">Profile</div>
@@ -125,7 +124,7 @@ const display = (data) => {
     const image = document.createElement('img');
     image.setAttribute('src', element.image);
 
-    const h1 = document.createElement('h1');
+    const h1 = document.createElement('h2');
     h1.innerText = "Title : "+element.title;
 
     const location_details = document.createElement('h3');
@@ -164,6 +163,7 @@ const display = (data) => {
       slotsDiv.setAttribute('class', 'slots');
       occasion.slots.forEach((slot) => {
         const slotTime = document.createElement('p');
+        slotTime.setAttribute("id","fifth")
         slotTime.innerText = `Slot Time: ${slot.time}`;
         const slotBooked = document.createElement('p');
         slotBooked.innerText = `Slot Booked: ${slot.booked}`;
