@@ -24,7 +24,7 @@
   }
   #dash_info{
     
-    height: 95vh;
+    height: 120vh;
     padding: 2%;
     background: rgb(93,223,230);
     background: linear-gradient(90deg, rgba(93,223,230,1) 0%, rgba(0,74,173,1) 100%);
@@ -52,6 +52,7 @@ row-gap: 5%;
 }
 .req_detail h1{
     margin-top: 8%;
+    font-size: 20px;
 }
 nav {
   
@@ -123,7 +124,7 @@ nav {
   #nav_left_side > div > i {
     color:  #00053d;
     margin-right: 7px;
-    font-size: 20px;
+    font-size: 16px;
   }
 
   
@@ -137,7 +138,7 @@ nav {
   #burger > div {
     transition: color 0.3s ease;
     padding-top: 10px;
-    font-size: large;
+    font-size: 16px;
     padding: 2%;
     /* background-color: #902735; */
     font-weight: 600;
@@ -155,7 +156,7 @@ nav {
     
     text-decoration: none;
     color:  #00053d;
-    font-size: 32px;
+    font-size: 24px;
     line-height: 200%;
     /* margin-left: 2%; */
   }
@@ -183,16 +184,16 @@ nav {
   #occasion-title{
     margin-top: 1%;
     margin-bottom: 2%;
-    font-size: 34px;
+    font-size: 20px;
   }
   #h1{
     margin-bottom: 2%;
-    font-size: 34px;
+    font-size: 22px;
     /* border: 1px solid red; */
   }
   #slot_btn{
     /* border: 1px solid red; */
-    font-size: 24px;
+    font-size: 16px;
     padding: 0.5%;
     margin-right: 1.5%;
     margin-bottom: 1%;
@@ -207,5 +208,5 @@ nav {
   }
   #note{
     margin-top: 5%;
-    font-size: 18px;
+    font-size: 14px;
   }

@@ -29,7 +29,7 @@ const photography_register = async () => {
 
   console.log(payload);
 
-  await fetch("http://localhost:8080/photographer/create", {
+  await fetch("https://cyan-jolly-bee.cyclic.app/photographer/create", {
     method: "POST",
     headers: {
       "content-type": "application/json",

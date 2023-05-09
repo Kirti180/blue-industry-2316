@@ -1,12 +1,169 @@
+body{
+    background: linear-gradient(90deg, rgba(93,223,230,1) 0%, rgba(0,74,173,1) 100%);
+}
 #user_home{
     width: 10%;
     height: 70%;
     font-size: 20px;
-    background-color: skyblue;
+    background-color: white;
     font-weight: bolder;
     border: none;
     border-radius: 10px;
 }
 #user_home:hover{
     background-color: rgb(194, 227, 240);
+}
+table{
+    width: 900px;
+    margin-top: 50px;
+    border: 1px solid black;
+    text-align: center;
+    height: auto;
+   }
+   table th{
+    width: 30px;
+    border: 1px solid rgb(19, 19, 18);
+    font-size: 18px;
+    color: white;
+    font-family: sans-serif;
+    background-color: rgb(106, 106, 110);
+   }
+
+   .h1{
+    margin-top: 50px;
+    text-align: center;
+    font-family: sans-serif;
+   }
+    td{
+    font-size: 15px;
+    background-color: rgb(199, 204, 202);
+   }
+
+   .AcceptBtn{
+    background-color: rgb(111, 164, 96);
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+   }
+   .AcceptBtn:hover{
+    background-color: rgb(89, 146, 74);
+   }
+
+   .RejectBtn{
+    background-color: rgb(210, 97, 97);
+    width: 80px;
+    color: white;
+    height: 30px;
+    cursor: pointer;
+   }
+
+   .RejectBtn:hover{
+    background-color: rgb(181, 70, 70);
+   }
+
+   .appointment-child>table{
+    border: 1px solid red;
+    width: 100%;
+  }
+/* 
+  @media screen and (min-width: 680px) and (max-width: 1100px) {
+
+  #nav_left_side{
+    border: 1px solid red;
+    margin-top: 0px;
+    background: linear-gradient(90deg, rgba(93,223,230,1) 0%, rgba(0,74,173,1) 100%);
+    padding: 50px 211px;
+    width: 111%;
+    margin-left: -30px;
+}
+  } */
+
+
+  
+@media screen and (max-width: 700px) {
+    #main_admin_photo {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        /* gap: 2%; */
+        /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+        width: 90%;
+        margin: auto;
+        /* grid-template-columns: 30% 70%; */
+        text-align: center;
+        font-family: sans-serif;
+    }
+    #dash_title{
+        border: 1px solid red;
+        height: 400px;
+        position: relative;
+    }
+   
+ 
+    #dash_info{
+        margin-top: 250px;
+    }
+    #button_edit {
+        margin-top: 0px;
+        height: 14%;
+        width: 22%;
+        border-radius: 10px;
+        background-color: skyblue;
+        border: none;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    #cart_info>h3 {
+        text-align: center;
+    }
+
+    #admin_info {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        /* border: 1px solid red; */
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        /* margin: auto; */
+        width: 80%;
+        background-color: snow;
+        padding: 3%;
+        border-radius: 10px;
+        row-gap: 5%;
+    }
+
+    #cart_info>h2 {
+        margin-top: -20px;
+        margin-bottom: -20px;
+        font-size: 28px;
+        text-align: left;
+    }
+
+    #cart_info>h3 {
+        /* color: red; */
+        font-size: 21px;
+        margin-bottom: -16px;
+        text-align: left;
+    }
+
+    #cart_img {
+        height: 300px;
+        margin-bottom: -22px;
+    }
+
+    .occasion>h3 {
+        color: red;
+        font-size: 22px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: -8px;
+        margin-top: 16px;
+    }
+
+    .slots>p {
+        font-size: 18px;
+        margin-bottom: -8px;
+    }
+
+
+
+
 }
