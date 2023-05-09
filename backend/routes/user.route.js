@@ -8,6 +8,7 @@ client.connect();
 const { UserModel } = require("../models/user.model");
 UserRoute = express.Router();
 UserRoute.use(express.json());
+require("dotenv").config()
 
 const { appointmentModel } = require("../models/appointment.model");
 
@@ -58,7 +59,7 @@ UserRoute.post("/login", async (req, res) => {
           res.send(err.message);
           if (err) res.send(err);
           else if (result) {
-            const token = jwt.sign({ userId: usr[0]._id }, "imran", {
+            const token = jwt.sign({ userId: usr[0]._id }, process.env.secretKey, {
               expiresIn: "10h"
             });
             res

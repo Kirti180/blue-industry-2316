@@ -233,10 +233,13 @@ p{
     font-size: 20px;
     padding: 10px 30px;
     border-radius: 10px;
+    color: white;
+    font-weight: bold;
     background-color: teal;
 }
 .nav-button:hover{
     background-color: wheat;
+    color: grey;
 }
 
 

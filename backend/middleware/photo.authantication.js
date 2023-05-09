@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
 const fs = require("fs");
+require("dotenv").config()
 const photoauth = async (req, res, next) => {
   var token = req.headers.authorization;
   if (!token) {
@@ -13,7 +14,7 @@ const photoauth = async (req, res, next) => {
   //   } else {
   if (token) {
     try {
-      let decoded = jwt.verify(token, "onesecret");
+      let decoded = jwt.verify(token, process.env.secretone);
       if (decoded) {
         req.body.user = decoded.userID;
         req.body.role = decoded.role;
