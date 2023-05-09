@@ -16,17 +16,20 @@ body{
 table{
     width: 900px;
     margin-top: 50px;
-    border: 1px solid black;
     text-align: center;
     height: auto;
    }
    table th{
     width: 30px;
-    border: 1px solid rgb(19, 19, 18);
     font-size: 18px;
+    height: 35px;
     color: white;
     font-family: sans-serif;
     background-color: rgb(106, 106, 110);
+   }
+
+   .t33{
+    padding-bottom: 40px;
    }
 
    .h1{
@@ -36,6 +39,7 @@ table{
    }
     td{
     font-size: 15px;
+    height: 23px;
     background-color: rgb(199, 204, 202);
    }
 
@@ -62,7 +66,6 @@ table{
    }
 
    .appointment-child>table{
-    border: 1px solid red;
     width: 100%;
   }
 /* 

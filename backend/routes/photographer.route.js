@@ -9,6 +9,7 @@ const {photoauth}=require("../middleware/photo.authantication")
 const { photoModel } = require("../models/photographer.model");
 const {authorise}=require("../middleware/Authorization.js")
 photographyRouter.use(express.json());
+require("dotenv").config()
 
 
 
@@ -24,13 +25,13 @@ photographyRouter.get("/:id",photoauth, async (req, res) => {
   try {
     const photographer = await photoModel.findOne({_id: id});
     if (!photographer) {
-      res.status(404).send({ message: "Photographer not found" });
+      res.status(400).send({ "message": "Photographer not found" });
       return;
     }
     res.send({ data: photographer });
   } catch (error) {
     console.error(error);
-    res.status(500).send({ message: "Server Error" });
+    res.status(500).send({ "message": "Server Error" });
   }
 });
 
@@ -59,8 +60,8 @@ photographyRouter.post("/login",async(req,res)=>{
     const hashedpwd = user?.pass
     bcrypt.compare(pass, hashedpwd, function(err, result) {
         if(result){
-            const token = jwt.sign({userID : user._id,role: user.role},"onesecret", {expiresIn : "60m"})
-            const refresh_token = jwt.sign({userID : user._id},"twosecret", {expiresIn : "1d"})
+            const token = jwt.sign({userID : user._id,role: user.role},process.env.secretone, {expiresIn : "60m"})
+            const refresh_token = jwt.sign({userID : user._id},process.env.secretwo, {expiresIn : "1d"})
             res.send({msg : "login successfull", token, user, refresh_token})
         }
         else{

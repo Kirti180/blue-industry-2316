@@ -7,12 +7,13 @@ const jwt = require("jsonwebtoken");
 const { UserModel } = require("../models/user.model");
 const {authorise} = require("../middleware/Authorization")
 const {photoauth}=require("../middleware/photo.authantication")
+require("dotenv").config()
 
 //booking appointment api
 appointmentRouter.post("/book/:id", (req, res) => {
   const id = req.params.id;
   const token = req.headers.authorization;
-  jwt.verify(token, "imran", async (err, decoded) => {
+  jwt.verify(token, process.env.secretKey, async (err, decoded) => {
     if (decoded) {
       req.body.user = decoded.userId;
       req.user = await UserModel.find({ _id: decoded.userId });

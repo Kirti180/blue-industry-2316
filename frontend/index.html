@@ -752,9 +752,14 @@
 <script>
   const book = document.querySelector("#bookbtn")
   book.addEventListener("click",()=>{
+  let token = localStorage.getItem("token")
+  if(token){
+      window.location.href="./detailphotography.html"
+  }else{
     swal("Login first!!");
     setTimeout(() => {
       window.location.href="./Login.html"
-    }, 2000);
+    }, 3000);
+  }
   })
 </script>
