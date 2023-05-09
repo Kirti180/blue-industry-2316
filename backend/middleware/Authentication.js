@@ -23,7 +23,6 @@ const authentication = async (req, res, next) => {
             if (decoded) {
                 req.body.user = decoded.userId
                 req.user = await UserModel.find({ _id: decoded.userId })
-                console.log("Next")
                 next()
             }
             else {
