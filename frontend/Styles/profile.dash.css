@@ -10,7 +10,8 @@
     margin: auto;
     width: 80%;
     background-color: snow;
-    padding: 5%;
+    padding-top: 3%;
+    padding-left: 3%;
     border-radius: 10px;
     row-gap: 5%;
 }

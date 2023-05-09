@@ -24,7 +24,7 @@
   }
   #dash_info{
     
-    /* height: 100vh; */
+    height: 95vh;
     padding: 2%;
     background: rgb(93,223,230);
     background: linear-gradient(90deg, rgba(93,223,230,1) 0%, rgba(0,74,173,1) 100%);
