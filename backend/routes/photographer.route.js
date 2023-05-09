@@ -139,7 +139,7 @@ photographyRouter.get("/search", async (req, res) => {
     res.status(500).send({ error: "Internal Server Error" });
   }
 });
-photographyRouter.patch("/update/:id/occasions/:occasionName/slots/:slotTime",photoauth, async (req, res) => {
+photographyRouter.patch("/update/:id/occasions/:occasionName/slots/:slotTime", async (req, res) => {
   const photoId = req.params.id;
   const occasionName = req.params.occasionName;
   const slotTime = req.params.slotTime;
