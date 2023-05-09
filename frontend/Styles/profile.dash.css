@@ -3,6 +3,7 @@
 }
 
 #admin_info {
+    height: 90vh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     /* border: 1px solid red; */
@@ -30,17 +31,14 @@
 }
 
 #cart_info {
-    line-height: 70px;
+    line-height: 60px;
     border-radius: 10px;
+    font-size: 16px;
     /* border: 1px solid red; */
 }
 
-#cart_info h1 {
-    /* border: 1px solid red; */
-    font-size: 48px;
-}
 
-/* #cart_info h3 {
+/* art_info h3 {
     border: 1px solid red;
     font-size: 22px;
 } */
@@ -104,7 +102,7 @@
 
     .occasion>h3 {
         color: red;
-        font-size: 22px;
+        font-size: 20px;
         display: flex;
         flex-direction: column;
         margin-bottom: -8px;
@@ -194,7 +192,7 @@
 
     .occasion>h3 {
         color: red;
-        font-size: 22px;
+        font-size: 2px;
         display: flex;
         flex-direction: column;
         margin-bottom: -8px;
@@ -212,16 +210,16 @@
 }
 
 .occasion {
-    font-size: 24px;
+    font-size: 18px;
     line-height: 40px;
 }
 
 .slots {
-    font-size: 24px;
+    font-size: 16px;
 }
 
 #admin_info>button {
-    margin-top: 230px;
+    margin-top: 150px;
     margin-bottom: 333px;
 }
 
@@ -229,12 +227,12 @@
     /* margin-top: 50%;
     margin-left: 70%; */
     margin: 0px 0px 0px 180px;
-    height: 50px;
-    width: 150px;
+    height: 40px;
+    width: 100px;
     border-radius: 10px;
     background-color: skyblue;
     border: none;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
 }
 

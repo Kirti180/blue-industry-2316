@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./Styles/dash.photo.nav.css" />
-    <link rel="stylesheet" href="./Styles/acceptReject.css" />
+    <!-- <link rel="stylesheet" href="./Styles/acceptReject.css" /> -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="./Styles/userstatus.css" />
     <script
@@ -101,7 +101,7 @@
   async function getRequests(user_id) {
     try {
       const newRequest = await fetch(
-        `http://localhost:8080/appointment/userdata/${id}`,
+        `https://cyan-jolly-bee.cyclic.app/appointment/userdata/${id}`,
         {
           method: "GET",
           headers: {

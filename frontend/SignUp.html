@@ -90,7 +90,7 @@
                     email: document.getElementById("email").value,
                     password: document.getElementById("password").value
                 }
-                fetch("http://localhost:8080/User/signup", {
+                fetch("https://cyan-jolly-bee.cyclic.app/User/signup", {
                     method: "POST",
                     headers: { "Content-type": "application/json" },
                     body: JSON.stringify(payload)

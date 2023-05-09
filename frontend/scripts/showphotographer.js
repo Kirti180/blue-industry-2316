@@ -4,7 +4,7 @@ let photo_data = document.getElementById("show-photo-data");
 let searchTimeoutId;
 
 const searchPhotos = (value) => {
-  fetch(`http://localhost:8080/photographer/search?location=${value}`)
+  fetch(`https://cyan-jolly-bee.cyclic.app/photographer/search?location=${value}`)
     .then((res) => res.json())
     .then((res) => {
       console.log(res);
@@ -22,7 +22,7 @@ searchInput.addEventListener("input", (event) => {
 });
 
 const high = () => {
-  fetch("http://localhost:8080/photographer/high")
+  fetch("https://cyan-jolly-bee.cyclic.app/photographer/high")
     .then((res) => res.json())
     .then((res) => {
       //    console.log(res)
@@ -32,7 +32,7 @@ const high = () => {
     .catch((err) => console.log(err));
 };
 const low = () => {
-  fetch("http://localhost:8080/photographer/low")
+  fetch("https://cyan-jolly-bee.cyclic.app/photographer/low")
     .then((res) => res.json())
     .then((res) => {
       //    console.log(res)
@@ -52,7 +52,7 @@ const select = (e) => {
   }
 };
 const getdata = () => {
-  fetch("http://localhost:8080/photographer/")
+  fetch("https://cyan-jolly-bee.cyclic.app/photographer/")
     .then((res) => res.json())
     .then((res) => {
       // console.log("hello");

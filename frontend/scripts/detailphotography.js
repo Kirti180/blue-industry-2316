@@ -30,7 +30,7 @@ occasionData.map((occasion) => {
             slot.booked = true;
             // Update the backend schema with the new data
             try {
-              const response = await fetch(`http://localhost:8080/photographer/update/${data._id}/occasions/${occasion.name}/slots/${slot.time}`, {
+              const response = await fetch(`https://cyan-jolly-bee.cyclic.app/photographer/update/${data._id}/occasions/${occasion.name}/slots/${slot.time}`, {
                 method: 'PATCH',
                 headers: {
                   'Content-Type': 'application/json',

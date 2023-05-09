@@ -127,7 +127,7 @@ ham.addEventListener("click", function () {
 
 
   async function requestData(photographer){
-    let countData = await fetch(`http://localhost:8080/appointment/getData/${id}`,{
+    let countData = await fetch(`https://cyan-jolly-bee.cyclic.app/appointment/getData/${id}`,{
     method:"GET",
     headers:{
       "content-type":"application/json",
@@ -186,7 +186,7 @@ const getdata = () => {
     method: 'GET',
     headers: headers
   };
-  fetch(`http://localhost:8080/photographer/${id}/occasion`)
+  fetch(`https://cyan-jolly-bee.cyclic.app/photographer/${id}/occasion`)
     .then((res) => res.json())
     .then((res) => {
       arr.push(...res.data);
@@ -216,7 +216,7 @@ function display(data) {
         button.addEventListener("click", async () => {
           try {
             const response = await fetch(
-              `http://localhost:8080/photographer/${id}/occasion/${occasion._id}/slot/${slot._id}`,
+              `https://cyan-jolly-bee.cyclic.app/photographer/${id}/occasion/${occasion._id}/slot/${slot._id}`,
               {
                 method: "PATCH",
                 headers: {
