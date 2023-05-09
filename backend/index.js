@@ -67,7 +67,7 @@ app.get("/google/callback", passport.authenticate("google", { failureRedirect: "
 
 
 
-app.get("/user",authentication,async (req, res) => {
+app.get("/users",authentication,async (req, res) => {
   try {
     const data = await UserModel.find()
     res.send(data)

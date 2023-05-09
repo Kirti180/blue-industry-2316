@@ -2,6 +2,7 @@ let searchInput  = document.getElementById("search");
 let select1 = document.getElementById("select");
 let photo_data = document.getElementById("show-photo-data");
 let searchTimeoutId;
+
 const searchPhotos = (value) => {
   fetch(`http://localhost:8080/photographer/search?location=${value}`)
     .then((res) => res.json())
@@ -55,7 +56,7 @@ const getdata = () => {
     .then((res) => res.json())
     .then((res) => {
       // console.log("hello");
-      //    console.log(res)
+         console.log(res)
       display(res.data);
     })
     .catch((err) => console.log(err));
