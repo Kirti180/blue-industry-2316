@@ -156,7 +156,7 @@ photographyRouter.patch("/update/:id/occasions/:occasionName/slots/:slotTime", a
   }
 });
 //unbook
-photographyRouter.patch("/:id/occasion/:occasionId/slot/:slotId",photoauth, async (req, res) => {
+photographyRouter.patch("/:id/occasion/:occasionId/slot/:slotId", async (req, res) => {
   const photographerId = req.params.id;
   const occasionId = req.params.occasionId;
   const slotId = req.params.slotId;
