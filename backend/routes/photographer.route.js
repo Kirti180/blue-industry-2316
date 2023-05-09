@@ -25,13 +25,13 @@ photographyRouter.get("/:id",photoauth, async (req, res) => {
   try {
     const photographer = await photoModel.findOne({_id: id});
     if (!photographer) {
-      res.status(404).send({ message: "Photographer not found" });
+      res.status(400).send({ "message": "Photographer not found" });
       return;
     }
     res.send({ data: photographer });
   } catch (error) {
     console.error(error);
-    res.status(500).send({ message: "Server Error" });
+    res.status(500).send({ "message": "Server Error" });
   }
 });
 

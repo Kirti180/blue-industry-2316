@@ -27,12 +27,12 @@ const authentication = async (req, res, next) => {
                 next()
             }
             else {
-                res.status(400).end({"msg":"Please login first"})
+                res.status(400).send({"msg":"Please login first"})
             }
         });
     }
     else {
-        res.send("Login first")
+        res.status(400).send({"msg":"Please login first"})
     }
 }
 
