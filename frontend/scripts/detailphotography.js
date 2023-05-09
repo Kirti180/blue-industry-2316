@@ -34,7 +34,7 @@ occasionData.map((occasion) => {
                 method: 'PATCH',
                 headers: {
                   'Content-Type': 'application/json',
-                  Authorization:JSON.parse(localStorage.getItem("phototoken"))
+                  // Authorization:JSON.parse(localStorage.getItem("phototoken"))
                 },
                 body: JSON.stringify({
                   booked: true
