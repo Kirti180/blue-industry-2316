@@ -48,7 +48,7 @@ UserRoute.post("/login", async (req, res) => {
     if (usr.length > 0) {
       bcrypt.compare(password, usr[0].password, async (err, result) => {
         if (result === true) {
-          const token = jwt.sign({ userId: usr[0]._id }, "imran", {
+          const token = jwt.sign({ userId: usr[0]._id }, process.env.secretKey, {
             expiresIn: "1h",
           });
           client.set("token", token);
