@@ -7,7 +7,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy
 const session = require('express-session');
 const { authentication } = require("./middleware/Authentication")
 const { createClient } = require("redis");
-const client = createClient("redis://default:pAZIQGIYzeoDcfPm3PKrPU0gmPWpMeQo@redis-11856.c301.ap-south-1-1.ec2.cloud.redislabs.com:11856");
+const client = createClient(process.env.redisURL);
 client.on('ready', function () {
   console.log("Redis is ready");
 });
