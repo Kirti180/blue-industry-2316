@@ -57,12 +57,13 @@
     }
     #nav_left_side{
         text-align: left;
-        /* border: 1px solid red;
+        border: 1px solid red;
         margin-top: 0px;
+        height: 100vh;
         background: linear-gradient(90deg, rgba(93,223,230,1) 0%, rgba(0,74,173,1) 100%);
         /* padding: 50px 211px; */
         /* width: 111%; */
-        /* margin-left: -30px; */
+        /* margin-left: -30px;
     }
     #cart_info>h3 {
         text-align: center;
