@@ -5,15 +5,16 @@
   position: -webkit-sticky;
     position: sticky;
     top: 0;
-    background-color: rgba(127, 255, 212, 0.553);
+    background-color: rgba(68, 108, 95, 0.553);
     z-index: 999;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
    
 }
 #mid>a{
-  font-size: 26px;
-  margin-right: 8%;
+  font-size: 21px;
+  margin-right: 7%;
   margin-top: 5px;
+  font-family: sans-serif;
 }
 
 .topnav {
@@ -36,10 +37,7 @@
   color: black;
 }
 
-.topnav a.active {
-  background-color: #04AA6D;
-  color: white;
-}
+
 
 .topnav .icon {
   display: none;

@@ -96,12 +96,12 @@
 
   const user_status_id = JSON.parse(localStorage.getItem("user"));
   const id = user_status_id._id;
-
+  getRequests(id)
   let arr = [];
   async function getRequests(user_id) {
     try {
       const newRequest = await fetch(
-        `https://cyan-jolly-bee.cyclic.app/appointment/userdata/${id}`,
+        `http://localhost:8080/appointment/userdata/${id}`,
         {
           method: "GET",
           headers: {

@@ -152,6 +152,7 @@
       <a href="./photography.html">Register as Photographer</a>
       <a href="./SignUp.html">SignUp</a>
       <a href="./Login.html">Login</a>
+      <a class="dashh" href="photographerLogin.html">Dashboard</a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
@@ -754,7 +755,7 @@
   book.addEventListener("click",()=>{
   let token = localStorage.getItem("token")
   if(token){
-      window.location.href="./detailphotography.html"
+      window.location.href="./showphotographers.html"
   }else{
     swal("Login first!!");
     setTimeout(() => {
@@ -762,4 +763,10 @@
     }, 3000);
   }
   })
+
+  let dash = document.querySelector(".dashh")
+  dash.addEventListener("click",(e)=>{
+  alert("Login first")
+  })
+
 </script>
