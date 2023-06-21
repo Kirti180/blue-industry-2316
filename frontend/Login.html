@@ -61,22 +61,22 @@
                     email: document.getElementById("email").value,
                     password: document.getElementById("password").value
                 }
-                fetch("https://cyan-jolly-bee.cyclic.app/User/login", {
+                fetch("http://localhost:8080/User/login", {
                     method: "POST",
                     headers: { "Content-type": "application/json" },
                     body: JSON.stringify(payload)
                 }).then(res => res.json())
                     .then(res => {
                         console.log(res)
-                        if(res.msg=="User logged in successful"){
+                        if(res){
                             alert("Login Successfull")
-                            // window.location.assign("index.html")
+                            //window.location.assign("index.html")
                         }
                         else{
                             alert("Wrong Credentials")
                         }
                             localStorage.setItem("token",res.token)
-                            localStorage.setItem("user",JSON.stringify(res.usr[0]))
+                            localStorage.setItem("user",JSON.stringify(res.user))
                             console.log(res)
                             window.location.href="./showphotographers.html"
                     })

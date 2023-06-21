@@ -110,9 +110,9 @@ appointbtn.addEventListener("click",(e)=>{
         const dataid=JSON.parse(localStorage.getItem("element"))
          const id = dataid._id
          console.log(id)
-        
+        getAppointment(id)
         async function getAppointment(photographer){
-            let newAppointment = await fetch(`https://cyan-jolly-bee.cyclic.app/appointment/book/${id}`,{
+            let newAppointment = await fetch(`http://localhost:8080/appointment/booking/${id}`,{
                 method:"POST",
                body:JSON.stringify(Appointobj),
          headers:{
@@ -120,7 +120,9 @@ appointbtn.addEventListener("click",(e)=>{
             Authorization: localStorage.getItem("token"),
         },
             })
+            console.log(newAppointment)
             if(newAppointment.ok){
+
                 swal({
   title: "Sit Tight!",
   text: "Your Appointment Request has been sent!",
@@ -130,9 +132,14 @@ console.log("appointment sent")
 setTimeout(()=>{
   window.location.href="./showphotographers.html"
 },3000)
+            }else{
+              swal({
+  title: "Kindly Book another slot.",
+  text: "There is already an appointment scheduled on this date and time!",
+  icon: "error",
+});
             }
         }
-    getAppointment()
 })
 
 </script>

@@ -7,8 +7,10 @@ client.on("error", (err) => console.log("Redis Client Error", err));
 client.connect();
 const { UserModel } = require("../models/user.model");
 UserRoute = express.Router();
+const authentication = require("../middleware/Authentication")
 UserRoute.use(express.json());
 require("dotenv").config()
+
 
 const { appointmentModel } = require("../models/appointment.model");
 
@@ -40,41 +42,41 @@ UserRoute.post("/signup", async (req, res) => {
 });
 
 UserRoute.post("/login", async (req, res) => {
-
+  
   const { email, password } = req.body;
   res.clearCookie("token");
-  try {
-    const usr = await UserModel.find({ email });
-    if (usr.length > 0) {
-      bcrypt.compare(password, usr[0].password, async (err, result) => {
-        if (result === true) {
-          const token = jwt.sign({ userId: usr[0]._id }, "imran", {
-            expiresIn: "1h",
-          });
-          client.set("token", token);
-          res.send({ msg: "User logged in successful", token: token, usr });
-        } else if (result === false) {
-          res.send({ msg: "Wrong password" });
-        } else {
-          res.send(err.message);
-          if (err) res.send(err);
-          else if (result) {
-            const token = jwt.sign({ userId: usr[0]._id }, process.env.secretKey, {
-              expiresIn: "10h"
-            });
-            res
-              .cookie("Token", token)
-              .send({ msg: "User logged in successful", token: token });
-          }
+  const user = await UserModel.findOne({email})
+  if(!user){
+      res.status(400).send({"msg":"Register first"})
+      return
+  }
+  const hashedpwd = user?.password
+  bcrypt.compare(password, hashedpwd, function(err, result) {
+      if(result){
+          const token = jwt.sign({userid : user._id, role : user.role}, process.env.secretKey, {expiresIn : "180m"})
+          client.set("token",token)
+          res.cookie("Token",token)
+          const refresh_token = jwt.sign({userid : user._id, role:user.role},process.env.secretone, {expiresIn : "640m"})
+          res.send({msg : "login successfull", token, user, refresh_token})
+        }
+        else{
+          res.status(400).send({"msg":"Wrong credentials"})
         }
       });
-    } else {
-      res.send("Register first!");
-    }
+    });
+    
+
+UserRoute.delete("/delete/:id",async(req,res)=>{
+  const id = req.params.id
+  try {
+  await UserModel.findByIdAndDelete({_id:id})
+  res.send("deleted user data")
+  
   } catch (error) {
-    res.send(error);
+      console.log(error)
+      res.send("somthing went wrong")
   }
-});
+})
 
 module.exports = {
   UserRoute,

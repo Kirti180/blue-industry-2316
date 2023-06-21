@@ -10,14 +10,18 @@ const {photoauth}=require("../middleware/photo.authantication")
 require("dotenv").config()
 
 //booking appointment api
-appointmentRouter.post("/book/:id", (req, res) => {
+appointmentRouter.post("/booking/:id", (req, res) => {
   const id = req.params.id;
   const token = req.headers.authorization;
+  if(!token){
+    return res.status(400).send({"msg":"login first"})
+  }
   jwt.verify(token, process.env.secretKey, async (err, decoded) => {
     if (decoded) {
       req.body.user = decoded.userId;
-      req.user = await UserModel.find({ _id: decoded.userId });
+      req.user = await UserModel.find({ _id: decoded.userid });
       const user_id = req.user[0]._id;
+      console.log(req.user)
       const {
         clientName,
         email,
@@ -27,7 +31,19 @@ appointmentRouter.post("/book/:id", (req, res) => {
         bookedOn,
         status,
       } = req.body;
-      try {
+
+      const existingAppointment = await appointmentModel.findOne({
+      
+        start_time:start_time,
+        end_time:end_time,
+        bookedOn:bookedOn,
+        photographer:id,
+     });
+       try {
+       console.log(existingAppointment)
+       if(existingAppointment){
+        return res.status(400).send({"msg":"There is already an appointment scheduled on this date and time. Please book another slot"})
+       }
         const newAppointment = new appointmentModel({
           user_id: user_id,
           clientName,
@@ -74,10 +90,9 @@ appointmentRouter.get("/userdata/:id", async (req, res) => {
   const id = req.params.id
  
 const appointmentData = await appointmentModel.find({user_id:id});
-const status = appointmentData[0].status
-let acceptedData = await appointmentModel.find({status:"Accepted"})
-let rejectedData = await appointmentModel.find({status:"Rejected"})
-let pendingData = await appointmentModel.find({status:"Pending"})
+let acceptedData = await appointmentModel.find({status:"Accepted",_id:appointmentData})
+let rejectedData = await appointmentModel.find({status:"Rejected",_id:appointmentData})
+let pendingData = await appointmentModel.find({status:"Pending",_id:appointmentData})
 res.send({pendingData,acceptedData,rejectedData});
 });
 

@@ -105,7 +105,7 @@ const getdata = () => {
     headers: headers
   };
 
-  fetch(`https://cyan-jolly-bee.cyclic.app/photographer/${id}`, options)
+  fetch(`http://localhost:8080/photographer/${id}`, options)
     .then((res) => res.json())
     .then((res) => {
       arr.push(res.data)

@@ -52,7 +52,7 @@ const select = (e) => {
   }
 };
 const getdata = () => {
-  fetch("https://cyan-jolly-bee.cyclic.app/photographer/")
+  fetch("http://localhost:8080/photographer/")
     .then((res) => res.json())
     .then((res) => {
       // console.log("hello");

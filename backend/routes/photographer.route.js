@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 require("dotenv").config
 const {appointmentModel} = require("../models/appointment.model")
+const authentication = require("../middleware/Authentication")
 const {UserModel} = require("../models/user.model")
 const {photoauth}=require("../middleware/photo.authantication")
 const { photoModel } = require("../models/photographer.model");
@@ -18,6 +19,11 @@ photographyRouter.get("/",async (req, res) => {
   const photo = await photoModel.find(req.query);
   res.send({ data: photo });
 });
+
+photographyRouter.get("/datass",(req,res)=>{
+  res.send("dataaaas!")
+})
+
 
 
 photographyRouter.get("/:id",photoauth, async (req, res) => {

@@ -147,7 +147,7 @@ sub.addEventListener("click",()=>{
   }
 
   async function loginFunction(_id){
-    let loginRequest = await fetch(`https://cyan-jolly-bee.cyclic.app/photographer/update/${id}`,{
+    let loginRequest = await fetch(`http://localhost:8080/photographer/update/${id}`,{
             method:"PATCH",
             body:JSON.stringify(payload),
         headers:{
@@ -156,6 +156,7 @@ sub.addEventListener("click",()=>{
         },
         })
         if(loginRequest.ok){
+          localStorage.setItem("")
           swal("Updated!", "Data updated successfully!", "success");
           setTimeout(()=>{
             window.location.href="./dashboard.photographer.html"
@@ -171,7 +172,7 @@ sub.addEventListener("click",()=>{
 
 
 const getdata=(_id)=>{
-        fetch(`https://cyan-jolly-bee.cyclic.app/photographer/${id}`,{
+        fetch(`http://localhost:8080/photographer/${id}`,{
     headers:{
       Authorization:JSON.parse(localStorage.getItem("phototoken"))
     },
