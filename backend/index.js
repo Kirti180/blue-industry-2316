@@ -7,11 +7,11 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy
 const session = require('express-session');
 const { authentication } = require("./middleware/Authentication")
 const { createClient } = require("redis");
-// const {photoauth}=require("../middleware/photo.authantication")
-const client = createClient();
-
+const client = createClient(process.env.redisURL);
+client.on('ready', function () {
+  console.log("Redis is ready");
+});
 client.on('error', err => console.log('Redis Client Error', err));
-// const { authorise } = require("../middleware/Authorization")
 const { UserModel } = require("./models/user.model")
 const { photographyRouter } = require("./routes/photographer.route");
 const { UserRoute } = require("./routes/user.route");
@@ -28,19 +28,15 @@ app.use(session({
   saveUninitialized: false
 }));
 
-
-
 app.use(express.json());
 app.use("/photographer",photographyRouter);
 app.use("/appointment", appointmentRouter)
-
 
 app.use("/User", UserRoute)
 
 app.use(passport.initialize())
 app.use(passport.session());
 require("./OAuth")
-
 
 app.get("/google", passport.authenticate("google", { scope: ["profile", "email"] }))
 app.use("/User", UserRoute)
@@ -60,12 +56,7 @@ app.get("/google/callback", passport.authenticate("google", { failureRedirect: "
   console.log({ "mail": req.user.emails[0].value })
   res.redirect('http://127.0.0.1:5500/frontend/index.html');
   res.end({ "token": token })
-
 })
-
-
-
-
 
 app.get("/users",authentication,async (req, res) => {
   try {

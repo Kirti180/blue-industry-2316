@@ -12,7 +12,7 @@ passport.deserializeUser((user, done) => {
 passport.use(new GoogleStrategy({
   clientID: "918752788272-fh9k9imtnfolqu7p7e6cbm34ip8rkkk8.apps.googleusercontent.com",
   clientSecret: "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",
-  callbackURL: "http://localhost:8080/google/callback"
+  callbackURL: "https://cyan-jolly-bee.cyclic.app/google/callback"
 },
   function  verify(accessToken, refreshToken, profile, cb) {
     console.log(profile)
