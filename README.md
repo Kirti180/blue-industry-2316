@@ -1,6 +1,6 @@
 ![Click It](https://user-images.githubusercontent.com/115463536/236754604-658eab7e-4823-4a29-bd15-ab68f71dedba.png)
 # blue-industry-2316
-# Deployed Link :
+# Deployed Netlify Link [updated] : https://649440ce6b0a8328e9da74e2--grand-capybara-84a0cd.netlify.app/
 
 Photography Appointment Booking System
 *This project is a web-based application that allows customers to schedule appointments with professional photographers. The application's backend is responsible for managing customer data, photographer availability, and scheduling.*
@@ -34,8 +34,8 @@ run the command
 - Login/Signup
 - Show phootographers
 - view request
-- Google OAuth 
 - book photographer.
+- Edit photographer
 
 ## Frontend Part Photographer
 
@@ -48,6 +48,7 @@ run the command
 - Authentication using JWT
 - Brypt 
 - Authentication as per role Admin | User
+- Redis for caching
 
 ## Database  
  - MongoDB
@@ -57,13 +58,35 @@ run the command
  ### Use by User side
 -  signup/login 
 -  Go to Book a photographer
--  Select the photographer | search by location | sort by price
--  select the slot fill the form for booking 
+-  Select the photographer
+-  select the slot fill the form for booking
+-  can view his appointment booking requests
  ### Use by Photographer side
 -  signup/login 
 -  create a account as photographer using register as photographer
--  accept reject request in view request
--  after work is completed click on the slots that are seen on dashboard to make them avaliable again 
+-  accept or reject request in view request from his dashboard
+-  after work is completed click on the slots that are seen on dashboard to make them avaliable again
+
+
+### Here are some of the snapshots of our website
+![one](./Images/Screenshot%202023-06-22%20172432.png)
+
+![two](./Images/Screenshot%202023-06-22%20172601.png)
+
+![three](./Images/Screenshot%202023-06-22%20172721.png)
+
+![four](./Images/Screenshot%202023-06-22%20172833.png)
+
+![five](./Images/Screenshot%202023-06-22%20172953.png)
+
+![six](./Images/Screenshot%202023-06-22%20173105.png)
+
+![sev](./Images/Screenshot%202023-06-22%20173323.png)
+
+![eight](./Images/Screenshot%202023-06-22%20173738.png)
+
+![nine](./Images/Screenshot%202023-06-22%20173822.png)
+  
 ## Group Members Info
 
 1. Kirti Shinde(Team Lead)
@@ -80,11 +103,4 @@ run the command
    >    - sutarimran47@gmail.com
    >    - GitHub: https://github.com/Imran2909
 
-
-4. Tarun Kumar
-   >    - e-Mail: tarunmehto71@gmail.com
-   >    - GitHub: https://github.com/IAmtarunKumar
-
-
 <br>
-

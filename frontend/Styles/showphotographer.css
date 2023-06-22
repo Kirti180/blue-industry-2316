@@ -7,61 +7,74 @@
    
    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
    border-radius: 10px;
-   background-color: white;
+   background-color: rgb(238, 238, 218);
+   cursor: pointer;
+   
+}
+#main_card:hover{
+    background-color: white;
 }
 #photo_main{
-    width: 60%;
+    width: 51%;
     margin: auto;
-    
+    cursor: pointer;
     
 }
 #show-photo-data{
     margin-top: 5%;
+    font-family: sans-serif;
 }
+
 body{
-    background: rgb(93,223,230);
-    background: linear-gradient(90deg, rgba(93,223,230,1) 0%, rgba(0,74,173,1) 100%);
+    background: rgb(198, 189, 126);
+    background: linear-gradient(90deg, rgb(246, 248, 207) 0%, rgb(136, 125, 85) 100%);
 }
 #card_img{
     /* margin: auto; */
     /* border: 1px solid red; */
     padding-top: 1%;
     padding-bottom: 1%;
-    width: 250px;
+    width: 280px;
     height: 200px;
+}
+
+
+#show-photo-data h1{
+    font-size: 20px;
 }
 #card_img img{
     width: 100%;
     height: 100%;
-    border-radius: 80px;
+    border-radius: 8px;
 }
 #occasion_add p{
     /* border: 1px solid red; */
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: lighter;
+    padding-top: 10px;
 
 }
 #card_info{
-    margin-top: 2%;
+    margin-top: 3%;
+    margin-bottom: 3%;
     /* border: 1px solid green; */
     width: 40%;
 }
 #card_info p{
-  font-size:20px;
+  font-size:15px;
+  padding-top: 10px;
   margin-top: 2%;
 }
 #search{
     width: 30%;
     height: 40px;
     font-size: 16px;
-    padding-left: 2%;
-    margin-right: 15%;
+   margin-left: 110px;
 }
 #select{
     width: 30%;
     height: 40px;
     font-size: 16px;
-    padding-left: 2%;
 }
 /* #functionality{
     display: flex;

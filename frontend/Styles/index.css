@@ -235,10 +235,11 @@ p{
     border-radius: 10px;
     color: white;
     font-weight: bold;
+    cursor: pointer;
     background-color: teal;
 }
 .nav-button:hover{
-    background-color: wheat;
+    background-color: rgb(213, 236, 245);
     color: grey;
 }
 

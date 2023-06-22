@@ -1,5 +1,5 @@
 body{
-    background: linear-gradient(90deg, rgba(93,223,230,1) 0%, rgba(0,74,173,1) 100%);
+    background: linear-gradient(90deg, rgb(246, 248, 207) 0%, rgb(136, 125, 85) 100%);
 }
 #user_home{
     width: 10%;
@@ -11,7 +11,7 @@ body{
     border-radius: 10px;
 }
 #user_home:hover{
-    background-color: rgb(194, 227, 240);
+    background-color: rgb(247, 250, 251);
 }
 table{
     width: 900px;

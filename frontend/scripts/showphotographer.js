@@ -1,56 +1,56 @@
-let searchInput  = document.getElementById("search");
-let select1 = document.getElementById("select");
+// let searchInput  = document.getElementById("search");
+// let select1 = document.getElementById("select");
 let photo_data = document.getElementById("show-photo-data");
-let searchTimeoutId;
+// let searchTimeoutId;
 
-const searchPhotos = (value) => {
-  fetch(`https://faithful-ox-sock.cyclic.app/photographer/search?location=${value}`)
-    .then((res) => res.json())
-    .then((res) => {
-      console.log(res);
-      display(res.data);
-    })
-    .catch((err) => console.log(err));
-};
+// const searchPhotos = (value) => {
+//   fetch(`https://faithful-ox-sock.cyclic.app/photographer/search?location=${value}`)
+//     .then((res) => res.json())
+//     .then((res) => {
+//       console.log(res);
+//       display(res.data);
+//     })
+//     .catch((err) => console.log(err));
+// };
 
-searchInput.addEventListener("input", (event) => {
-  const { value } = event.target;
-  clearTimeout(searchTimeoutId);
-  searchTimeoutId = setTimeout(() => {
-    searchPhotos(value);
-  }, 300);
-});
+// searchInput.addEventListener("input", (event) => {
+//   const { value } = event.target;
+//   clearTimeout(searchTimeoutId);
+//   searchTimeoutId = setTimeout(() => {
+//     searchPhotos(value);
+//   }, 300);
+// });
 
-const high = () => {
-  fetch("https://faithful-ox-sock.cyclic.app/photographer/high")
-    .then((res) => res.json())
-    .then((res) => {
-      //    console.log(res)
-      display(res.data);
-      console.log(res.data);
-    })
-    .catch((err) => console.log(err));
-};
-const low = () => {
-  fetch("https://faithful-ox-sock.cyclic.app/photographer/low")
-    .then((res) => res.json())
-    .then((res) => {
-      //    console.log(res)
-      display(res.data);
-      console.log(res.data);
-    })
-    .catch((err) => console.log(err));
-};
-const select = (e) => {
-  console.log(e.target.value);
-  if (e.target.value == "") {
-    getdata();
-  } else if (e.target.value == "low") {
-    low();
-  } else {
-    high();
-  }
-};
+// const high = () => {
+//   fetch("https://faithful-ox-sock.cyclic.app/photographer/high")
+//     .then((res) => res.json())
+//     .then((res) => {
+//       //    console.log(res)
+//       display(res.data);
+//       console.log(res.data);
+//     })
+//     .catch((err) => console.log(err));
+// };
+// const low = () => {
+//   fetch("https://faithful-ox-sock.cyclic.app/photographer/low")
+//     .then((res) => res.json())
+//     .then((res) => {
+//       //    console.log(res)
+//       display(res.data);
+//       console.log(res.data);
+//     })
+//     .catch((err) => console.log(err));
+// };
+// const select = (e) => {
+//   console.log(e.target.value);
+//   if (e.target.value == "") {
+//     getdata();
+//   } else if (e.target.value == "low") {
+//     low();
+//   } else {
+//     high();
+//   }
+// };
 const getdata = () => {
   fetch("https://faithful-ox-sock.cyclic.app/photographer/")
     .then((res) => res.json())
@@ -102,8 +102,8 @@ function display(data) {
   });
 }
 
-search.addEventListener("change", searchPhotos);
-select1.addEventListener("change", select);
+// search.addEventListener("change", searchPhotos);
+// select1.addEventListener("change", select);
 window.addEventListener("load", getdata);
 // navbar2
 let ham = document.getElementById("hamburger");

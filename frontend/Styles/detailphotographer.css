@@ -1,70 +1,87 @@
 #detail_main{
     display: flex;
     /* border: 1px solid red; */
-    width: 65%;
+    width: 55%;
     margin: auto;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
    border-radius: 10px;
-   background-color: white;
+   background-color: beige;
    padding: 1%;
+   font-family: sans-serif;
    justify-content: space-between;
    margin-bottom: 3%;
-   
+   padding-top: 10px;
+   color: rgb(73, 71, 71);
 }
+#detail_main>div p{
+    padding-top: 10px;
+    font-size: 16px;
+}
+#ba{
+    padding-left: 11%;
+    font-family: sans-serif;
+    color:rgb(62, 60, 60);
+}
+
+
 #detail_contain{
     /* border: 1px solid red; */
     margin-top: 2%;
     width: 40%;
-    
+
 }
 #title{
     
-    font-size: 38px;
+    font-size: 25px;
     font-weight: bold;
 }
 
 #location_detail, #charges, #workingtime, #address, #contact{
-    margin-top: 3%;
-    font-size: 26px;
+    margin-top: 1%;
+    font-size: 19px;
 }
 #detail_img{
     /* border: 1px solid red; */
-    height: 350px;
-    width: 550px;
+    height: 250px;
+    width: 300px;
     margin-right: 20px;
 }
 #detail_img img{
     height: 100%;
     width: 100%;
-    border-radius: 50px;
+    border-radius: 10px;
 }
 body{
     background: rgb(93,223,230);
-    background: linear-gradient(90deg, rgba(93,223,230,1) 0%, rgba(0,74,173,1) 100%);
+    background: linear-gradient(90deg, rgb(246, 248, 207) 0%, rgb(136, 125, 85) 100%);
 }
 #form{
-    width: 65%;
-padding: 2%;
+    width: 30%;
+    padding-left: 10%;
+    padding-top: 20px;
     margin: auto;
+    height: 400px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
    border-radius: 10px;
    background-color: snow;
+   margin-bottom: 20px;
+   background-color: beige;
 }
 #clientName,#email{
-    margin-top: 2%;
     height: 35px;
-    width: 55%;
-    font-size: 16px;
+    margin-top: 20px;
+    width: 65%;
+    font-size: 12px;
 }
 #occasion,#bookedOn{
-    margin-top: 2%;
+    margin-top: 20px;
     height: 35px;
     width: 25%;
-    font-size: 16px;
+    font-size: 12px;
 }
 #form_contain{
     display: flex;
-    gap: 5%;
+    gap: 10%;
 }
 #book-slot{
     display: flex;
@@ -74,24 +91,26 @@ padding: 2%;
 }
 #start_time,#end_time{
 
-    margin-top: 2%;
     height: 30px;
     width: 60%;
-    font-size: 16px;
-    margin-right: 2%;
+    font-size: 14px;
+    margin-right: 1%;
 }
 #confirm{
-    margin-top: 4%;
+    margin-left: 15%;
+    margin-top: 7%;
     font-size: 18px;
     padding: 1.5%;
     border-radius: 10px;
-    background-color: skyblue;
+    width: 170px;
+    color: white;
+    background-color: rgb(74, 72, 32);
     font-weight: bold;
    
     border: none;
 }
 #confirm:hover{
-    background-color: rgba(127, 255, 212, 0.553);
+    background-color: rgb(105, 101, 39);
 }
 #occasions-container{
     margin-top: 2%;
@@ -120,7 +139,7 @@ ul::after {
     margin-bottom: 2%;
   }
 
-  @media screen and  (max-width: 1110px) {
+  @media screen and  (max-width: 1110px) and(min-width:450px) {
 
     #detail_main{
         border: 1px solid red;
@@ -138,5 +157,35 @@ ul::after {
     #detail_contain{
         margin-top: 20px;
         margin: auto;
+    }
+  }
+
+  @media screen and  (max-width: 449px){
+    #detail_main{
+        width: auto;
+        display: flex;
+        flex-wrap: wrap;
+        /* margin: auto; */
+    
+    }
+    #detail_img{
+        margin: auto;
+        margin-top: 0px;
+        width: auto;
+    }
+    #title{
+        margin-top: 14px;
+    }
+    #detail_contain{
+        margin-top: 10px;
+        margin: auto;
+    }
+    #form{
+        width: auto;
+        height: 500px;
+    }
+
+    #confirm{
+        width: 80px;
     }
   }

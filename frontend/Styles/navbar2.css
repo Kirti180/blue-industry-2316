@@ -6,12 +6,13 @@
 nav {
   margin-bottom: 2%;
     display: flex;
+    font-family: sans-serif;
     justify-content: space-between;
     padding: 5px 30px 5px 30px;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    background-color:white;
+    background-color:rgb(245, 246, 232);
     z-index: 999;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
     /* border: 1px solid red; */
@@ -60,7 +61,7 @@ nav {
     
   }
   #nav_left_side :hover {
-    background-color: rgba(127, 255, 212, 0.553);
+    background-color: rgba(145, 147, 103, 0.553);
     border-radius: 7px;
    
     color:  #00053d;
