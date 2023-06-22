@@ -68,7 +68,6 @@ run the command
 -  after work is completed click on the slots that are seen on dashboard to make them avaliable again
 
 
-
 ### Here are some of the snapshots of our website
 ![one](./Images/Screenshot%202023-06-22%20172432.png)
 
@@ -103,6 +102,7 @@ run the command
 3. Imran Sutar
    >    - sutarimran47@gmail.com
    >    - GitHub: https://github.com/Imran2909
+
 
 <br>
 

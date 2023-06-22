@@ -150,9 +150,9 @@
       <a href="#news"></a>
       <a href="./index.html">Home</a>
       <a href="./photography.html">Register as Photographer</a>
-      <a href="./SignUp.html">SignUp</a>
+      <a href="./SignUp.html">Signup</a>
       <a href="./Login.html">Login</a>
-      <a class="dashh" href="photographerLogin.html">Dashboard</a>
+      <a class="dashh" href="photographerLogin.html">Photographer Dashboard</a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
@@ -714,7 +714,7 @@
 
     <div class="bottom">
       <p>Are you Professional Photographer?</p>
-      <button class="nav-button">Register as Studio</button>
+      <button onclick="gotoPhoto()" class="nav-button">Register as Studio</button>
     </div>
 
     <!------------------- footer part  ------------>
@@ -768,5 +768,9 @@
   dash.addEventListener("click",(e)=>{
   alert("Login first")
   })
+
+  function gotoPhoto(){
+    window.location.href="photography.html"
+  }
 
 </script>

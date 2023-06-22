@@ -81,7 +81,7 @@
     margin: 24px 0px 0px 50px;
     border: none;
     color: white;
-    background-color: aqua;
+    background-color: rgb(157, 157, 134);
     border-radius: 115px;
     font-size: 24px;
     cursor: pointer;
@@ -110,8 +110,11 @@
 
 #goto-login{
     text-decoration: none;
-    color: white;
-    margin-left: 555px;
+    color: rgb(136, 135, 121);
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-left: 425px;
 }
 
 #bl{
@@ -123,12 +126,13 @@
     height: 50px;
     border: 1px solid red;
     padding: 12px 108px;
-    margin-left: 50px;
+    margin-left: 80px;
     margin-top: 130px;
     border: none;
-    background-color: aqua;
+    background-color: rgb(201, 197, 169);
     border-radius: 115px;
     font-size: 24px;
+
     cursor: pointer;
     text-decoration: none;
     color: white;

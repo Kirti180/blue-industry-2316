@@ -1,10 +1,20 @@
 *{
-    margin:0;
-    padding:0;
+  margin:0;
+  padding:0;
   
-  }
-  
+}
+#admin_photo_name{
+  color: rgb(61, 59, 59);
+  border: 1px solid black;
+  width: 400px;
+  font-size: 20px;
+  height: 40px;
+  margin: auto;
+  padding-top: 10px;
+}
+
   #main_admin_photo{
+    
     display: grid;
     gap: 2%;
     /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
@@ -17,8 +27,8 @@
   
 }
 #dash_title{
-    background: rgb(93,223,230);
-    background: linear-gradient(90deg, rgba(93,223,230,1) 0%, rgba(0,74,173,1) 100%);
+    background: rgb(207, 200, 170);
+    width: 300px;
     /* border: 1px solid red; */
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
@@ -27,7 +37,7 @@
     height: 120vh;
     padding: 2%;
     background: rgb(93,223,230);
-    background: linear-gradient(90deg, rgba(93,223,230,1) 0%, rgba(0,74,173,1) 100%);
+    background: linear-gradient(90deg, rgb(246, 248, 207) 0%, rgb(136, 125, 85) 100%);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     /* width: 120%; */
     /* border: 1px solid red; */
@@ -52,7 +62,8 @@ row-gap: 5%;
 }
 .req_detail h1{
     margin-top: 8%;
-    font-size: 20px;
+    font-size: 30px;
+    color: rgb(79, 79, 37);
 }
 nav {
   
@@ -92,7 +103,7 @@ nav {
     width: 250px;
     height: 80%;
     border: none;
-    background-color: white;
+    background-color: rgb(202, 197, 197);
     border-radius: 7px;
   }
   ::placeholder {
@@ -110,19 +121,22 @@ nav {
   #nav_left_side > div {
     display: flex;
     align-items: center;
+    padding-top: 40px;
     padding-left: 10px;
     padding-right: 10px;
+    font-weight: bold;
+    color: rgb(70, 67, 67);
     
   }
   #nav_left_side :hover {
     background-color: white;
     border-radius: 7px;
    
-    color:  #00053d;
+    color:  #7a7a7d;
   }
   
   #nav_left_side > div > i {
-    color:  #00053d;
+    color:  #555661;
     margin-right: 7px;
     font-size: 16px;
   }
@@ -143,7 +157,7 @@ nav {
     /* background-color: #902735; */
     font-weight: 600;
     background-color: white;
-    color:  #00053d;
+    color:  #6a6a6c;
   }
   #burger > div:hover {
     width: 96%;
@@ -155,7 +169,7 @@ nav {
   .indexstyle {
     
     text-decoration: none;
-    color:  #00053d;
+    color:  #4f4f54;
     font-size: 24px;
     line-height: 200%;
     /* margin-left: 2%; */
