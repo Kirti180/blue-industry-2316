@@ -69,23 +69,58 @@ run the command
 
 
 ### Here are some of the snapshots of our website
+## Home page
 ![one](./Images/Screenshot%202023-06-22%20172432.png)
 
+<br>
+<br>
+
+## Book a photographer by clicking "Book a photographer" Button
 ![two](./Images/Screenshot%202023-06-22%20172601.png)
 
+<br>
+<br>
+
+## Photographer Dashboard where you can get to see accepted, rejected and pending appointment data 
 ![three](./Images/Screenshot%202023-06-22%20172721.png)
 
+<br>
+<br>
+
+## Here, you get to edit your photographer profile
 ![four](./Images/Screenshot%202023-06-22%20172833.png)
 
+<br>
+<br>
+
+## Here, your can choose a photographer of your choice
 ![five](./Images/Screenshot%202023-06-22%20172953.png)
 
+<br>
+<br>
+
+## Booking appointment page.
 ![six](./Images/Screenshot%202023-06-22%20173105.png)
 
+<br>
+<br>
+
+## Here, you get to see your appointment request data.
 ![sev](./Images/Screenshot%202023-06-22%20173323.png)
 
+<br>
+<br>
+
+## Here, in photographer's dashboard, a photographer can accept or reject appointment request.
 ![eight](./Images/Screenshot%202023-06-22%20173738.png)
 
+<br>
+<br>
+
+## Registration page for a user.
 ![nine](./Images/Screenshot%202023-06-22%20173822.png)
+<br>
+<br>
   
 ## Group Members Info
 
