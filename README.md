@@ -67,6 +67,26 @@ run the command
 -  accept or reject request in view request from his dashboard
 -  after work is completed click on the slots that are seen on dashboard to make them avaliable again
 
+
+
+### Here are some of the snapshots of our website
+![one](./Images/Screenshot%202023-06-22%20172432.png)
+
+![two](./Images/Screenshot%202023-06-22%20172601.png)
+
+![three](./Images/Screenshot%202023-06-22%20172721.png)
+
+![four](./Images/Screenshot%202023-06-22%20172833.png)
+
+![five](./Images/Screenshot%202023-06-22%20172953.png)
+
+![six](./Images/Screenshot%202023-06-22%20173105.png)
+
+![sev](./Images/Screenshot%202023-06-22%20173323.png)
+
+![eight](./Images/Screenshot%202023-06-22%20173738.png)
+
+![nine](./Images/Screenshot%202023-06-22%20173822.png)
   
 ## Group Members Info
 
