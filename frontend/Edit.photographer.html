@@ -147,7 +147,7 @@ sub.addEventListener("click",()=>{
   }
 
   async function loginFunction(_id){
-    let loginRequest = await fetch(`http://localhost:8080/photographer/update/${id}`,{
+    let loginRequest = await fetch(`https://faithful-ox-sock.cyclic.app/photographer/update/${id}`,{
             method:"PATCH",
             body:JSON.stringify(payload),
         headers:{
@@ -156,15 +156,14 @@ sub.addEventListener("click",()=>{
         },
         })
         if(loginRequest.ok){
-          localStorage.setItem("")
+          let data = await loginRequest.json()
+         console.log(data)
           swal("Updated!", "Data updated successfully!", "success");
           setTimeout(()=>{
             window.location.href="./dashboard.photographer.html"
           },2000)
         }
 
-         let data = await loginRequest.json()
-        console.log(data)
       }
       loginFunction()
       
@@ -172,7 +171,7 @@ sub.addEventListener("click",()=>{
 
 
 const getdata=(_id)=>{
-        fetch(`http://localhost:8080/photographer/${id}`,{
+        fetch(`https://faithful-ox-sock.cyclic.app/photographer/${id}`,{
     headers:{
       Authorization:JSON.parse(localStorage.getItem("phototoken"))
     },

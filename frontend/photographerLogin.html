@@ -55,7 +55,7 @@
       pass:pass.value
     }
    async function loginFunction(){
-    let loginRequest = await fetch("http://localhost:8080/photographer/login",{
+    let loginRequest = await fetch("https://faithful-ox-sock.cyclic.app/photographer/login",{
             method:"POST",
             body:JSON.stringify(loginobj),
         headers:{
@@ -64,6 +64,8 @@
         })
         if(loginRequest.ok){
           swal("Login Successfull!", "success");
+        }else{
+          alert("Wrong credentials")
         }
          let data = await loginRequest.json()
          localStorage.setItem("phototoken",JSON.stringify(data.token))
