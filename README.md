@@ -1,6 +1,6 @@
 ![Click It](https://user-images.githubusercontent.com/115463536/236754604-658eab7e-4823-4a29-bd15-ab68f71dedba.png)
 # blue-industry-2316
-# Deployed Link :
+# Deployed Netlify Link [updated] : https://6494306a6b0a831ca3da7537--sparkling-cactus-118064.netlify.app/
 
 Photography Appointment Booking System
 *This project is a web-based application that allows customers to schedule appointments with professional photographers. The application's backend is responsible for managing customer data, photographer availability, and scheduling.*
@@ -34,8 +34,8 @@ run the command
 - Login/Signup
 - Show phootographers
 - view request
-- Google OAuth 
 - book photographer.
+- Edit photographer
 
 ## Frontend Part Photographer
 
@@ -48,6 +48,7 @@ run the command
 - Authentication using JWT
 - Brypt 
 - Authentication as per role Admin | User
+- Redis for caching
 
 ## Database  
  - MongoDB
@@ -57,13 +58,16 @@ run the command
  ### Use by User side
 -  signup/login 
 -  Go to Book a photographer
--  Select the photographer | search by location | sort by price
--  select the slot fill the form for booking 
+-  Select the photographer
+-  select the slot fill the form for booking
+-  can view his appointment booking requests
  ### Use by Photographer side
 -  signup/login 
 -  create a account as photographer using register as photographer
--  accept reject request in view request
--  after work is completed click on the slots that are seen on dashboard to make them avaliable again 
+-  accept or reject request in view request from his dashboard
+-  after work is completed click on the slots that are seen on dashboard to make them avaliable again
+
+  
 ## Group Members Info
 
 1. Kirti Shinde(Team Lead)
@@ -79,12 +83,6 @@ run the command
 3. Imran Sutar
    >    - sutarimran47@gmail.com
    >    - GitHub: https://github.com/Imran2909
-
-
-4. Tarun Kumar
-   >    - e-Mail: tarunmehto71@gmail.com
-   >    - GitHub: https://github.com/IAmtarunKumar
-
 
 <br>
 
