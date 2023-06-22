@@ -4,7 +4,7 @@ let photo_data = document.getElementById("show-photo-data");
 let searchTimeoutId;
 
 const searchPhotos = (value) => {
-  fetch(`https://cyan-jolly-bee.cyclic.app/photographer/search?location=${value}`)
+  fetch(`https://faithful-ox-sock.cyclic.app/photographer/search?location=${value}`)
     .then((res) => res.json())
     .then((res) => {
       console.log(res);
@@ -22,7 +22,7 @@ searchInput.addEventListener("input", (event) => {
 });
 
 const high = () => {
-  fetch("https://cyan-jolly-bee.cyclic.app/photographer/high")
+  fetch("https://faithful-ox-sock.cyclic.app/photographer/high")
     .then((res) => res.json())
     .then((res) => {
       //    console.log(res)
@@ -32,7 +32,7 @@ const high = () => {
     .catch((err) => console.log(err));
 };
 const low = () => {
-  fetch("https://cyan-jolly-bee.cyclic.app/photographer/low")
+  fetch("https://faithful-ox-sock.cyclic.app/photographer/low")
     .then((res) => res.json())
     .then((res) => {
       //    console.log(res)
@@ -52,7 +52,7 @@ const select = (e) => {
   }
 };
 const getdata = () => {
-  fetch("http://localhost:8080/photographer/")
+  fetch("https://faithful-ox-sock.cyclic.app/photographer/")
     .then((res) => res.json())
     .then((res) => {
       // console.log("hello");
