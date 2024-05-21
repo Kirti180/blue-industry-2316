@@ -113,7 +113,7 @@ appointbtn.addEventListener("click",(e)=>{
          console.log(id)
         getAppointment(id)
         async function getAppointment(photographer){
-            let newAppointment = await fetch(`https://faithful-ox-sock.cyclic.app/appointment/booking/${id}`,{
+            let newAppointment = await fetch(`https://photo-backend-h4ns.onrender.com/appointment/booking/${id}`,{
                 method:"POST",
                body:JSON.stringify(Appointobj),
          headers:{

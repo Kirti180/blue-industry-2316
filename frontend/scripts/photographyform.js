@@ -29,7 +29,7 @@ const photography_register = async () => {
 
   console.log(payload);
 
-  await fetch("https://faithful-ox-sock.cyclic.app/photographer/create", {
+  await fetch("https://photo-backend-h4ns.onrender.com/photographer/create", {
     method: "POST",
     headers: {
       "content-type": "application/json",

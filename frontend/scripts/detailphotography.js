@@ -30,7 +30,7 @@ let image = document.createElement("img");
 //             slot.booked = true;
 //             // Update the backend schema with the new data
 //             try {
-//               const response = await fetch(`https://faithful-ox-sock.cyclic.app/update/${data._id}/occasions/${occasion.name}/slots/${slot.time}`, {
+//               const response = await fetch(`https://photo-backend-h4ns.onrender.com/update/${data._id}/occasions/${occasion.name}/slots/${slot.time}`, {
 //                 method: 'PATCH',
 //                 headers: {
 //                   'Content-Type': 'application/json',

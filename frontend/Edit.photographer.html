@@ -147,7 +147,7 @@ sub.addEventListener("click",()=>{
   }
 
   async function loginFunction(_id){
-    let loginRequest = await fetch(`https://faithful-ox-sock.cyclic.app/photographer/update/${id}`,{
+    let loginRequest = await fetch(`https://photo-backend-h4ns.onrender.com/photographer/update/${id}`,{
             method:"PATCH",
             body:JSON.stringify(payload),
         headers:{
@@ -171,7 +171,7 @@ sub.addEventListener("click",()=>{
 
 
 const getdata=(_id)=>{
-        fetch(`https://faithful-ox-sock.cyclic.app/photographer/${id}`,{
+        fetch(`https://photo-backend-h4ns.onrender.com/photographer/${id}`,{
     headers:{
       Authorization:JSON.parse(localStorage.getItem("phototoken"))
     },

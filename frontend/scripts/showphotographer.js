@@ -4,7 +4,7 @@ let photo_data = document.getElementById("show-photo-data");
 // let searchTimeoutId;
 
 // const searchPhotos = (value) => {
-//   fetch(`https://faithful-ox-sock.cyclic.app/photographer/search?location=${value}`)
+//   fetch(`https://photo-backend-h4ns.onrender.com/photographer/search?location=${value}`)
 //     .then((res) => res.json())
 //     .then((res) => {
 //       console.log(res);
@@ -22,7 +22,7 @@ let photo_data = document.getElementById("show-photo-data");
 // });
 
 // const high = () => {
-//   fetch("https://faithful-ox-sock.cyclic.app/photographer/high")
+//   fetch("https://photo-backend-h4ns.onrender.com/photographer/high")
 //     .then((res) => res.json())
 //     .then((res) => {
 //       //    console.log(res)
@@ -32,7 +32,7 @@ let photo_data = document.getElementById("show-photo-data");
 //     .catch((err) => console.log(err));
 // };
 // const low = () => {
-//   fetch("https://faithful-ox-sock.cyclic.app/photographer/low")
+//   fetch("https://photo-backend-h4ns.onrender.com/photographer/low")
 //     .then((res) => res.json())
 //     .then((res) => {
 //       //    console.log(res)
@@ -52,7 +52,7 @@ let photo_data = document.getElementById("show-photo-data");
 //   }
 // };
 const getdata = () => {
-  fetch("https://faithful-ox-sock.cyclic.app/photographer/")
+  fetch("https://photo-backend-h4ns.onrender.com/photographer/")
     .then((res) => res.json())
     .then((res) => {
       // console.log("hello");

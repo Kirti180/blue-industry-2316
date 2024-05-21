@@ -117,7 +117,7 @@ const tableHead = document.querySelector('thead');
        
 let arr=[]
  async function getRequests(photographer){
-    let newRequest = await fetch(`https://faithful-ox-sock.cyclic.app/appointment/${id}`,{
+    let newRequest = await fetch(`https://photo-backend-h4ns.onrender.com/appointment/${id}`,{
         method:"GET",
         headers:{
             "content-type":"application/json",
@@ -199,7 +199,7 @@ let arr=[]
 
  //using accept appointment api
 async function acceptingAppointment(id){
-    let accept = await fetch(`https://faithful-ox-sock.cyclic.app/appointment/accept/${id}`,{
+    let accept = await fetch(`https://photo-backend-h4ns.onrender.com/appointment/accept/${id}`,{
                 method:"PATCH",
          headers:{
             "content-type":"application/json",
@@ -217,7 +217,7 @@ async function acceptingAppointment(id){
 
 //reject appointment api
 async function declineAppointment(id){
-    let rejected = await fetch(`https://faithful-ox-sock.cyclic.app/appointment/reject/${id}`,{
+    let rejected = await fetch(`https://photo-backend-h4ns.onrender.com/appointment/reject/${id}`,{
                 method:"PATCH",
          headers:{
             "content-type":"application/json",

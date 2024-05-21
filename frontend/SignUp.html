@@ -39,7 +39,7 @@
                     I have read and agree to Sprout Studio's <a href="">Terms and Conditions. </a> <br>
                     <button id="submit" type="submit"> SignUp </button> <br>
                     <h3 id="or">OR</h3>
-                    <a href="http://localhost:8080/google" id="ggl" >SignUp With Google</a>
+                    <a href="https://photo-backend-h4ns.onrender.com/google" id="ggl" >SignUp With Google</a>
                 </form>
 
             </div>
@@ -90,7 +90,7 @@
                     email: document.getElementById("email").value,
                     password: document.getElementById("password").value
                 }
-                fetch("https://faithful-ox-sock.cyclic.app/User/signup", {
+                fetch("https://photo-backend-h4ns.onrender.com/User/signup", {
                     method: "POST",
                     headers: { "Content-type": "application/json" },
                     body: JSON.stringify(payload)
@@ -109,10 +109,10 @@
 
     // document.getElementById("google").addEventListener("click", (rew) => {
     //     rew.preventDefault()
-    //     fetch("http://localhost:8080/google").then((res) => res.json())
+    //     fetch("https://photo-backend-h4ns.onrender.com/google").then((res) => res.json())
     //         .then((res) => console.log(res))
     //         .catch((err) => console.log(err))
-    //     // fetch("http://localhost:8080//google/callback").then((res) => res.json())
+    //     // fetch("https://photo-backend-h4ns.onrender.com//google/callback").then((res) => res.json())
     //     //     .then((res) => console.log(res))
     //     //     .catch((err) => console.log(err))
     //     // window.location.assign("index.html")
