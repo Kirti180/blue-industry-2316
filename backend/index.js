@@ -4,23 +4,64 @@ const app = express();
 const { connection } = require("./db");
 const passport = require("passport")
 const GoogleStrategy = require('passport-google-oauth20').Strategy
+require("dotenv").config();
 const session = require('express-session');
 const { authentication } = require("./middleware/Authentication")
-const { createClient } = require("redis");
-const client = createClient(process.env.redisURL);
-client.on('ready', function () {
-  console.log("Redis is ready");
+const cors = require("cors");
+
+
+
+app.use(
+  cors({
+    origin: "https://zingy-cajeta-563e6d.netlify.app",
+    preflightContinue: true
+  })
+);
+
+
+app.use(async(req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://zingy-cajeta-563e6d.netlify.app");
+  res.header(
+    "Access-Control-Allow-Methods",
+    "DELETE, POST, GET, PATCH, PUT, OPTIONS"
+  ),
+  res.header(
+    "Access-Control-Allow-Credentials",
+    "true"
+  ),
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+    );
+  next();
 });
-client.on('error', err => console.log('Redis Client Error', err));
+
+// const redis = new Redis({
+  //     port:process.env.port,
+  //     host:process.env.redisURL,
+  //     username:process.env.username,
+  //     password:process.env.password,
+  // })
+
+  const {createClient} = require("redis")
+
+  const client = createClient({
+    password:process.env.password,
+    socket: {
+        host: process.env.redisURL,
+        port: process.env.redis_port
+    }
+  });
+client.connect(()=>console.log("Redis connected"))
+
+
+
+// const { authorise } = require("../middleware/Authorization")
 const { UserModel } = require("./models/user.model")
 const { photographyRouter } = require("./routes/photographer.route");
 const { UserRoute } = require("./routes/user.route");
 const { BlacklistModel } = require("./models/blacklist.model")
 const { appointmentRouter } = require("./routes/appointment.route")
-require("dotenv").config();
-client.connect();
-const cors = require("cors");
-app.use(cors());
 
 app.use(session({
   secret: "my-secret-key",
@@ -28,15 +69,19 @@ app.use(session({
   saveUninitialized: false
 }));
 
+
+
 app.use(express.json());
 app.use("/photographer",photographyRouter);
 app.use("/appointment", appointmentRouter)
+
 
 app.use("/User", UserRoute)
 
 app.use(passport.initialize())
 app.use(passport.session());
 require("./OAuth")
+
 
 app.get("/google", passport.authenticate("google", { scope: ["profile", "email"] }))
 app.use("/User", UserRoute)
@@ -56,7 +101,12 @@ app.get("/google/callback", passport.authenticate("google", { failureRedirect: "
   console.log({ "mail": req.user.emails[0].value })
   res.redirect('http://127.0.0.1:5500/frontend/index.html');
   res.end({ "token": token })
+
 })
+
+
+
+
 
 app.get("/users",authentication,async (req, res) => {
   try {
