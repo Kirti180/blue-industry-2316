@@ -2,13 +2,22 @@ const express = require("express")
 const jwt = require("jsonwebtoken")
 const { UserModel } = require("../models/user.model")
 const { BlacklistModel } = require("../models/blacklist.model")
-const { createClient } = require("redis");
 require("dotenv").config()
 // const cors = require("cors");
 // app.use(cors());
-const client = createClient();
-client.on('error', err => console.log('Redis Client Error', err));
-client.connect();
+
+const {createClient} = require("redis")
+
+const client = createClient({
+    password:process.env.password,
+    socket: {
+        host: process.env.redisURL,
+        port: process.env.redis_port
+    }
+  });
+client.connect(()=>console.log("Redis connected"))
+
+
 
 const authentication = async (req, res, next) => {
     
