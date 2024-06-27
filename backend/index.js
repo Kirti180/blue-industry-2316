@@ -13,14 +13,14 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin: "https://zingy-cajeta-563e6d.netlify.app",
+    origin: "*",
     preflightContinue: true
   })
 );
 
 
 app.use(async(req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://zingy-cajeta-563e6d.netlify.app");
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Methods",
     "DELETE, POST, GET, PATCH, PUT, OPTIONS"
