@@ -1,6 +1,6 @@
 ![Click It](https://user-images.githubusercontent.com/115463536/236754604-658eab7e-4823-4a29-bd15-ab68f71dedba.png)
 # blue-industry-2316
-# Deployed Netlify Link [updated] : https://6494306a6b0a831ca3da7537--sparkling-cactus-118064.netlify.app/
+# Deployed Netlify Link [updated] : https://667d0577fe1895796f933c2c--timely-dieffenbachia-a1d820.netlify.app/
 
 Photography Appointment Booking System
 *This project is a web-based application that allows customers to schedule appointments with professional photographers. The application's backend is responsible for managing customer data, photographer availability, and scheduling.*
